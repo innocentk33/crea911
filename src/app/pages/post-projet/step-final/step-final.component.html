@@ -1,0 +1,61 @@
+<div class="flex-column">
+
+  <simple-notifications [options]="options"></simple-notifications>
+
+  <div class="row around-xs">
+    <h2 class="crea-session-title uppercase">Rédiger une commande</h2>
+  </div>
+  <div class="row center-xs col-xs-12 flex-column">
+    <form [formGroup]="projectForm" (ngSubmit)="nextStep()" class="col-xs-8">
+      <div class="row">
+        <label for="">Titre du projet</label>
+        <input formControlName="titre" type="text" placeholder="titre du projet">
+      </div>
+      <div class="row">
+        <label for="">Description du projet</label>
+        <textarea formControlName="description" name="" id="" cols="30" rows="10" placeholder="décrivez votre projet"></textarea>
+      </div>
+
+      <div class="col-xs-12 jumbo">
+        <p>
+            Vous pouvez charger uniquement des fichiers images (.png .gif .jpg .jpeg .bmp ...), text ou pdf
+        </p>
+      </div>
+      <div class="col-xs-12 files-chooce">
+        <div #fileContainerA class="item-chooce" (click)="chooseFile($event, 'A')">
+          <input (change)="onFileChange($event)" type="file" class="fileItem" #fileInputA>
+          <div class="flex-row">
+            <mat-icon svgIcon="trombone"></mat-icon>
+            <label for="">{{libellePieceA}}</label>
+          </div>
+        </div>
+        <div #fileContainerB class="item-chooce" (click)="chooseFile($event, 'B')">
+          <input (change)="onFileChange($event)" type="file" class="fileItem" #fileInputB>
+          <div class="flex-row">
+            <mat-icon svgIcon="trombone"></mat-icon>
+            <label for="">{{libellePieceB}}</label>
+          </div>
+        </div>
+        <div #fileContainerC class="item-chooce" (click)="chooseFile($event, 'C')">
+          <input (change)="onFileChange($event)" type="file" class="fileItem" #fileInputC>
+          <div class="flex-row">
+            <mat-icon svgIcon="trombone"></mat-icon>
+            <label for="">{{libellePieceC}}</label>
+          </div>
+        </div>
+        <div #fileContainerD class="item-chooce" (click)="chooseFile($event, 'D')">
+          <input (change)="onFileChange($event)" type="file" class="fileItem" #fileInputD>
+          <div class="flex-row">
+            <mat-icon svgIcon="trombone"></mat-icon>
+            <label for="">{{libellePieceD}}</label>
+          </div>
+        </div>
+      </div>
+      <div class="row form-row">
+        <div class="col-md-3">
+          <button [disabled]="!projectForm.valid" type="submit" class="crea-btn-default">Suivant</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

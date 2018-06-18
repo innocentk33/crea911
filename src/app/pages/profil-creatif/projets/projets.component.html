@@ -1,0 +1,236 @@
+<div class="row no-margin flex-column">
+  <!--  -->
+  <div class="row around-xs">
+    <h2 class="crea-session-title uppercase">Liste des projets</h2>
+  </div>
+
+  <div class="row flex-row crea99-categorie-barre">
+    <h4 class="" style="margin: auto 3em">Catégorie</h4>
+    <div>
+      <mat-radio-group (change)="changeService($event)">
+        <mat-radio-button color="primary" class="example-radio-button" value="">Tout</mat-radio-button>
+        <mat-radio-button color="primary" class="example-radio-button" *ngFor="let service of services"
+                          [value]="service.SrvId">
+          {{service.SvrLibelle}}
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </div>
+
+  <!-- en attente -->
+  <div class="">
+    <div class="flex-row title container">
+      <h4 class="col-xs-12 col-md-1">EN ATTENTE</h4>
+      <div class="barre"></div>
+    </div>
+    <!--En attente Mobile-->
+    <div class="mobileView">
+      <app-item-projet-creatif-table-row *ngFor="let projet of projetsEnAttentes" [terminated]="false"
+                                         [projet]="projet"></app-item-projet-creatif-table-row>
+      <!-- pager -->
+      <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+        <li class="page" [ngClass]="{disabled:pager.currentPage === 1}">
+          <a (click)="goPage(1)">First</a>
+        </li>
+        <li class="page" [ngClass]="{disabled:pager.currentPage === 1}">
+          <a (click)="goPage(pager.currentPage - 1)">Previous</a>
+        </li>
+        <li class="page" *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+          <a (click)="goPage(page)">{{page}}</a>
+        </li>
+        <li class="page" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+          <a (click)="goPage(pager.currentPage + 1)">Next</a>
+        </li>
+        <li class="page" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+          <a (click)="goPage(pager.totalPages)">Last</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+
+      <div class="desktopView container">
+        <app-item-projet-creatif-table-row *ngFor="let projet of projetsEnAttentes" [terminated]="false"
+                                           [projet]="projet"></app-item-projet-creatif-table-row>
+        <!--bare des titres-->
+        <div class="crea-barre-title">
+          <ul class="">
+            <li style="width: 5%">N°</li>
+            <li style="width: 13%">Types</li>
+            <li style="width: 27%">Titre & description</li>
+            <li style="width: 15%">Jours restant</li>
+            <li style="width: 15%">Gaint</li>
+            <li style="width: 10%">Nbr participants</li>
+            <li style="width: 15%">Action</li>
+          </ul>
+        </div>
+        <!-- pager -->
+        <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+          <li class="page" [ngClass]="{disabled:pager.currentPage === 1}">
+            <a (click)="goPage(1)">First</a>
+          </li>
+          <li class="page" [ngClass]="{disabled:pager.currentPage === 1}">
+            <a (click)="goPage(pager.currentPage - 1)">Previous</a>
+          </li>
+          <li class="page" *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+            <a (click)="goPage(page)">{{page}}</a>
+          </li>
+          <li class="page" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a (click)="goPage(pager.currentPage + 1)">Next</a>
+          </li>
+          <li class="page" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a (click)="goPage(pager.totalPages)">Last</a>
+          </li>
+        </ul>
+      </div>
+
+
+    </div>
+
+  </div>
+
+  <!-- En cours -->
+  <div class="">
+    <div class="flex-row title container">
+      <h4 class="col-xs-12 col-md-1">EN COURS</h4>
+      <div class="barre"></div>
+    </div>
+    <div class="mobileView">
+      <app-item-projet-creatif-table-row *ngFor="let projet of projetsEncours" [terminated]="true"
+                                         [projet]="projet"></app-item-projet-creatif-table-row>
+
+      <!-- pager -->
+
+
+      <ul *ngIf="pagerProjetCours.pages && pagerProjetCours.pages.length" class="pagination">
+        <li class="page" [ngClass]="{disabled:pagerProjetCours.currentPage === 1}">
+          <a (click)="goPageEN(1)">First</a>
+        </li>
+        <li class="page" [ngClass]="{disabled:pagerProjetCours.currentPage === 1}">
+          <a (click)="goPageEN(pagerProjetCours.currentPage - 1)">Previous</a>
+        </li>
+        <li class="page" *ngFor="let page of pager.pages" [ngClass]="{active:pagerProjetCours.currentPage === page}">
+          <a (click)="goPageEN(page)">{{page}}</a>
+        </li>
+        <li class="page" [ngClass]="{disabled:pagerProjetCours.currentPage === pagerProjetCours.totalPages}">
+          <a (click)="goPageEN(pagerProjetCours.currentPage + 1)">Next</a>
+        </li>
+        <li class="page" [ngClass]="{disabled:pagerProjetCours.currentPage === pagerProjetCours.totalPages}">
+          <a (click)="goPageEN(pagerProjetCours.totalPages)">Last</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <div class="container desktopView">
+        <div class="crea-barre-title">
+          <ul class="">
+            <li style="width: 5%">N°</li>
+            <li style="width: 13%">Types</li>
+            <li style="width: 27%">Titre & description</li>
+            <li style="width: 15%">Jours restant</li>
+            <li style="width: 15%">Gaint</li>
+            <li style="width: 10%">Nbr participants</li>
+            <li style="width: 15%">Action</li>
+          </ul>
+        </div>
+
+        <app-item-projet-creatif-table-row *ngFor="let projet of projetsEncours" [terminated]="true"
+                                           [projet]="projet"></app-item-projet-creatif-table-row>
+
+        <!-- pager -->
+
+
+        <ul *ngIf="pagerProjetCours.pages && pagerProjetCours.pages.length" class="pagination">
+          <li class="page" [ngClass]="{disabled:pagerProjetCours.currentPage === 1}">
+            <a (click)="goPageEN(1)">First</a>
+          </li>
+          <li class="page" [ngClass]="{disabled:pagerProjetCours.currentPage === 1}">
+            <a (click)="goPageEN(pagerProjetCours.currentPage - 1)">Previous</a>
+          </li>
+          <li class="page" *ngFor="let page of pager.pages" [ngClass]="{active:pagerProjetCours.currentPage === page}">
+            <a (click)="goPageEN(page)">{{page}}</a>
+          </li>
+          <li class="page" [ngClass]="{disabled:pagerProjetCours.currentPage === pagerProjetCours.totalPages}">
+            <a (click)="goPageEN(pagerProjetCours.currentPage + 1)">Next</a>
+          </li>
+          <li class="page" [ngClass]="{disabled:pagerProjetCours.currentPage === pagerProjetCours.totalPages}">
+            <a (click)="goPageEN(pagerProjetCours.totalPages)">Last</a>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="">
+    <div class="flex-row title container">
+      <h4 class="col-md-1 col-xs-12">Terminés</h4>
+      <div class="barre desktopView"></div>
+    </div>
+    <div>
+      <div class="mobileView">
+        <app-item-projet-creatif-table-row *ngFor="let projet of projetsTermines" [terminated]="true"
+                                           [projet]="projet"></app-item-projet-creatif-table-row>
+        <ul *ngIf="pagerProjetTermines.pages && pagerProjetTermines.pages.length" class="pagination">
+          <li class="page" [ngClass]="{disabled:pagerProjetTermines.currentPage === 1}">
+            <a (click)="goPagePT(1)">First</a>
+          </li>
+          <li class="page" [ngClass]="{disabled:pagerProjetTermines.currentPage === 1}">
+            <a (click)="goPagePT(pagerProjetTermines.currentPage - 1)">Previous</a>
+          </li>
+          <li class="page" *ngFor="let page of pagerProjetTermines.pages"
+              [ngClass]="{active:pagerProjetTermines.currentPage === page}">
+            <a (click)="goPagePT(page)">{{page}}</a>
+          </li>
+          <li class="page" [ngClass]="{disabled:pagerProjetTermines.currentPage === pagerProjetTermines.totalPages}">
+            <a (click)="goPagePT(pagerProjetTermines.currentPage + 1)">Next</a>
+          </li>
+          <li class="page" [ngClass]="{disabled:pagerProjetTermines.currentPage === pagerProjetTermines.totalPages}">
+            <a (click)="goPagePT(pagerProjetTermines.totalPages)">Last</a>
+          </li>
+        </ul>
+      </div>
+      <div class="desktopView container">
+        <div class="crea-barre-title">
+          <ul class="">
+            <li style="width: 5%">N°</li>
+            <li style="width: 13%">Types</li>
+            <li style="width: 27%">Titre & description</li>
+            <li style="width: 15%">Jours restant</li>
+            <li style="width: 15%">Gaint</li>
+            <li style="width: 10%">Nbr participants</li>
+            <li style="width: 15%">Action</li>
+          </ul>
+        </div>
+        <app-item-projet-creatif-table-row *ngFor="let projet of projetsTermines" [terminated]="true"
+                                           [projet]="projet"></app-item-projet-creatif-table-row>
+        <ul *ngIf="pagerProjetTermines.pages && pagerProjetTermines.pages.length" class="pagination">
+          <li class="page" [ngClass]="{disabled:pagerProjetTermines.currentPage === 1}">
+            <a (click)="goPagePT(1)">First</a>
+          </li>
+          <li class="page" [ngClass]="{disabled:pagerProjetTermines.currentPage === 1}">
+            <a (click)="goPagePT(pagerProjetTermines.currentPage - 1)">Previous</a>
+          </li>
+          <li class="page" *ngFor="let page of pagerProjetTermines.pages"
+              [ngClass]="{active:pagerProjetTermines.currentPage === page}">
+            <a (click)="goPagePT(page)">{{page}}</a>
+          </li>
+          <li class="page" [ngClass]="{disabled:pagerProjetTermines.currentPage === pagerProjetTermines.totalPages}">
+            <a (click)="goPagePT(pagerProjetTermines.currentPage + 1)">Next</a>
+          </li>
+          <li class="page" [ngClass]="{disabled:pagerProjetTermines.currentPage === pagerProjetTermines.totalPages}">
+            <a (click)="goPagePT(pagerProjetTermines.totalPages)">Last</a>
+          </li>
+        </ul>
+      </div>
+
+
+
+
+
+
+    </div>
+  </div>
+
+</div>

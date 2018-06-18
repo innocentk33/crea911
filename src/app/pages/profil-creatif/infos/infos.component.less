@@ -1,0 +1,95 @@
+.infos-compte-box {
+    padding: 2em 3em;
+
+    form.marge-corps-form1{
+        div{
+            padding: 0px;
+        }
+    }
+}
+
+.medias-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1em 2em;
+    .medias-box-title {
+        color: #2AAAE3;
+    }
+    h6,
+    h4 {
+        margin-bottom: 3px;
+        margin-top: 0px;
+    }
+    h6 {
+        font-size: 1em;
+        font-weight: bold;
+    }
+    .col-boxed {
+        padding: 1em;
+        border: 1px #ccc solid;
+        margin: 1em auto;
+        display: flex;
+        flex-direction: column;
+        * {
+            margin: .4em auto;
+        }
+        span {
+            text-align: center;
+        }
+    }
+    .rounded-img-div {
+        border-radius: 50%;
+        background: rgb(18, 200, 255);
+        height: 12em;
+        width: 12em;
+        margin: auto;
+        position: relative;
+        .inner-overview,
+        img {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            border-radius: 50%;
+            height: 100%;
+            width: 100%;
+            margin: auto;
+        }
+        .inner-overview {
+            margin: auto;
+            justify-content: center;
+            color: white;
+            display: flex;
+            cursor: pointer;
+            background: url("/assets/images/icons/ic_avatar_rounded.svg");
+            background-size: cover;
+            background-position: center;
+            mat-icon {
+                margin: auto;
+                position: relative;
+                width: 50px;
+                height: 50px;
+                font-size: 50px;
+                display: none;
+            }
+            &:hover {
+                background: #00000059;
+                mat-icon {
+                    display: initial;
+                }
+            }
+        }
+    }
+}
+
+#avatarInput {
+    display: none;
+}
+
+.height-apropos {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    textarea {
+        flex-grow: 2;
+    }
+}

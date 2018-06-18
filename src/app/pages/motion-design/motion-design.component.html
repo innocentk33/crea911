@@ -1,0 +1,269 @@
+<!-- MENU -->
+<app-top-menu></app-top-menu>
+<!-- FIN MENU -->
+<div class="desktopView">
+  <!-- column -->
+  <div class="  crea911-top-cover">
+    <!-- group -->
+
+
+
+    <div class="top-cover-title">
+      <div class="top-cover-title-part1">
+        <!-- content -->
+        <h1>MOTION DESIGN</h1>
+      </div>
+      <div class="top-cover-title-part2">
+        <!-- content -->
+        <p>L’image animée est un excellent outil de communication.</p>
+        <p>&nbsp;</p>
+
+        <button class="crea-btn-default" (click)="iamClient()">J'ai un projet</button>
+
+      </div>
+    </div>
+
+    <div class="flex-row barre-bottom-row center-xs">
+      <div class="flex-row container-barre container">
+        <!-- group -->
+        <div class="flex-row">
+          <!-- svg -->
+          <img class="svg" src="assets/images/icons/svg_colle_8833_x_84.svg" alt="" />
+          <div class="">
+            <!-- content -->
+            <h3>LANCEZ UN PROJET</h3>
+            <p>Notre équipe vous assistera dans la redaction de vos besoins.</p>
+          </div>
+        </div>
+
+        <div class="flex-row">
+
+          <!-- svg -->
+          <img class="svg" src="assets/images/icons/svg_colle_85031_x_88.svg" alt="" />
+          <div>
+            <!-- content -->
+            <h3>RECEVEZ UN DEVIS</h3>
+            <p>Une équipe technique spécialisée en motion design vous est dédiée.</p>
+          </div>
+        </div>
+
+        <div class="flex-row">
+          <!-- svg -->
+          <img class="svg" src="assets/images/icons/svg_colle_78099_x_70.svg" alt="" />
+          <div>
+            <!-- content -->
+            <h3>LA PRODUCTION DE VOTRE VIDÉO</h3>
+            <p>Nous supervisons et encardrons à toutes les étapes de la production à partir du storyboard validé.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <!-- CONTENT -->
+  <div class="crea-page-container padding-lat">
+
+    <div>
+
+      <div>
+        <!-- content -->
+        <h4 class="litle-title">Une image vaut mille mots ! Et si elle était en mouvement, accompagner de mots et ou de son? Elle en vaudrait combien?
+        </h4>
+      </div>
+      <div class="flex-row between-xs text-justify container" id="text-pu800">
+        <!-- group -->
+        <div class="">
+          <!-- content -->
+          <p>Le motion design est l’art d’étendre votre identité graphique à la production de contenus animés, audiovisuels et
+            interactifs. Et parce que nous croyons à la réconciliation du fond et de la forme, nous apportons autant de soin
+            au graphisme qu’à l’animation.</p>
+          <p>Pour la présentation de votre agence, produit, fonctionnement d’application, site web, étude économique, bilan… plus
+            besoin de vous alarmer. Parce que mille cerveaux valent mieux qu’un, Crea911 dispose d’une équipe de spécialistes
+            compétents pour répondre à vos attentes. </p>
+          <p>Un chef de projet vous assistera dans la rédaction de votre alerte. Et notre équipe technique se chargera quant à
+            elle de l’analyser, puis de vous soumettre un devis.</p>
+        </div>
+        <div class="second-inline">
+          <!-- content -->
+          <p>Après validation du devis soumis, Crea911 imaginera l’histoire idéale. Ainsi un scénario illustré et accompagné de
+            remarques sur l’animation vous sera soumis pour appréciation avant la production...</p>
+          <br>
+          <p>LES POINTS FORTS DU MOTION DESIGN</p>
+          <br>
+          <p>
+            <b>Rapide</b> : votre message en 1 minutes.</p>
+          <p>
+            <b>Pédagogique</b> : une animation simple à comprendre.</p>
+          <p>
+            <b>Esthétique</b> : un univers graphique de qualité.</p>
+          <p>
+            <b>Dynamique</b> : un rythme captivant votre public.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- FIN CONTENT -->
+
+  <div class=" margin-top-6 row-carousel bg-grey">
+    <!-- group -->
+    <div class="browser_width ">
+      <div>
+        <!-- column -->
+        <div>
+
+          <div class="row around-xs no-margin-lat">
+            <h2 class="crea-session-title uppercase">NOS EXEMPLES DE VIDEOS MOTION DESIGN</h2>
+          </div>
+
+          <div class="carousel-container container">
+
+            <ngx-carousel [inputs]="carouselOne" (carouselLoad)="myfunc($event)">
+              <ngx-item NgxCarouselItem *ngFor="let item of itemsCreas">
+                <app-item-creation-default [creation]="item"></app-item-creation-default>
+              </ngx-item>
+              <button NgxCarouselPrev class='leftRs leftRs-5'>&lt;</button>
+              <button NgxCarouselNext class='rightRs rightRs-5'>&gt;</button>
+            </ngx-carousel>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="mobileView">
+  <!-- column -->
+  <div class="  crea911-top-cover">
+    <!-- group -->
+    <div class="top-cover-title">
+      <div class="top-cover-title-part1">
+        <!-- content -->
+        <h1>MOTION DESIGN</h1>
+      </div>
+      <div class="top-cover-title-part2">
+        <!-- content -->
+        <p>L’image animée est un excellent outil de communication.</p>
+        <p>&nbsp;</p>
+
+        <button class="crea-btn-default" (click)="iamClient()">J'ai un projet</button>
+
+      </div>
+    </div>
+
+    <div class="flex-row barre-bottom-row center-xs">
+      <div class="flex-row container-barre container">
+        <!-- group -->
+        <div class="flex-row">
+          <!-- svg -->
+          <img class="svg" src="assets/images/icons/svg_colle_8833_x_84.svg" alt="" />
+          <div class="">
+            <!-- content -->
+            <h3>LANCEZ UN PROJET</h3>
+            <p>Notre équipe vous assistera dans la redaction de vos besoins.</p>
+          </div>
+        </div>
+
+        <div class="flex-row">
+
+          <!-- svg -->
+          <img class="svg" src="assets/images/icons/svg_colle_85031_x_88.svg" alt="" />
+          <div>
+            <!-- content -->
+            <h3>RECEVEZ UN DEVIS</h3>
+            <p>Une équipe technique spécialisée en motion design vous est dédiée.</p>
+          </div>
+        </div>
+
+        <div class="flex-row">
+          <!-- svg -->
+          <img class="svg" src="assets/images/icons/svg_colle_78099_x_70.svg" alt="" />
+          <div>
+            <!-- content -->
+            <h3>LA PRODUCTION DE VOTRE VIDÉO</h3>
+            <p>Nous supervisons et encardrons à toutes les étapes de la production à partir du storyboard validé.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <!-- CONTENT -->
+  <div class="crea-page-container padding-lat">
+
+    <div>
+
+      <div>
+        <!-- content -->
+        <h4 class="litle-title">Une image vaut mille mots ! Et si elle était en mouvement, accompagner de mots et ou de son? Elle en vaudrait combien?
+        </h4>
+      </div>
+      <div class="flex-row between-xs text-justify container" id="text-pu800">
+        <!-- group -->
+        <div class="">
+          <!-- content -->
+          <p>Le motion design est l’art d’étendre votre identité graphique à la production de contenus animés, audiovisuels et
+            interactifs. Et parce que nous croyons à la réconciliation du fond et de la forme, nous apportons autant de soin
+            au graphisme qu’à l’animation.</p>
+          <p>Pour la présentation de votre agence, produit, fonctionnement d’application, site web, étude économique, bilan… plus
+            besoin de vous alarmer. Parce que mille cerveaux valent mieux qu’un, Crea911 dispose d’une équipe de spécialistes
+            compétents pour répondre à vos attentes. </p>
+          <p>Un chef de projet vous assistera dans la rédaction de votre alerte. Et notre équipe technique se chargera quant à
+            elle de l’analyser, puis de vous soumettre un devis.</p>
+        </div>
+        <div class="second-inline">
+          <!-- content -->
+          <p>Après validation du devis soumis, Crea911 imaginera l’histoire idéale. Ainsi un scénario illustré et accompagné de
+            remarques sur l’animation vous sera soumis pour appréciation avant la production...</p>
+          <br>
+          <p>LES POINTS FORTS DU MOTION DESIGN</p>
+          <br>
+          <p>
+            <b>Rapide</b> : votre message en 1 minutes.</p>
+          <p>
+            <b>Pédagogique</b> : une animation simple à comprendre.</p>
+          <p>
+            <b>Esthétique</b> : un univers graphique de qualité.</p>
+          <p>
+            <b>Dynamique</b> : un rythme captivant votre public.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- FIN CONTENT -->
+
+  <div class=" margin-top-6 row-carousel bg-grey">
+    <!-- group -->
+    <div class="browser_width ">
+      <div>
+        <!-- column -->
+        <div>
+
+          <div class="row around-xs no-margin-lat">
+            <h2 class="crea-session-title uppercase">NOS EXEMPLES DE VIDEOS MOTION DESIGN</h2>
+          </div>
+
+          <div class="carousel-container container">
+
+            <ngx-carousel [inputs]="carouselOne" (carouselLoad)="myfunc($event)">
+              <ngx-item NgxCarouselItem *ngFor="let item of itemsCreas">
+                <app-item-creation-default [creation]="item"></app-item-creation-default>
+              </ngx-item>
+              <button NgxCarouselPrev class='leftRs leftRs-5'>&lt;</button>
+              <button NgxCarouselNext class='rightRs rightRs-5'>&gt;</button>
+            </ngx-carousel>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<app-footer></app-footer>
+<!-- FIN FOOTER -->

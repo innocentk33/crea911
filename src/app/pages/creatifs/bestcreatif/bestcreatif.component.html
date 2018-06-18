@@ -1,0 +1,106 @@
+<div class="col-xs-12 center-xs flex-column">
+  <div class="col-xs-12 center-xs flex-row title-barre">
+    <h2 class="crea-session-title uppercase">Le créatif du mois</h2>
+  </div>
+</div>
+  <div class="container">
+
+
+
+    <div class="col-xs-12 col-lg-10 col-md-10 col-sm-10 flex-row ">
+
+
+      <div class="col-xs-12 col-lg-8 col-md-8 col-sm-8 between-xs flex-row ">
+        <div class="col-xs-12 crea-box flex-column">
+          <div class="col-xs-12 row-images">
+            <div (click)="zoomCrea(0)" class="img" #creaImgA></div>
+            <div (click)="zoomCrea(2)" class="img" #creaImgB></div>
+            <div (click)="zoomCrea(2)" class="img" #creaImgC></div>
+            <div (click)="zoomCrea(3)" class="img" #creaImgD></div>
+          </div>
+
+
+
+
+
+        </div>
+
+      </div>
+
+      <div class="col-md-4 col-lg-4 col-sm-4 lat-creatif-infos desktopView">
+
+        <div class="col-xs-12 flex-row crea-avatar-container">
+          <div class="crea911-creatif-avatar">
+            <img [src]="avatar" alt="">
+          </div>
+          <div class="crea911-creatif-name">
+            <h4>@{{user?.creatif?.CrPseudo}}</h4>
+            <h4>{{user?.user?.UNom}} {{user?.user?.UPrenoms}}</h4>
+            <span>{{user?.creatif?.CrProfession}}</span>
+          </div>
+        </div>
+        <div class="details-creatif-mois">
+          <div>
+            <mat-icon>attachment</mat-icon>
+            <span *ngFor="let item of user?.domaines">	• {{item.SvrLibelle}} </span>
+          </div>
+          <div>
+            <mat-icon>room</mat-icon>
+            <span>{{user?.adresse.PsNom}}</span>
+          </div>
+          <div>
+            <mat-icon>mode_comment</mat-icon>
+            <span *ngFor="let item of user?.centre_interets">	• {{item.CiLibelle}} </span>
+          </div>
+        </div>
+        <div class="text-creatif-mois">
+          <p [innerHtml]="user?.bio?.CrMsBio"></p>
+        </div>
+        <a (click)="openPortfolio()" class="btnOpenPortfolio center">Voir portfolio</a>
+
+      </div>
+
+
+    </div>
+    <div class="margin-top-1">
+      <div class="row mobileView margin-top-1">
+        <div class="col-xs-11 lat-creatif-infos margin-top-1 ">
+
+          <div class="col-xs-11 flex-row crea-avatar-container">
+            <div class="crea911-creatif-avatar">
+              <img [src]="avatar" alt="" class="img-responsive">
+            </div>
+            <div class="crea911-creatif-name center-xs">
+              <h4>@{{user?.creatif?.CrPseudo}}</h4>
+              <h4>{{user?.user?.UNom}} {{user?.user?.UPrenoms}}</h4>
+              <span>{{user?.creatif?.CrProfession}}</span>
+            </div>
+          </div>
+          <div class="details-creatif-mois">
+            <div>
+              <mat-icon>attachment</mat-icon>
+              <span *ngFor="let item of user?.domaines">	• {{item.SvrLibelle}} </span>
+            </div>
+            <div>
+              <mat-icon>room</mat-icon>
+              <span>{{user?.adresse.PsNom}}</span>
+            </div>
+            <div>
+              <mat-icon>mode_comment</mat-icon>
+              <span *ngFor="let item of user?.centre_interets">	• {{item.CiLibelle}} </span>
+            </div>
+          </div>
+          <div class="text-creatif-mois">
+            <p [innerHtml]="user?.bio?.CrMsBio"></p>
+          </div>
+          <a (click)="openPortfolio()" class="btnOpenPortfolio center">Voir portfolio</a>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+</div>
+

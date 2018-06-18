@@ -1,0 +1,115 @@
+.projet-row-table {
+    display: flex;
+    background: rgb(231, 231, 231);
+    width: 100%;
+    margin: .2em auto;
+    ul {
+        width: 100%;
+        max-width: 100%;
+        display: -ms-flexbox;
+        display: flex;
+        list-style: none;
+        padding: .2em 0;
+        font-weight: 500;
+        margin: 0;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        li {
+            padding: .8em 0px;
+            text-transform: uppercase;
+            border-left: 1.2px #00000036 solid;
+            text-align: center;
+            margin: 0px;
+            &:first-child {
+                border: none;
+            }
+            div.col-type {
+                display: flex;
+                flex-direction: row;
+                margin: auto;
+                width: 100%;
+                margin-top: 0px;
+                .div-img {
+                    flex: 1;
+                    margin: auto;
+                    img {
+                        max-height: 1em;
+                    }
+                }
+                .div-libelle {
+                    flex: 2;
+                    margin: auto;
+                    padding-left: .4em;
+                    h6 {
+                        margin: auto;
+                        font-size: 13px;
+                        font-weight: lighter;
+                        text-align: left;
+                    }
+                }
+            }
+            div.col-titre-description {
+                display: flex;
+                flex-direction: row;
+                margin: auto;
+                .div-texte {
+                    flex: 4;
+                    margin: auto;
+                    text-align: left;
+                    padding: .3em;
+                    h4,
+                    h5 {
+                        margin: auto;
+                        font-weight: normal;
+                    }
+                    p {
+                        text-transform: lowercase;
+                        margin: auto;
+                    }
+                }
+                .div-icon-action {
+                    margin: auto;
+                    flex: 1;
+                    img {
+                        max-width: 1.2em;
+                    }
+                }
+            }
+            .div-delai {
+                margin: auto;
+                justify-content: center;
+                width: 100%;
+                display: flex;
+                img {
+                    max-width: 1.6em;
+                    max-height: 2em;
+                    margin-right: .4em;
+                }
+                * {
+                    margin: auto;
+                }
+                span {
+                    text-transform: capitalize;
+                    margin-left: 0em;
+                }
+            }
+            .div-cout {
+                display: flex;
+                justify-content: center;
+                margin: auto;
+                font-size: 1.4em;
+                * {
+                    margin: auto;
+                }
+            }
+            .div-action {
+                display: flex;
+                justify-content: center;
+                margin: auto;
+                * {
+                    margin: auto;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+<div class="row no-margin flex-column">
+  <!-- CONTENT -->
+  <div class="row around-xs">
+    <h2 class="crea-session-title uppercase">Mon portfolio</h2>
+  </div>
+
+  <div class="row around-xs container flex-colomn">
+    <div class="col-xs-11 col-md-9 crea911-grid-creation">
+      <app-item-my-crea *ngFor="let crea of creations" [creation]="crea" (updateItem)="updateItemCrea($event)"></app-item-my-crea>
+
+      <div class="app-add-crea">
+        <div class="border-dashed">
+          <button (click)="openAddDialog()"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

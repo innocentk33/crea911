@@ -1,0 +1,30 @@
+<div class="crea-login-container">
+
+    <div class="closeBtn" (click)="nextStep()">
+      <div class="outer">
+        <div class="inner">
+          <label>Fermer</label>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row around-xs">
+      <h2 class="crea-session-title uppercase">Brief projet</h2>
+    </div>
+  
+    <div class="col-xs-12 flex-row">
+     <p>{{data.PrDescription}}</p>
+    </div>
+    <div class="rowcol-xs-12 flex-row">
+      <div class="brief-txt" [innerHTML]="data.PrDescriptionComplet"></div>
+    </div>
+  
+    <div class="col-xs-12 center-xs" style="justify-content: flex-start;
+    padding-top: 1em;
+    display: flex;">
+      <button class="crea-btn-default" (click)="download()">Télécharger</button>
+      <button (click)="nextStep()" type="button" class="crea-btn-default">Fermer</button>
+  
+    </div>
+  </div>
+  

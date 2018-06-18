@@ -1,0 +1,55 @@
+<!-- MENU -->
+<app-top-menu></app-top-menu>
+<!-- FIN MENU -->
+
+<!-- CONTENT -->
+<div class="crea-page-container flex-column">
+  <div class="row around-xs margin-top-6">
+    <h2 class="crea-session-title uppercase">Les créations de {{creatif.creatif.CrPseudo}}</h2>
+  </div>
+
+  <div class="row center-xs crea911-nos-creations">
+
+    <div class="col-xs-12 center-xs">
+    </div>
+    <div class="col-xs-9">
+      <div class="row round-xs">
+
+        <!-- left block-->
+        <div class="col-xs-3">
+          <div class="row flex-column">
+            <h6 class="title-block">CATEGORIE</h6>
+
+            <div class="crea911-divider"></div>
+            <mat-radio-group (change)="changeService($event)">
+              <mat-radio-button color="primary" class="example-radio-button" value="">Tout</mat-radio-button>
+              <mat-radio-button color="primary" class="example-radio-button" *ngFor="let service of services" [value]="service.SrvId">
+                {{service.SvrLibelle}}
+              </mat-radio-button>
+            </mat-radio-group>
+
+            <div class="btns-block margin-top-6">
+              <button (click)="postProject()" class="crea-btn-default">J'ai un projet</button>
+              <button class="crea-btn-default">Participer à un projet</button>
+            </div>
+
+            <button class="crea-btn-default crea911-btn-link link-color" style="margin:.6em auto; font-size:16px">Télécharger notre portfolio</button>
+
+          </div>
+        </div>
+
+        <!-- rigth block -->
+        <div class="col-xs-9 crea911-grid-creation">
+          <app-item-creation-default *ngFor="let crea of creations" [creation]="crea"></app-item-creation-default>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- FIN CONTENT -->
+
+<!-- FOOTER -->
+<app-footer></app-footer>
+<!-- FIN FOOTER -->

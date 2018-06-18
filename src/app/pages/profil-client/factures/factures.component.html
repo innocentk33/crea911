@@ -1,0 +1,55 @@
+<div class="row no-margin flex-column">
+  <!--  -->
+  <div class="row around-xs">
+    <h2 class="crea-session-title uppercase">mes facture</h2>
+  </div>
+
+  <!--  -->
+  <div class="row around-xs padding-1 crea-facture-main-container">
+
+    <!--  -->
+    <div class="crea-border col-xs-12">
+
+      <div class="flex-row around-xs">
+          <h2 class="crea-title-blue">échéances de facture à payer</h2>
+          <button style="margin:auto; margin-right: 0px" [routerLink]="'/post-projet'" class="crea-btn-default">Passer une commande</button>
+    
+      </div>
+    
+      <div>
+        <div class="crea-barre-title">
+          <ul class="">
+            <li style="width: 10%">Pdf</li>
+            <li style="width: 25%">Code facture</li>
+            <li style="width: 25%">Date d'échéance</li>
+            <li style="width: 25%">Montant à régler</li>
+            <li style="width: 15%">Actions</li>
+          </ul>
+        </div>
+
+        <item-facture-row *ngFor="let facture of facturesEnAttentes" [facture]="facture"></item-facture-row>
+
+      </div>
+    </div>
+
+    <!--  -->
+    <div class="crea-border col-xs-12">
+      <h2 class="crea-title-blue">historique des factures</h2>
+
+      <div>
+        <div class="crea-barre-title">
+          <ul class="">
+            <li style="width: 10%">Pdf</li>
+            <li style="width: 25%">Code facture</li>
+            <li style="width: 25%">Date d'échéance</li>
+            <li style="width: 25%">Montant à régler</li>
+            <li style="width: 15%">Actions</li>
+          </ul>
+        </div>
+
+        <item-facture-row *ngFor="let facture of allfactureEnd" [facture]="facture"></item-facture-row>
+
+      </div>
+    </div>
+  </div>
+</div>

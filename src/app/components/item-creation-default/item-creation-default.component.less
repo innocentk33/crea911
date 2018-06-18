@@ -1,0 +1,103 @@
+@height-item-creation : 18em;
+@width-item-creation : 100%;
+.crea911-item-creation {
+    max-width: @width-item-creation;
+    max-height: @height-item-creation;
+    width: @width-item-creation;
+    height: @height-item-creation;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: auto;
+    border: 0px #d6d4d400 solid;
+    border-radius: 20px;
+    background-color: #ccc;
+    .crea911-item-creation-div-img {
+        position: relative;
+        display: block;
+        background-position: center;
+        background-size: contain;
+        max-width: @width-item-creation;
+        max-height: @height-item-creation;
+        img {
+            max-width: @width-item-creation;
+            max-height: @height-item-creation;
+            width: @width-item-creation;
+            height: @height-item-creation;
+            display: block;
+            position: relative;
+        }
+    }
+    .crea911-item-creation-overlay {
+        background: rgba(0, 0, 0, 0.356);
+        display: none;
+        position: initial;
+        left: 0px;
+        top: -100%;
+        color: white;
+        max-width: @width-item-creation;
+        max-height: @height-item-creation;
+        width: @width-item-creation;
+        height: @height-item-creation;
+        -webkit-animation-name: overlay;
+        /* Safari 4.0 - 8.0 */
+        -webkit-animation-duration: 2s;
+        /* Safari 4.0 - 8.0 */
+        animation-name: overlay;
+        animation-duration: 2s;
+        .crea911-item-creation-infos {
+            display: flex;
+            max-width: 100%;
+            max-height: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            padding: 0px 2em;
+            img {
+                flex: 1;
+                max-width: 38px;
+                border-radius: 50%;
+            }
+            .crea911-item-creation-texte {
+                flex: 3;
+                h4 {
+                    margin-bottom: 0em;
+                }
+            }
+        }
+    }
+    &:hover {
+        .crea911-item-creation-overlay {
+            display: block;
+            left: 0;
+            -webkit-animation-name: overlay;
+            /* Safari 4.0 - 8.0 */
+            -webkit-animation-duration: 2s;
+            /* Safari 4.0 - 8.0 */
+            animation-name: overlay;
+            animation-duration: 2s;
+        }
+    }
+}
+
+@-webkit-keyframes overlay {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes overlay {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+mat-icon{
+    color: white;
+}

@@ -1,0 +1,39 @@
+<div class="projet-row-table">
+  <ul class="">
+    <li style="width: 5%">{{projet.PrId}}</li>
+    <li style="width: 15%" class="flex-column">
+      <div class="col-type" *ngFor="let service of projet.services">
+        <div class="div-libelle">
+          <h6>{{service.SvrLibelle}}</h6>
+        </div>
+      </div>
+    </li>
+    <li style="width: 35%">
+      <div class="col-titre-description">
+        <div class="div-texte">
+          <h4 style="cursor: pointer;" (click)="showBrief()">{{projet.PrTitre}}</h4>
+          <p (click)="showBrief()">{{(projet.PrDescription.length>100)? (projet.PrDescription | slice:0:100)+'..':(projet.PrDescription)}} </p>
+        </div>
+        <div *ngIf="!online()" class="div-icon-action">
+          <img class="cursor" style="cursor: pointer;" (click)="editProjet()" src="assets/images/icons/ic_edit.svg" alt="">
+        </div>
+      </div>
+    </li>
+    <li style="width: 10%; display: flex">
+      <div class="div-delai">
+        <img src="assets/images/icons/ic_timer.svg" alt="">
+        <span>{{projet.PrDelai}} jour(s)</span>
+      </div>
+    </li>
+    <li style="width: 20%; display: flex">
+      <div class="div-cout">
+        <h4>{{montantTTC | money }} FCFA</h4>
+      </div>
+    </li>
+    <li style="width: 15%; display: flex">
+      <div class="div-action">
+          <button [disabled]="online()" (click)="showFacture()" class="crea-btn-default">Commencer</button>
+      </div>
+    </li>
+  </ul>
+</div>

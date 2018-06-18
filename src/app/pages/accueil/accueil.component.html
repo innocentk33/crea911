@@ -1,0 +1,319 @@
+<app-top-menu-transparent></app-top-menu-transparent>
+<div class="row col-xs-12 crea-top-cover">
+
+
+  <div class="row crea-search-box">
+    <h2>STUDIO DE CREATION PARTICIPATIVE</h2>
+    <div class="no-margin-top" style="margin-top: 0px">
+      <form [formGroup]="formSubscribe" (ngSubmit)="createCompte()">
+        <input type="email" placeholder="Veuillez entrer votre adresse mail" formControlName="email">
+        <button type="submit">INSCRIPTION GRATUITE</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="crea-page-container center-xs" style="padding-top : 8em; display: flex; flex-direction: column">
+  <div class="row around-xs">
+    <h2 class="crea-session-title uppercase desktopView">CREA911 connecte les clients aux créateurs</h2>
+    <h2 class="crea-session-title uppercase mobileView">CREA911 connecte les <br>
+      clients aux créateurs</h2>
+  </div>
+  <div class="container">
+<!--    mobileView-->
+    <div class="row margin-top-6 center mobileView">
+      <div class="col-xs-6 col-md-3">
+        <img src="assets/images/icons/ic_service1.svg" class="img-icon-pres" alt="">
+        <p class="margin-1">LANCER VOTRE PROJET</p>
+        <p>Dites-nous ce dont vous avez besoin en rédigeant votre brief créatif.</p>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <img src="assets/images/icons/ic_service3.svg" class="img-icon-pres" alt="">
+        <p class="margin-1">CONNECTEZ VOUS À NOTRE COMMUNAUTÉ</p>
+        <p>Choisissez votre types de projet et accédez notre large communauté de créatifs.</p>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <img src="assets/images/icons/ic_service4.svg" class="img-icon-pres" alt="">
+        <p class="margin-1">RECEVEZ PLUSIEURS CREATIONS</p>
+        <p>Nos créatifs de divers horizons vous proposent des créations sur mesure.</p>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <img src="assets/images/icons/ic_service5.svg" class="img-icon-pres" alt="">
+        <p class="margin-1">CHOISISSEZ LA CREATION QUI VOUS CONVIENT</p>
+        <p>Faites votre choix parmi plusieurs créations proposées. Récupérez les fichiers.</p>
+      </div>
+    </div>
+    <!--desktopView-->
+    <div class="row margin-top-6 center desktopView">
+      <div class="col-xs-6 col-md-3">
+        <img src="assets/images/icons/ic_service1.svg" class="img-icon-pres" alt="">
+        <p class="margin-1">LANCER VOTRE PROJET</p>
+        <p>Dites-nous ce dont vous avez besoin en rédigeant votre brief créatif.</p>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <img src="assets/images/icons/ic_service3.svg" class="img-icon-pres" alt="">
+        <p class="">CONNECTEZ-VOUS À NOTRE COMMUNAUTÉ</p>
+        <p>Choisissez votre types de projet et accédez notre large communauté de créatifs.</p>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <img src="assets/images/icons/ic_service4.svg" class="img-icon-pres" alt="">
+        <p class="margin-1">RECEVEZ  PLUSIEURS CREATIONS</p>
+        <p>Nos créatifs de divers horizons vous proposent des créations sur mesure.</p>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <img src="assets/images/icons/ic_service5.svg" class="img-icon-pres" alt="">
+        <p class="margin-1">CHOISISSEZ LA CREATION QUI VOUS CONVIENT</p>
+        <p>Faites votre choix parmi plusieurs créations proposées. Récupérez les fichiers.</p>
+      </div>
+    </div>
+    <div class="flex-row col-xs-12 around-xs auto-margin type-user-container desktopView">
+      <div class="col-lat-concept col-xs-12 col-md-5">
+        <p class="justify-texte no-margin-bottom">
+          <b class="font-size-1-1">Annonceurs</b>
+        </p><br><br>
+        <p class="justify-texte no-margin">Puisez dans la co-création pour résoudre vos défis marketing.</p>
+        <p class="justify-texte no-margin-top">De l'innovation d'un produit à des idées de graphisme, de l’édition, de
+          packaging d’aménagement..., notre communauté offre un volume important d'idées innovantes et créatives qui
+          sont affinées par une équipe de professionnels.</p><br>
+        <div class="row center-xs mobileView">
+          <button class="crea-btn-default" (click)="iamClient()">Je suis client</button>
+        </div>
+      </div>
+      <div class="col-lat-concept col-xs-12 col-md-5">
+        <p class="justify-texte no-margin-bottom">
+          <b class="font-size-1-1">Créateurs</b>
+        </p>
+        <p class="justify-texte no-margin"> Exprimez votre créativité et devenez célèbre!
+          Participez à des concours créatifs lancés par les plus grandes marques
+          pour résoudre leurs défis de marketing et de
+          communication, et remportez la mise.
+        </p><br>
+        <div class="row center-xs mobileView">
+          <button class="crea-btn-default" (click)="iamCreatif()">Je suis créatif</button>
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <!--mobileView-->
+    <div class="flex-row col-xs-12 around-xs auto-margin type-user-container mobileView">
+      <div class="col-lat-concept col-xs-12 col-md-5">
+        <p class="text-center no-margin-bottom">
+          <b class="font-size-1-1">Annonceurs</b>
+        </p><br><br>
+        <p class="text-center no-margin">Puisez dans la co-création pour résoudre vos défis marketing.</p>
+        <p class="text-center no-margin-top">De l'innovation d'un produit à des idées de graphisme, de l’édition, de
+          packaging d’aménagement..., notre communauté
+          offre un volume important d'idées innovantes et créatives qui sont affinées par une équipe de
+          professionnels.</p>
+        <div class="row center-xs mobileView">
+          <button class="crea-btn-default" (click)="iamClient()">Je suis client</button>
+        </div>
+      </div>
+      <div class="col-lat-concept col-xs-12 col-md-5">
+        <p class="text-center no-margin-bottom">
+          <b class="font-size-1-1">Créateurs</b>
+        </p>
+        <br>
+        <p class="text-center no-margin"> Exprimez votre créativité et devenez célèbre!</p>
+        <p class="text-center no-margin-top">Participez à des concours créatifs lancés par les plus grandes marques
+          pour résoudre leurs défis de marketing et de
+          communication, et remportez la mise.</p>
+        <div class="row center-xs mobileView">
+          <button class="crea-btn-default" (click)="iamCreatif()">Je suis créatif</button>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="row around-lg around-md around-sm around-xs ">
+      <div class="col-lg-5 col-xs-5 col-md-5">
+        <div class="row center-xs">
+          <button class="crea-btn-default desktopView" (click)="iamClient()">Je suis client</button>
+        </div>
+      </div>
+      <div class="col-lg-5 col-xs-5 col-md-5">
+        <div class="row center-xs">
+          <button class="crea-btn-default desktopView" (click)="iamCreatif()">Je suis créatif</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row around-xs margin-top-6">
+      <h2 class="crea-session-title uppercase">NOS SERVICES</h2>
+    </div>
+
+    <div class="crea911-nos-services c911-services-container margin-top-6 desktopView">
+      <app-service-tile-item *ngFor="let service of services; let i = index "
+                             [service]="service"></app-service-tile-item>
+    </div>
+    <div class="crea911-services-row c911se">
+      <div class="crea911-nos-services c911-services-container margin-top-6 mobileView">
+        <app-service-tile-item *ngFor="let service of services; let i = index"
+                               [service]="service"></app-service-tile-item>
+      </div>
+
+
+      <div class="row around-xs">
+        <button class="crea-btn-default" (click)="iamClient()">J'ai un projet</button>
+      </div>
+
+      <!-- FIN NOS SERVICES -->
+    </div>
+
+    <!--  <div class="flex-row center-xs margin-top-6">
+        <div class="row crea911-services-row">
+          <div class="col-xs-6 flex-column crea911-service-item">
+            <img src="assets/images/icons/ic_service1.svg" class="img-icon-pres" alt="">
+            <p class="margin-1">LANCER VOTRE PROJET</p>
+            <p>Dites-nous ce dont vous avez besoin en rédigeant votre brief créatif.</p>
+          </div>
+          <div class="col-xs-6 flex-column crea911-service-item">
+            <img src="assets/images/icons/ic_service3.svg" class="img-icon-pres" alt="">
+            <p class="margin-1">CONNECTEZ VOUS À NOTRE COMMUNAUTÉ</p>
+            <p>Choisissez votre types de projet et accédez notre large communauté de créatifs.</p>
+          </div>
+          <div class="col-xs flex-column crea911-service-item">
+            <img src="assets/images/icons/ic_service4.svg" class="img-icon-pres" alt="">
+            <p class="margin-1">RECEVEZ PLUSIEURS CREATIONS</p>
+            <p>Nos créatifs de divers horizons vous proposent des créations sur mesure.</p>
+          </div>
+          <div class="col-xs-3 flex-column crea911-service-item">
+            <img src="assets/images/icons/ic_service5.svg" class="img-icon-pres" alt="">
+            <p class="margin-1">CHOISISSEZ LA CREATION QUI VOUS CONVIENT</p>
+            <p>Faites votre choix parmi plusieurs créations proposées. Récupérez les fichiers.</p>
+          </div>
+        </div>
+      </div>-->
+
+
+    <!-- NOTRE COMMUNAUTE DE CREATIF -->
+
+    <div class="row around-xs margin-top-6">
+      <h2 class="crea-session-title uppercase desktopView">notre communauté des créatifs c911</h2>
+      <h2 class="crea-session-title uppercase mobileView">notre communauté <br>des créatifs c911</h2>
+
+      <div class="row center-xs">
+
+        <div class="col-xs-12 center-xs">
+          <button [routerLink]="'/creatifs'" class="crea-btn-default crea911-btn-link link-color">Voir tous nos
+            talents
+          </button>
+        </div>
+
+        <div class="col-xs-10 auto-margin crea911-default-list-creatif">
+
+          <ngx-carousel [inputs]="carouselOne" (carouselLoad)="myfunc($event)">
+            <ngx-item NgxCarouselItem *ngFor="let creatif of creatifsArray ; let i = index">
+              <app-item-creatif-default [creatif]="creatif"></app-item-creatif-default>
+            </ngx-item>
+            <button NgxCarouselPrev class='leftRs'>
+              <mat-icon svgIcon="icon_arow_left"></mat-icon>
+            </button>
+            <button NgxCarouselNext class='rightRs'>
+              <mat-icon svgIcon="icon_arow_right"></mat-icon>
+            </button>
+          </ngx-carousel>
+        </div>
+      </div>
+    </div>
+
+    <div class="row around-xs">
+      <button class="crea-btn-default" [routerLink]="'/inscription-creatif'">Nous rejoindre</button>
+    </div>
+
+    <!-- FIN NOTRE COMMUNAUTE DE CREATIF -->
+
+
+    <!-- NOS CREATIONS -->
+    <div class="row around-xs margin-top-6">
+      <h2 class="crea-session-title uppercase">Nos créations</h2>
+    </div>
+
+    <div class="row center-xs crea911-nos-creations desktopView">
+
+      <div class="col-xs-12 center-xs">
+        <button class="crea-btn-default crea911-btn-link link-color" style="margin:.6em auto"
+                [routerLink]="'/portfolio'">Télécharger notre portfolio
+        </button>
+      </div>
+      <!--utilisation d'un mauvais style ici-->
+      <div class="col-xs-12 col-lg-9 auto-margin-xs col-md-9 " style="max-width: 70%">
+        <div class="row round-xs auto-margin-xs">
+          <!--
+                  &lt;!&ndash; left block&ndash;&gt;
+                  <div class="col-xs-12 col-md-2 auto-margin-xs">
+                    <div class="row auto-margin-xs">
+                      &lt;!&ndash;<h6 class="title-block">CATEGORIE</h6>
+
+                      <div class="crea911-divider"></div>
+                      <mat-radio-group  (change)="changeServiceCreas($event)">
+                          <mat-radio-button  color="primary"  class="example-radio-button" value="">Tout</mat-radio-button>
+                          <mat-radio-button  color="primary"  class="example-radio-button" *ngFor="let service of servicesCreas" [value]="service.SrvId">
+                              {{service.SvrLibelle}}
+                            </mat-radio-button>
+                      </mat-radio-group>&ndash;&gt;
+
+                      <div class="btns-block auto-margin-xs">
+                        &lt;!&ndash;<button class="crea-btn-default crea911-btn-link link-color" [routerLink]="'/portfolio'">Voir plus</button>&ndash;&gt;
+                        &lt;!&ndash;<button class="crea-btn-default" (click)="haveAproject()">J'ai un projet</button>
+                        <button class="crea-btn-default" (click)="participateProject()">Participer à un projet</button>&ndash;&gt;
+                      </div>
+                    </div>
+                  </div>-->
+
+          <!-- rigth block -->
+          <div class="col-xs-12 col-md-12  crea911-grid-creation auto-margin-xs " id="right-block">
+            <app-item-creation-default *ngFor="let crea of creations" [creation]="crea"></app-item-creation-default>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row center-xs crea911-nos-creations desktopView">
+
+      <div class="col-xs-12 center-xs">
+        <button class="crea-btn-default crea911-btn-link link-color" style="margin:.6em auto"
+                [routerLink]="'/portfolio'">Télécharger notre portfolio
+        </button>
+      </div>
+      <!--utilisation d'un mauvais style ici-->
+      <div class="col-xs-12 col-lg-9 auto-margin-xs col-md-9 " style="max-width: 70%">
+
+        <!--      <div class="row round-xs auto-margin-xs">
+                &lt;!&ndash; rigth block &ndash;&gt;
+                <div class="col-xs-12 col-md-12  crea911-grid-creation auto-margin-xs ">
+                  <app-item-creation-default *ngFor="let crea of creations" [creation]="crea"></app-item-creation-default>
+                </div>
+
+              </div>-->
+      </div>
+    </div>
+    <div class="row mobileView margin-top-6">
+      <div class="col-xs-8 col-xs-offset-2">
+        <ngx-carousel [inputs]="carouselOne" (carouselLoad)="myfunc($event)">
+          <ngx-item NgxCarouselItem *ngFor="let crea of creations ; let i = index">
+            <app-item-creation-default [creation]="crea"></app-item-creation-default>
+          </ngx-item>
+          <button NgxCarouselPrev class='leftRs'>
+            <mat-icon svgIcon="icon_arow_left"></mat-icon>
+          </button>
+          <button NgxCarouselNext class='rightRs'>
+            <mat-icon svgIcon="icon_arow_right"></mat-icon>
+          </button>
+        </ngx-carousel>
+      </div>
+    </div>
+
+    <!-- FIN NOS CREATIONS -->
+
+  </div>
+
+  <!-- FOOTER -->
+  <app-footer></app-footer>
+  <!-- FIN FOOTER -->

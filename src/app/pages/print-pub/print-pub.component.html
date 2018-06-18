@@ -1,0 +1,130 @@
+<!-- MENU -->
+<app-top-menu></app-top-menu>
+<!-- FIN MENU -->
+
+<!-- column -->
+<div class="  crea911-top-cover">
+  <!-- group -->
+
+  <div class="top-cover-title">
+    <div class="top-cover-title-part1">
+      <!-- content -->
+      <h1>PRINT &amp; PUB</h1>
+    </div>
+    <div class="top-cover-title-part2">
+      <!-- content -->
+      <p>Etre lu, visible et incontournable</p>
+      <p>&nbsp;</p>
+
+      <button class="crea-btn-default" (click)="iamClient()">J'ai un projet</button>
+
+    </div>
+  </div>
+
+  <div class="flex-row barre-bottom-row center-xs ">
+    <div class="flex-row container-barre container">
+      <!-- group -->
+      <div class="flex-row">
+        <!-- svg -->
+        <img class="svg" src="assets/images/icons/svg_colle_8833_x_84.svg" alt="" />
+        <div class="">
+          <!-- content -->
+          <h3>LANCEZ UN PROJET</h3>
+          <p>Nos chefs de projets vous assisterons dans la redaction de votre demande, sous la supervision de notre Directeur
+            Artisitique.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex-row">
+
+        <!-- svg -->
+        <img class="svg" src="assets/images/icons/svg_colle_85031_x_88.svg" alt="" />
+        <div>
+          <!-- content -->
+          <h3>RECEVEZ UNE MULTITUDES DE CRÉATIONS</h3>
+          <p>Profitez de la créativité et de la diversité culturelle des webdeigners de notre communauté de créatifs</p>
+        </div>
+      </div>
+
+      <div class="flex-row">
+        <!-- svg -->
+        <img class="svg" src="assets/images/icons/svg_colle_78099_x_70.svg" alt="" />
+        <div>
+          <!-- content -->
+          <h3>CHOISISSEZ LA CRÉATION IDÉALE</h3>
+          <p>Notre Directeur Artistique encardre les retouches et déclinaisons des autres pages de vos documents.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+<!-- CONTENT -->
+<div class="crea-page-container padding-lat ">
+
+  <div>
+
+    <div class="container">
+      <!-- content -->
+      <h4 class="litle-title">Faites quelque chose de simple, de mémorisable, d’agréable à regarder, et d’amusant à lire.</h4>
+    </div>
+    <div class="flex-row between-xs text-justify" id="text-pu800">
+      <!-- group -->
+      <div class="col-md-6">
+        <!-- content -->
+        <p>Le digital est en plein essor certes, mais les supports papiers, indétrônables, ont toujours un rôle très important
+          au sein d’une stratégie de communication. Plaquettes, dépliants, brochures, catalogues sont des outils clés dans
+          une démarche commerciale sérieuse et fiable.</p>
+
+        <p>En ce qui concerne la publicité, une affiche lisible et soigneusement construite a forcément un impact considérable.</p>
+        <p>Vos imprimés véhiculent l’image de votre entreprise. C’est pourquoi, nous vous proposons de les réaliser sur une
+          base graphique soignée, claire et efficace. Toutes vos demandes sont d’abord validées par notre équipe technique.
+          Elles seront ensuite proposées aux créatifs de notre communauté sous forme de compétition par nos chefs de projets.</p>
+      </div>
+      <div class="col-md-6">
+        <!-- content -->
+        <p>Autrement, selon la confidentialité et l’urgence de votre alerte, Crea911 se charge de vous dédier une équipe composée
+          d’un Chef de projet, deux à trois Créatifs de notre communauté, d’un Copywriter et d’un Directeur Artistique pour
+          y travailler. Ainsi, dans le délai de 07 à 15 jours ou plus, vous recevrez plusieurs propositions créatives parmi
+          lesquels vous choisirez la plus adaptée à votre entreprise. </p>
+
+        <p>Parce que mille cerveaux valent mieux qu’un, Crea911 conçoit des supports de communication éfficaces, attractifs
+          et impactants.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- FIN CONTENT -->
+
+<div class=" margin-top-6 row-carousel bg-grey">
+  <!-- group -->
+  <div class="browser_width container">
+    <div>
+      <!-- column -->
+      <div>
+
+        <div class="row around-xs no-margin-lat">
+          <h2 class="crea-session-title uppercase">NOS EXEMPLES PRINTS &amp; D’AFFICHES</h2>
+        </div>
+
+        <div class="carousel-container">
+
+          <ngx-carousel [inputs]="carouselOne" (carouselLoad)="myfunc($event)">
+            <ngx-item NgxCarouselItem *ngFor="let item of itemsCreas">
+              <app-item-creation-default [creation]="item"></app-item-creation-default>
+            </ngx-item>
+            <button NgxCarouselPrev class='leftRs' style="left: -5%">&lt;</button>
+            <button NgxCarouselNext class='rightRs' style="right: -5%">&gt;</button>
+          </ngx-carousel>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- FOOTER -->
+<app-footer></app-footer>
+<!-- FIN FOOTER -->

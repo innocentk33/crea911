@@ -1,0 +1,37 @@
+<div class="crea911-item-creation">
+  <!-- div img-->
+  <div #coverCrea class="crea911-item-creation-div-img">
+
+  </div>
+
+  <!-- div overlay-->
+  <div #divAsk class="crea911-item-creation-overlay">
+    <div class="crea911-item-creation-infos">
+      <div class="flex-column">
+        <button class="button">
+          <span>Supprimer</span>
+          <div class="icon" (click)="deleteAsk()">
+            <i class="fa fa-remove material-icons">&#xE872;</i>
+          </div>
+        </button>
+        <button (click)="openAddDialog()"  mat-button  style="margin-top: 10em ; color: #fff">
+          <mat-icon>remove_red_eye</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div  #divConfirm class="crea911-item-creation-overlay-confirmer">
+    <div class="crea911-item-creation-infos">
+      <div class="flex-column">
+        <button class="button">
+          <span>Confirmer</span>
+          <div class="icon">
+            <i (click)="cancelDelete()" class="fa fa-remove material-icons">&#xE042;</i>
+            <i (click)="confirmDelete()" class="fa fa-check material-icons">&#xE872;</i>
+          </div>
+        </button>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="crea911-creatif-card">
+  <div class="crea911-creatif-card-header">
+    <div (click)="openPortfolio()" class="crea911-creatif-avatar">
+      <img [src]="avatar" alt="">
+    </div>
+    <div class="crea911-creatif-name">
+      <h4>{{creatif.creatif?.CrPseudo}}</h4>
+      <span *ngIf="creatif.creatif.CrProfession">{{creatif.creatif.CrProfession}}</span>
+    </div>
+  </div>
+  <div class="crea911-creatif-card-body">
+    <div class="crea911-cretif-infos">
+      <div *ngIf="domaine">
+        <mat-icon>attachment</mat-icon>
+        <span>{{domaine}}</span>
+      </div>
+      <div *ngIf="creatif?.pays?.PsNom">
+        <mat-icon>room</mat-icon>
+        <span>{{creatif?.pays?.PsNom}}</span>
+      </div>
+      <div *ngIf="centre_interets">
+        <mat-icon>mode_comment</mat-icon>
+        <span>{{centre_interets}}</span>
+      </div>
+    </div>
+    <div *ngIf="creatif.UApropos" class="crea911-creatif-bio">
+      <p>{{creatif.UApropos}}</p>
+    </div>
+    <div *ngIf='fichierCover' class="crea911-divider"></div>
+    <div  *ngIf='fichierCover' #cover (click)="zoomCrea()" class="crea911-creatif-cover">
+      
+    </div>
+  </div>
+  <div *ngIf="isActif" (click)="iamClient()" class="crea911-creatif-card-footer">
+    <span>{{travaillerText}}</span>
+  </div>
+</div>

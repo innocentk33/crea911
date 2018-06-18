@@ -1,0 +1,135 @@
+<!-- MENU -->
+<app-top-menu></app-top-menu>
+<!-- FIN MENU -->
+
+<!-- column -->
+<div class="  crea911-top-cover">
+  <!-- group -->
+
+  <div class="top-cover-title">
+    <div class="top-cover-title-part1">
+      <!-- content -->
+      <h1>RÉDACTION</h1>
+    </div>
+    <div class="top-cover-title-part2">
+      <!-- content -->
+      <p>Une petite phrase aux grands effets.</p>
+      <p>&nbsp;</p>
+
+      <button class="crea-btn-default" (click)="iamClient()">J'ai un projet</button>
+
+    </div>
+  </div>
+
+  <div class="flex-row barre-bottom-row center-xs">
+    <div class="flex-row container-barre container">
+      <!-- group -->
+      <div class="flex-row">
+        <!-- svg -->
+        <img class="svg" src="assets/images/icons/svg_colle_8833_x_84.svg" alt="" />
+        <div class="">
+          <!-- content -->
+          <h3>LANCEZ UN PROJET</h3>
+          <p>Définissez votre besoin, regroupez toutes les informations techniques.</p>
+        </div>
+      </div>
+
+      <div class="flex-row">
+
+        <!-- svg -->
+        <img class="svg" src="assets/images/icons/svg_colle_85031_x_88.svg" alt="" />
+        <div>
+          <!-- content -->
+          <h3>RECEVEZ UNE MULTITUDES DE NOMS OU DE SLOGANS</h3>
+          <p>Profitez de la créativité et de la diversité culturelle de notre communauté de créatifs.</p>
+        </div>
+      </div>
+
+      <div class="flex-row">
+        <!-- svg -->
+        <img class="svg" src="assets/images/icons/svg_colle_78099_x_70.svg" alt="" />
+        <div>
+          <!-- content -->
+          <h3>CHOISISSEZ CELUI QUI VOUS INSPIRE</h3>
+          <p>Nous supervisons et encadrons à toutes les étapes de recherche de nom.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+<!-- CONTENT -->
+<div class="crea-page-container padding-lat container">
+
+  <div>
+
+    <div>
+      <!-- content -->
+      <h4 class="litle-title">Le nom de votre entreprise est le premier contact avec vos clients. Son choix est aussi délicat que primordial.</h4>
+    </div>
+    <div class="flex-row between-xs text-justify container" id="text-pu800">
+      <!-- group -->
+      <div class="">
+        <!-- content -->
+        <p>Un nom et un logo peuvent dire beaucoup. Mais ils ne disent jamais tout. La signature de marque a pour fonction de
+          transmettre des informations complémentaires sur votre entreprise et attiser l’envie d’entrer en contact avec elle.
+          Dans l’entreprise, le slogan peut être utilisé pour attirer l’attention, déclencher l’émotion, faciliter la mémorisation,
+          ou inciter à une action.</p>
+          <br>
+        <p>Phrase-choc ou formule chic, il s’imprègne souvent dans les esprits pendant des années.</p>
+        <br>
+        <p>Parce que mille cerveaux valent mieux qu’un, Crea911 se propose de vous apporter des solutions pertinentes, innovantes
+          dans le domaine du naming (création de noms de marque, produit, commerce, entreprise, artiste...) et de votre communication
+          globale.
+        </p>
+      </div>
+      <div class="">
+        <!-- content -->
+        <p>Une fois votre brief bien rédigé notre équipe se charge de le publier à l’ensemble de notre communauté de créatif.
+          Et dans un délai de 10 jours vous recevrez plusieurs propositions innovantes, original.</p>
+        <p>Cependant, selon la confidentialité et l’urgence de votre demande, Crea911 se charge de sélectionner en amont des
+          créatifs de sa communauté pour y travailler.</p>
+        <p>Pourquoi choisir un bon nom de marque, d’entreprise ou de site internet ?</p>
+        <ul>
+          <li>C’est le nom que vos clients/prospects entendent dès que vous vous présentez,</li>
+          <li>C’est un moyen de vous différencier de vos concurrents et de vous rendre « unique »,</li>
+          <li>C’est un critère de positionnement qui renseigne sur vos activités...</li>
+          <li>C’est le nom que votre entreprise ou votre produit vont  porter pour plusieurs années.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- FIN CONTENT -->
+
+<div class=" margin-top-6 row-carousel bg-grey">
+  <!-- group -->
+  <div class="browser_width ">
+    <div>
+      <!-- column -->
+      <div>
+
+        <div class="row around-xs no-margin-lat">
+          <h2 class="crea-session-title uppercase">NOS EXEMPLES PRINTS &amp; D’AFFICHES</h2>
+        </div>
+
+        <div class="carousel-container container">
+
+          <ngx-carousel [inputs]="carouselOne" (carouselLoad)="myfunc($event)">
+            <ngx-item NgxCarouselItem *ngFor="let item of itemsCreas">
+              <app-item-creation-default [creation]="item"></app-item-creation-default>
+            </ngx-item>
+            <button NgxCarouselPrev class='leftRs leftRs-5'>&lt;</button>
+            <button NgxCarouselNext class='rightRs rightRs-5'>&gt;</button>
+          </ngx-carousel>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- FOOTER -->
+<app-footer></app-footer>
+<!-- FIN FOOTER -->

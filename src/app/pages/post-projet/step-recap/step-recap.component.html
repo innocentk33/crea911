@@ -1,0 +1,38 @@
+<div class="crea-login-container">
+
+  <div class="closeBtn" (click)="nextStep()">
+    <div class="outer">
+      <div class="inner">
+        <label>Fermer</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="row around-xs">
+    <h2 class="crea-session-title uppercase">INFOS DE FACTURATION</h2>
+  </div>
+
+  <div class="row center-xs col-xs-12 flex-row items-recap">
+    <div class="prix-recap">
+      <h2>Montant à payer</h2>
+      <h1>{{data | money}} FCFA</h1>
+    </div>
+    <div class="item-moyen-payement">
+      <h3>Payer par carte bancaire</h3>
+      <p>Veuillez adresser un virement aux coordonnées bancaires suivantes :</p>
+    </div>
+    <div class="item-moyen-payement">
+      <h3>Payer par cheque</h3>
+      <p>Veuillez adresser un chèque à l'ordre de CREA911 à retourner à : CREA911 BP Abidjan 911</p>
+    </div>
+    <div class="item-moyen-payement">
+      <h3>Payer par Orange Money</h3>
+      <p>Veillez effectuer la transaction sur le numéro suivant : +225 58 45 99 99</p>
+    </div>
+  </div>
+
+  <div class="col-xs-12 center-xs">
+    <button (click)="nextStep()" type="button" class="crea-btn-default">Terminer</button>
+
+  </div>
+</div>

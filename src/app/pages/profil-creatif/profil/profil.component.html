@@ -1,0 +1,193 @@
+<div class="row no-margin">
+  <simple-notifications [options]="options"></simple-notifications>
+  <div class="row around-xs">
+    <h2 class="crea-session-title uppercase" style="padding: 0.3rem 1em">mon profil</h2>
+  </div>
+  <div class="row around-xs padding-1 desktopView">
+    <!-- CREATIF -->
+    <!-- Debut left infos bloc -->
+    <div class="col-xs-4">
+      <div class="row crea911-left-infos-container">
+        <div class="col-xs-4 col-lg-4 avatar-container" style="display: flex;justify-content: center;">
+          <img class="img-responsive crea911-avatar-img" [src]="avatar" alt="">
+        </div>
+        <div class="col-xs-8 flex-column crea911-infos-box">
+          <p class="infos-texte">pour ajouter votre photo et d’autres informations importantes, rendez-vous sur INFO COMPTES</p>
+          <h3 class="name">{{creatif?.UNom | uppercase}} {{creatif?.UPrenoms | capitalize: true}}</h3>
+          <!-- <h3 class="name">{{creatif?.UNom | uppercase}} {{creatif?.UPrenoms | capitalize: true}}</h3>
+          <div *ngIf="this.creatif?.creatif?.CrProfession">
+            <mat-icon svgIcon="sac_crea"></mat-icon>
+            <span>{{this.creatif?.creatif?.CrProfession}}</span>
+          </div>
+          <div *ngIf="creatif?.domaines?.length>0">
+            <mat-icon svgIcon="trombone"></mat-icon>
+            <span>{{domaineTexte}}</span>
+          </div>
+          <div *ngIf="creatif?.adresse?.AdAdresse">
+            <mat-icon svgIcon="building_crea"></mat-icon>
+            <span>{{creatif?.adresse?.AdAdresse}}</span>
+          </div>
+          <div *ngIf="creatif?.adresse?.pays?.PsNom">
+            <mat-icon svgIcon="locate_crea"></mat-icon>
+            <span>{{creatif?.adresse?.pays?.PsNom}}</span>
+          </div> !-->
+        </div>
+      </div>
+      <div class="col-xs-12 center-xs left-xs" style="padding: .6em 0px">
+        <button class="crea-btn-default right-xs" (click)="editable()">Modifier</button>
+      </div>
+      <div class="crea911-divider"></div>
+      <div class="flex-column">
+        <h6 class="crea911-sub-title-default">à propos</h6>
+        <div class="crea911-divider"></div>
+        <p class="left-xs">{{creatif?.UApropos}}</p>
+      </div>
+
+    </div>
+
+    <!-- Fin left infos bloc -->
+
+    <!-- Debut right infos bloc -->
+    <div class="col-xs-5 crea-form-bloc">
+
+      <form [formGroup]="formDomaines" (ngSubmit)="saveProfil()" action="">
+
+        <div class="row">
+          <label for="">Domaine d'activité principal</label>
+          <select formControlName="dactivite_principal">
+            <option value="">Domaine d'activité principal</option>
+            <option *ngFor="let service of services" [value]="service.SrvId">{{service.SvrLibelle}}</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <label for="">Domaine d'activité secondaire</label>
+          <select formControlName="dactivite_secondaire">
+            <option value="">Domaine d'activité secondaire</option>
+            <option *ngFor="let service of services" [value]="service.SrvId">{{service.SvrLibelle}}</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <label for="">Profession</label>
+          <input type="text" placeholder="Profession" formControlName="profession" />
+        </div>
+
+        <div class="row">
+          <label for="">Adresse géographique</label>
+          <input type="text" placeholder="Adresse géographique" formControlName="adresse" />
+        </div>
+
+        <div class="row">
+          <mat-form-field class="demo-chip-list">
+            <mat-chip-list #chipList>
+              <mat-chip *ngFor="let itemInteret of itemsInterets" [selectable]="editableForm" [removable]="editableForm" (remove)="remove(itemInteret)">
+                {{itemInteret.CiLibelle}}
+                <mat-icon matChipRemove *ngIf="editableForm">cancel</mat-icon>
+              </mat-chip>
+              <input [disabled]="!editableForm" placeholder="+ centre interêt" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)" />
+            </mat-chip-list>
+          </mat-form-field>
+        </div>
+
+        <div class="between-xs btn-group">
+          <button *ngIf="edited()" class="crea-btn-default" type="submit">Enregistrer</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+
+  <!--mobileView @ innocent kacou-->
+  <div class="row padding-1 mobileView">
+    <!--avatar-->
+    <!-- CREATIF -->
+    <!-- Debut left infos bloc -->
+    <div class="col-xs-12">
+      <div class="row crea911-left-infos-container">
+        <div class="col-xs-6 avatar-container" style="display: flex;justify-content: center;">
+          <img class="img-responsive crea911-avatar-img" [src]="avatar" alt="">
+        </div>
+        <div class="col-xs-6 flex-column crea911-infos-box">
+
+          <h3 class="name">{{creatif?.UNom | uppercase}} {{creatif?.UPrenoms | capitalize: true}}</h3>
+          <p class="infos-texte text-center">pour ajouter votre photo et d’autres informations importantes, rendez-vous sur INFO COMPTES</p>
+        </div>
+      </div>
+      <div class="col-xs-12 center-xs " style="padding: .6em 0px">
+
+        <button class="crea-btn-default right-xs" (click)="editable()">Modifier</button>
+      </div>
+      <div class="crea911-divider"></div>
+      <div class="flex-column">
+        <h6 class="crea911-sub-title-default">à propos</h6>
+        <div class="crea911-divider"></div>
+        <p class="left-xs">{{creatif?.UApropos}}</p>
+      </div>
+
+    </div>
+
+    <!-- Fin left infos bloc -->
+  </div>
+  <div class="padding-1 mobileView">
+
+
+    <!-- Debut right infos bloc -->
+    <div class="col-xs-12 crea-form-bloc">
+
+      <form [formGroup]="formDomaines" (ngSubmit)="saveProfil()" action="">
+
+        <div class="row">
+          <label for="">Domaine d'activité principal</label>
+          <select formControlName="dactivite_principal">
+            <option value="">Domaine d'activité principal</option>
+            <option *ngFor="let service of services" [value]="service.SrvId">{{service.SvrLibelle}}</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <label for="">Domaine d'activité secondaire</label>
+          <select formControlName="dactivite_secondaire">
+            <option value="">Domaine d'activité secondaire</option>
+            <option *ngFor="let service of services" [value]="service.SrvId">{{service.SvrLibelle}}</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <label for="">Profession</label>
+          <input type="text" placeholder="Profession" formControlName="profession" />
+        </div>
+
+        <div class="row">
+          <label for="">Adresse géographique</label>
+          <input type="text" placeholder="Adresse géographique" formControlName="adresse" />
+        </div>
+
+        <div class="row">
+          <mat-form-field class="demo-chip-list">
+            <mat-chip-list #chipList>
+              <mat-chip *ngFor="let itemInteret of itemsInterets" [selectable]="editableForm" [removable]="editableForm" (remove)="remove(itemInteret)">
+                {{itemInteret.CiLibelle}}
+                <mat-icon matChipRemove *ngIf="editableForm">cancel</mat-icon>
+              </mat-chip>
+              <input [disabled]="!editableForm" placeholder="+ centre interêt" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                     [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)" />
+            </mat-chip-list>
+          </mat-form-field>
+        </div>
+
+        <div class="between-xs btn-group center-xs">
+          <button *ngIf="edited()" class="crea-btn-default" type="submit">Enregistrer</button>
+        </div>
+
+      </form>
+    </div>
+
+
+
+
+  </div>
+
+</div>

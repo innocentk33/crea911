@@ -1,0 +1,118 @@
+<div class="desktopView">
+  <simple-notifications [options]="options"></simple-notifications>
+
+  <h2 mat-dialog-title class="col-xs-12">Ajouter une de mes créations</h2>
+  <mat-dialog-content>
+    <div class="row">
+      <div class="flex-column col-xs-12">
+        <form [formGroup]="formCreation" (ngSubmit)="saveCreation()">
+
+          <div class="crea-form-add-container">
+            <div class="app-add-crea">
+              <div #avatarImg class="border-dashed">
+                <button (click)="chooseAvatar()"></button>
+                <input type="file" accept="image/*" id="avatarInput" (change)="onAvatarFileChange($event)" #fileInput>
+              </div>
+            </div>
+          </div>
+
+          <!--  -->
+          <div class="row col-xs-12">
+            <label for="">Categorie</label>
+            <select  (change)="serviceChange($event)" formControlName="service">
+              <option value="">--Categorie--</option>
+              <option *ngFor="let service of services" [value]="service.SrvId">{{service.SvrLibelle}}</option>
+            </select>
+          </div>
+          <!--  -->
+          <div class="row col-xs-12">
+            <label for="">Activité</label>
+            <select formControlName="type_activtie">
+              <option value="">--Activité--</option>
+              <option *ngFor="let activite of typeactivites" [value]="activite.TpactId">{{activite.TpactLibelle}}</option>
+            </select>
+          </div>
+
+          <!--  -->
+          <div class="row col-xs-12">
+            <label for="">Tags</label>
+            <!--<input type="text" placeholder="Centres d'intérêt "  />-->
+            <tag-input [(ngModel)]='itemsTags' [placeholder]="'+ tags'"
+                       [onAdding]="transform" formControlName="tags"
+                       [displayBy]="'TgLibelle'" [identifyBy]="'TgLibelle'">
+              <tag-input-dropdown [autocompleteItems]="tags" [displayBy]="'TgLibelle'" [identifyBy]="'TgLibelle'">
+              </tag-input-dropdown>
+            </tag-input>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+  </mat-dialog-content>
+  <mat-dialog-actions class="flex-row between-xs">
+    <button mat-button mat-dialog-close>Annuler</button>
+    <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+    <button mat-button (click)="saveCreation()">Enregitrer</button>
+  </mat-dialog-actions>
+
+</div>
+<div class="mobileView">
+
+    <simple-notifications [options]="options"></simple-notifications>
+
+    <h2 mat-dialog-title class="col-xs-12">Ajouter une de mes créations</h2>
+    <mat-dialog-content>
+      <div class="row">
+        <div class="flex-column col-xs-12">
+          <form [formGroup]="formCreation" (ngSubmit)="saveCreation()">
+
+            <div class="crea-form-add-container">
+              <div class="app-add-crea">
+                <div #avatarImg class="border-dashed">
+                  <button (click)="chooseAvatar()"></button>
+                  <input type="file" accept="image/*" id="avatarInput" (change)="onAvatarFileChange($event)" #fileInput>
+                </div>
+              </div>
+            </div>
+
+            <!--  -->
+            <div class="row col-xs-12">
+              <label for="">Categorie</label>
+              <select  (change)="serviceChange($event)" formControlName="service">
+                <option value="">--Categorie--</option>
+                <option *ngFor="let service of services" [value]="service.SrvId">{{service.SvrLibelle}}</option>
+              </select>
+            </div>
+            <!--  -->
+            <div class="row col-xs-12">
+              <label for="">Activité</label>
+              <select formControlName="type_activtie">
+                <option value="">--Activité--</option>
+                <option *ngFor="let activite of typeactivites" [value]="activite.TpactId">{{activite.TpactLibelle}}</option>
+              </select>
+            </div>
+
+            <!--  -->
+            <div class="row col-xs-12">
+              <label for="">Tags</label>
+              <!--<input type="text" placeholder="Centres d'intérêt "  />-->
+              <tag-input [(ngModel)]='itemsTags' [placeholder]="'+ tags'"
+                         [onAdding]="transform" formControlName="tags"
+                         [displayBy]="'TgLibelle'" [identifyBy]="'TgLibelle'">
+                <tag-input-dropdown [autocompleteItems]="tags" [displayBy]="'TgLibelle'" [identifyBy]="'TgLibelle'">
+                </tag-input-dropdown>
+              </tag-input>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </mat-dialog-content>
+    <mat-dialog-actions class="flex-row between-xs">
+      <button mat-button mat-dialog-close>Annuler</button>
+      <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+      <button mat-button (click)="saveCreation()">Enregitrer</button>
+    </mat-dialog-actions>
+</div>

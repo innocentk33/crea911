@@ -1,0 +1,171 @@
+<div class="row no-margin flex-column">
+  <!--  -->
+  <simple-notifications [options]="options"></simple-notifications>
+
+  <div class="row around-xs">
+    <h2 class="crea-session-title uppercase">infos compte</h2>
+  </div>
+
+  <div>
+    <div class="row around-xs padding-1">
+      <div class="row around-xs">
+        <div class="row between-xs col-xs-10 crea-border col-boxed ">
+          <div class="col-xs-4">
+            <h6 class="info-compte-title">Informations du compte</h6>
+            <p class="pref">
+              Vos informations de compte vous permettent de vous connecter sur votre espace client et dêtre joignable par nos chefs de
+              projets
+            </p>
+          </div>
+          <div class="col-xs-8 padding-xs-top-2">
+            <form [formGroup]="infosClientForm" (ngSubmit)="editeInfosUser()" class="col-xs-12 marge-corps-form1">
+              <div class="row between-xs">
+                <div class="col-xs-5">
+                  <label for="nom">Nom</label>
+                  <input type="text" class="form-control" id="nom" placeholder="Nom" formControlName="nom">
+                </div>
+                <div class="col-xs-5">
+                  <label for="prenom">Prénom(s)</label>
+                  <input type="text" class="form-control" id="prenom" placeholder="Prénom(s)" formControlName="prenom">
+                </div>
+              </div>
+
+              <div class="row between-xs">
+                <div class=" col-xs-5">
+                  <label for="telephone">Téléphone <b class="exemple">Exemple : (225)58459999</b></label>
+                  <input type="text" [textMask]="{mask: mask}" class="form-control" id="telephone" placeholder="Téléphone" formControlName="telephone">
+                </div>
+                <div class="col-xs-5">
+                  <label for="telephonePortable">Téléphone portable <b class="exemple">Exemple : (225)58459999</b></label>
+                  <input type="text" [textMask]="{mask: mask}" class="form-control" id="telephonePortable" placeholder="Téléphone portable"
+                    formControlName="telephonePortable">
+                </div>
+              </div>
+
+              <div class="row between-xs">
+                <div class="col-xs-5">
+                  <label for="entreprise">Entreprise</label>
+                  <input type="text" class="form-control" id="entreprise" placeholder="Nom de l'entreprise" formControlName="entreprise">
+                </div>
+                <div class="col-xs-5">
+                  <label for="">Domaine d'activité</label>
+                  <select formControlName="domaineActivite">
+                    <option value="">Domaine d'activité</option>
+                    <option *ngFor="let service of domaines" [value]="service.SrvId">{{service.SvrLibelle}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row between-xs">
+                <div class="col-xs-12">
+                  <label for="code_postal">Code postal</label>
+                  <input id="code_postal" type="text" class="form-control" placeholder="Code postal" formControlName="code_postal">
+                </div>
+              </div>
+              <div class="row between-xs">
+                <div class="col-xs-12">
+                  <label for="adresse">Adresse</label>
+                  <input type="text" class="form-control" id="adresse" placeholder="Adresse" formControlName="adresse">
+                </div>
+              </div>
+              <div class="row between-xs">
+                <div class="col-xs-12">
+                  <label for="complement_adresse">Adresse complementaire</label>
+                  <input id="complement_adresse" type="text" class="form-control" placeholder="Complement d'adresse" formControlName="complement_adresse">
+                </div>
+              </div>
+              <div class="row between-xs">
+                <div class="col-xs-12">
+                  <label for="apropos">A propos</label>
+                  <textarea id="apropos" formControlName="apropos" rows="180"></textarea>
+                </div>
+              </div>
+
+              <div class="row between-xs">
+
+                <div class="col-xs-4 flex-column">
+                  <label for="pays">Pays</label>
+                  <select formControlName="pays" class="form-control">
+                    <option selected value="">--CHOISIR UN PAYS--</option>
+                    <option *ngFor="let country of countries" [value]="country.PsId">{{country.PsNom}}</option>
+                  </select>
+                </div>
+
+                <div class="col-xs-5">
+                  <label for="ville">Ville</label>
+                  <input type="text" class="form-control" id="ville" placeholder="Ville" formControlName="ville">
+                </div>
+
+                <div class="col-xs-2">
+                  <label for="devise">Dévise</label>
+                  <input type="text" class="form-control" id="devise" placeholder="EUR" formControlName="devise">
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <!--La nouvelle classe btn-edit provient du fichier styles.css-->
+                <button type="submit" class="crea-btn-default">SAUVEGARDER</button>
+              </div>
+            </form>
+          </div>
+          <div class="crea-divider"></div>
+          <div class="col-xs-4">
+            <h6 class="info-compte-title">Sécurité</h6>
+            <p class="pref">Un bon mot de passe doit contenir au moins 12 caractères et 4 types différents : des minuscules, des majuscules, des chiffres et des caractères spéciaux. Il peut être plus court si votre compte est équipé de sécurités complémentaires !  </p>
+          </div>
+          <div class="col-xs-8 padding-xs-top-2">
+            <!--Deuxieme formulaire-->
+            <form [formGroup]="clientPassword"  (ngSubmit)="changePassword()"  class="col-xs-12">
+
+              <div class="row between-xs">
+                <div class="col-xs-5">
+                  <label for="motDePasse">Mot de passe actuel</label>
+                  <input #lastPasswordInput type="password" class="form-control" id="motDePasseLast" placeholder="Mot de passe actuel" formControlName="lastPassword">
+                </div>
+              </div>
+              <div class="row between-xs">
+                <div class="col-xs-5">
+                  <label for="motDePasse">Mot de passe</label>
+                  <input #passwordInput type="password" class="form-control" id="motDePasse" placeholder="Mot de passe" formControlName="motDePasse">
+                </div>
+                <div class="col-xs-5">
+                  <label for="confirmerMotPasse">Confirmer le mot de passe</label>
+                  <input #passwordConfirmInput type="password" class="form-control" id="confirmerMotPasse" placeholder="Confirmer le mot de passe" formControlName="confirmerMotPasse">
+                </div>
+              </div>
+
+              <div class="row form-row">
+                <div class="col-md-3">
+                  <button [disabled]="!clientPassword.valid" type="submit" class="crea-btn-default">SAUVEGARDER</button>
+                </div>
+              </div>
+            </form>
+
+
+          </div>
+        </div>
+
+        <!--  Debut
+        <div class="row col-xs-10 crea-border" style="margin-top: 1em">
+          <div class="col-xs-4">
+            <h6 class="info-compte-title">Informations de facturation</h6>
+            <p>
+              Vos informations de facturation figuront sur votre facture Crea 911
+            </p>
+          </div>
+          <div class="col-xs-8">
+            <p class="p_facturation">
+              Vous n'avez pas encore renseigné d'adresse de facturation
+            </p>
+            <div class="form-row">
+              <div class="col-md-12">
+                <button type="submit" class="crea-btn-default">+ CREER UNE ADRESSE DE FACTURATION</button>
+              </div>
+            </div>
+          </div>
+        </div>-->
+      </div>
+
+    </div>
+
+  </div>
+</div>

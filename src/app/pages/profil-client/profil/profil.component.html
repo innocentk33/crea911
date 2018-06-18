@@ -1,0 +1,155 @@
+<div class="row no-margin">
+  <simple-notifications [options]="options"></simple-notifications>
+
+  <div class="row around-xs">
+    <h2 class="crea-session-title uppercase">mon profil</h2>
+  </div>
+  <div class="row center-xs padding-1 desktopView">
+    <!-- Debut left infos bloc -->
+    <div class="col-xs-8">
+      <div class="row crea911-left-infos-container">
+        <div class="col-xs-4 avatar-container" style="display: flex;justify-content: center;">
+          <form [formGroup]="formAvatar" (ngSubmit)="uploadAvatar()" action="">
+
+            <div class="between-xs">
+              <div class="rounded-img-div">
+                <!--<img #avatarImg src="assets/images/icons/ic_avatar_rounded.svg" alt="">-->
+                <div #avatarImg class="inner-overview">
+                  <mat-icon (click)="chooseAvatar(fileInput)">camera</mat-icon>
+                </div>
+              </div>
+              <input type="file" accept="image/*" id="avatarInput" (change)="onAvatarFileChange($event)" #fileInput>
+            </div>
+            <div class="between-xs">
+              <button *ngIf="btnAvatarUpload" type="submit" class="crea-btn-default btn-save-avatar">ENREGISTRER LA PHOTO</button>
+            </div>
+          </form>
+
+        </div>
+        <div class="col-xs-8 flex-column crea911-infos-box">
+          <h3 class="name">{{client.UNom | uppercase}} {{client.UPrenoms | capitalize: true }}</h3>
+          <div *ngIf="client?.UEmail">
+            <mat-icon svgIcon="sac_crea"></mat-icon>
+            <span>{{client?.UEmail}}</span>
+          </div>
+
+          <div *ngIf="client?.adresse?.AdTel1">
+            <mat-icon>phone</mat-icon>
+            <span>{{client?.adresse?.AdTel1}}</span>
+          </div>
+          <div *ngIf="client?.adresse?.AdTel2">
+            <mat-icon>tel</mat-icon>
+            <span>{{client?.adresse?.AdTel2}}</span>
+          </div>
+          <div *ngIf="client?.adresse?.AdAdresse">
+            <mat-icon svgIcon="building_crea"></mat-icon>
+            <span>{{client?.adresse?.AdAdresse}}</span>
+          </div>
+          <div *ngIf="client?.adresse?.pays?.PsNom">
+            <mat-icon svgIcon="locate_crea"></mat-icon>
+            <span>{{client.adresse.pays.PsNom}}</span>
+          </div>
+
+
+        </div>
+      </div>
+      <div class="col-xs-12 right-xs" style="padding: .6em 0px">
+        <button [routerLink]="'/profil-client/infos'" class="crea-btn-default">Modifier</button>
+      </div>
+
+      <div class="crea911-divider"></div>
+      <div class="flex-column left-xs">
+        <h6 class="crea911-sub-title-default">à propos</h6>
+        <div class="crea911-divider"></div>
+        <p class="left-xs">{{client?.UApropos}}</p>
+      </div>
+
+    </div>
+
+    <!-- Fin left infos bloc -->
+
+    <!-- Debut right infos bloc
+    <div class="col-xs-5 crea-form-bloc">
+      <div class="row">
+        <input class="" type="text" placeholder="Domaine d'activité principal" />
+      </div>
+      <div class="row">
+        <input type="text" placeholder="Domaine d'activité secondaire" />
+      </div>
+      <div class="row">
+        <input type="text" placeholder="Responsable marketing / communication" />
+      </div>
+      <div class="row">
+        <input type="text" placeholder="Adresse géographique" />
+      </div>
+      <div class="row">
+        <input type="text" placeholder="Besoins marketing / communication" />
+      </div>
+    </div> -->
+  </div>
+
+  <!--mobileView par innocent kacou-->
+  <div class="row center-xs padding-1 mobileView">
+    <!-- Debut left infos bloc -->
+    <div class="col-xs-8">
+      <div class="row crea911-left-infos-container">
+        <div class="col-xs-4 avatar-container" style="display: flex;justify-content: center;">
+          <form [formGroup]="formAvatar" (ngSubmit)="uploadAvatar()" action="">
+
+            <div class="between-xs">
+              <div class="rounded-img-div">
+                <!--<img #avatarImg src="assets/images/icons/ic_avatar_rounded.svg" alt="">-->
+                <div #avatarImg class="inner-overview">
+                  <mat-icon (click)="chooseAvatar(fileInput)">camera</mat-icon>
+                </div>
+              </div>
+              <input type="file" accept="image/*" id="avatarInput" (change)="onAvatarFileChange($event)" #fileInput>
+            </div>
+            <div class="between-xs">
+              <button *ngIf="btnAvatarUpload" type="submit" class="crea-btn-default btn-save-avatar">ENREGISTRER LA PHOTO</button>
+            </div>
+          </form>
+
+        </div>
+        <div class="col-xs-8 flex-column crea911-infos-box">
+          <h3 class="name">{{client.UNom | uppercase}} {{client.UPrenoms | capitalize: true }}</h3>
+          <div *ngIf="client?.UEmail">
+            <mat-icon svgIcon="sac_crea"></mat-icon>
+            <span>{{client?.UEmail}}</span>
+          </div>
+
+          <div *ngIf="client?.adresse?.AdTel1">
+            <mat-icon>phone</mat-icon>
+            <span>{{client?.adresse?.AdTel1}}</span>
+          </div>
+          <div *ngIf="client?.adresse?.AdTel2">
+            <mat-icon>tel</mat-icon>
+            <span>{{client?.adresse?.AdTel2}}</span>
+          </div>
+          <div *ngIf="client?.adresse?.AdAdresse">
+            <mat-icon svgIcon="building_crea"></mat-icon>
+            <span>{{client?.adresse?.AdAdresse}}</span>
+          </div>
+          <div *ngIf="client?.adresse?.pays?.PsNom">
+            <mat-icon svgIcon="locate_crea"></mat-icon>
+            <span>{{client.adresse.pays.PsNom}}</span>
+          </div>
+
+
+        </div>
+      </div>
+      <div class="col-xs-12 right-xs" style="padding: .6em 0px">
+        <button [routerLink]="'/profil-client/infos'" class="crea-btn-default">Modifier</button>
+      </div>
+
+      <div class="crea911-divider"></div>
+      <div class="flex-column left-xs">
+        <h6 class="crea911-sub-title-default">à propos</h6>
+        <div class="crea911-divider"></div>
+        <p class="left-xs">{{client?.UApropos}}</p>
+      </div>
+
+    </div>
+
+  </div>
+</div>

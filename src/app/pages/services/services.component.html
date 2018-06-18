@@ -1,0 +1,25 @@
+<!-- MENU -->
+<app-top-menu></app-top-menu>
+<!-- FIN MENU -->
+
+<!-- CONTENT -->
+<div class="crea-page-container container">
+
+
+  <div class="margin-top-3 row col-xs-6 center-xs crea911-nos-services">
+    <div *ngFor="let service of services; let i = index" class="crea911-item-nos-services">
+      <div class="crea911-item-service-title">
+        <img [src]="service.svrIcon" class="img-icon-pres" alt="icon service" >
+      </div>
+      <h4>{{service.svrLibelle}}</h4>
+      <p class="left-text">{{service.srvDescription}}</p>
+      <a href="#" [routerLink]="service.link">Plus d’information</a>
+    </div>
+  </div>
+  <!-- FIN NOS SERVICES -->
+</div>
+<!-- FIN CONTENT -->
+
+<!-- FOOTER -->
+<app-footer></app-footer>
+<!-- FIN FOOTER -->

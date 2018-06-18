@@ -1,0 +1,60 @@
+<footer class="crea-footer  around-xs desktopView">
+    <mat-chip-list class="mat-chip-list-stacked">
+        <mat-chip style="display: flex;" selected="true" (click)="onContactWhatsApp()"><mat-icon matChipAvatar svgIcon="whatsapp"></mat-icon> <span class="magnSpan">WhatsApp</span></mat-chip>
+      </mat-chip-list>
+    <div class="crea-footer-top">
+      <div class="row container">
+        <div class="">
+          <h4>SERVICES</h4>
+          <ul>
+              <li *ngFor="let service of services" [routerLink]="service.link">{{service.libelle}}</li>
+            </ul>
+        </div>
+        <div class="">
+          <h4>Crea911</h4>
+          <ul>
+            <li *ngFor="let menu of menusCrea911" [routerLink]="menu.link">{{menu.libelle}}</li>
+
+          </ul>
+        </div>
+        <div class="">
+          <h4>médias</h4>
+          <ul>
+              <li *ngFor="let media of medias">{{media.libelle}}</li>
+            </ul>
+        </div>
+        <div class="">
+          <h4>Contactez nous</h4>
+          <h4><a href="tel:+22558459999">{{contact}}</a></h4>
+        </div>
+        <div class="last">
+          <h4>à propos</h4>
+          <p style="font-size:12px">{{apropos}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="crea-footer-bottom">
+      <span>COPYRIGHT 2017 </span>
+      <div><img src="assets/images/logo.svg" alt=""></div>
+      <span>MENTIONS LEGALES CGV CGU</span>
+    </div>
+  </footer>
+
+
+<footer class="crea-footer  around-xs mobileView">
+  <mat-chip-list class="mat-chip-list-stacked">
+    <mat-chip style="display: flex;" selected="true" (click)="onContactWhatsApp()"><mat-icon matChipAvatar svgIcon="whatsapp"></mat-icon> <span class="magnSpan">WhatsApp</span></mat-chip>
+  </mat-chip-list>
+  <div class="crea-footer-top">
+    <div class="row">
+      <div class="col-xs-12 center-xs">
+        <h5 style="font-size: medium">Contactez nous</h5>
+        <h4><a href="tel:+22558459999">{{contact}}</a></h4><br>
+        <span>MENTIONS LEGALES CGV CGU</span>
+      </div>
+    </div>
+  </div>
+  <div class="crea-footer-bottom">
+    <div><img src="assets/images/logo.svg" alt=""></div>
+  </div>
+</footer>

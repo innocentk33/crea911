@@ -1,0 +1,20 @@
+<div class="crea-container">
+
+  <div class="closeBtn" (click)="nextStep()">
+    <div class="outer">
+      <div class="inner">
+        <label>Fermer</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="row col-xs-12 flex-row betwen-xs">
+    <img [src]="icon" class="icon-action" alt="">
+    <div class="row flex-column details">
+      <h2>{{texte}}</h2>
+      <h2 class="action-attente blue" [innerHTML]="action"></h2>
+      <h2 class="action-attente blue">{{sub_action}}</h2>
+    </div>
+  </div>
+
+</div>

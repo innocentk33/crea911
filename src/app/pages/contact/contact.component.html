@@ -1,0 +1,117 @@
+<!-- MENU -->
+<app-top-menu></app-top-menu>
+<!-- FIN MENU -->
+
+<!-- CONTENT -->
+<div class="crea-page-container flex-column">
+  <!--  -->
+  <div class="row around-xs">
+    <h2 class="crea-session-title uppercase">Contact</h2>
+  </div>
+  <div class="col-xs-12 flex-column">
+    <div class="row col-xs-12 end-xs bg-contact">
+
+      <div class="col-xs-12">
+        <p class="center-text">Chers clients, chers créatifs, notre équipe répondra à votre demande dans les plus brefs délais.<br> A tout à l'heure!</p>
+      </div>
+
+      <div class="col-xs-6">
+        <form [formGroup]="formContact">
+          <div class="row between-xs padding-horizontal-3 col-xs-12">
+            <mat-radio-group formControlName="type">
+              <mat-radio-button color="primary" value="1">Je suis client</mat-radio-button>
+              <mat-radio-button style="margin-left: 3em" color="primary" value="0">Je suis créatif</mat-radio-button>
+            </mat-radio-group>
+          </div>
+
+          <div class="row between-xs">
+            <div class="col-xs-6">
+              <label>
+                <b class="error-input" *ngIf="errors">{{errors.prenoms ? errors.prenoms[0] : ""}}</b>
+              </label>
+              <input type="text" class="form-control" placeholder="Nom" formControlName="nom">
+            </div>
+            <div class="col-xs-6">
+              <label>
+                <b class="error-input" *ngIf="errors">{{errors.prenoms ? errors.prenoms[0] : ""}}</b>
+              </label>
+              <input type="text" class="form-control" placeholder="Prénoms" formControlName="prenoms">
+            </div>
+          </div>
+          <div class="row between-xs">
+            <div class="col-xs-6">
+              <label>
+                <b class="error-input" *ngIf="errors">{{errors.prenoms ? errors.prenoms[0] : ""}}</b>
+              </label>
+              <input type="text" class="form-control" placeholder="Société" formControlName="societe">
+            </div>
+            <div class="col-xs-6">
+              <label>
+                <b class="error-input" *ngIf="errors">{{errors.prenoms ? errors.prenoms[0] : ""}}</b>
+              </label>
+              <input type="text" class="form-control" placeholder="E-mail" formControlName="email">
+            </div>
+          </div>
+          <div class="row between-xs">
+            <div class="col-xs-6">
+              <label>
+                <b class="error-input" *ngIf="errors">{{errors.prenoms ? errors.prenoms[0] : ""}}</b>
+              </label>
+              <input type="text" class="form-control" placeholder="Téléphone fixe" formControlName="telfixe">
+            </div>
+            <div class="col-xs-6">
+              <label>
+                <b class="error-input" *ngIf="errors">{{errors.prenoms ? errors.prenoms[0] : ""}}</b>
+              </label>
+              <input type="text" class="form-control" placeholder="Téléphone portable" formControlName="telportable">
+            </div>
+          </div>
+          <div class="row between-xs">
+            <div class="col-xs-12">
+              <label>
+                <b class="error-input" *ngIf="errors">{{errors.prenoms ? errors.prenoms[0] : ""}}</b>
+              </label>
+              <input type="text" class="form-control" placeholder="Questions" formControlName="question">
+            </div>
+          </div>
+          <div class="row between-xs">
+            <div class="col-xs-12">
+              <label>
+                <b class="error-input" *ngIf="errors">{{errors.prenoms ? errors.prenoms[0] : ""}}</b>
+              </label>
+              <textarea rows="80" class="form-control" placeholder="Votre message" formControlName="message"></textarea>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="crea-divider"></div>
+
+    <div class="row col-xs-12 center-xs flex-row">
+      <div class="col-xs-3">
+        <p class="text-justify">Service client :</p>
+        <p class="text-justify">+225 58 45 99 99<br>
+        +225 86 03 99 11</p>
+      </div>
+
+      <div class="col-xs-3">
+        <p class="text-justify">Nos horaires d’ouverture <br> 08h - 12h / 14h - 18h</p>
+        <p class="text-justify">info@crea911.net</p>
+      </div>
+
+      <div class="col-xs-3 flex-column around-xs">
+        <button type="button" class="crea-btn-default">ENVOYER</button>
+        <button type="button" class="crea-btn-default">LANCER MON PROJET</button>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+<!-- FOOTER -->
+<app-footer></app-footer>
+<!-- FIN FOOTER -->

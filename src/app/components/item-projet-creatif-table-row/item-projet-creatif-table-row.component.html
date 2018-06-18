@@ -1,0 +1,108 @@
+<div class="mobileView">
+<!--  <div class="row">
+
+  </div>-->
+  <table>
+    <thead>
+    <tr>
+      <th><b>No</b></th>
+      <th><b>Types</b></th>
+      <th><b>Titre & description</b></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>{{projet.PrId}}</td>
+      <td>
+        <div class="col-type" *ngFor="let service of projet.services">
+          <div class="div-libelle">
+            <h4>{{service.SvrLibelle}}</h4>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div class="col-titre-description">
+          <div class="div-texte">
+            <h4 class="hover-pointer" style="cursor: pointer;" (click)="showBrief()">{{projet.PrTitre}}</h4>
+            <p>{{(projet.PrDescription.length>100)? (projet.PrDescription |
+              slice:0:100)+'..':(projet.PrDescription)}} </p>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div class="div-delai" *ngIf="!terminated">
+          <img src="assets/images/icons/ic_timer.svg" alt="" height="10px" width="10px">
+          <app-count-down-view (zeroTrigger)="zeroAtteint()" [end]="dateAchevement"></app-count-down-view>
+        </div>
+      </td>
+
+      <td>
+        <div class="div-cout" *ngIf="!terminated">
+          <h4>{{montant | money }} FCFA</h4>
+        </div>
+      </td>
+      <td>
+        <div class="div-particip">
+          <img src="assets/images/icons/ic_avatar.svg" alt="nombreDeParticipant" height="2em" width="2em">
+          <span>{{projet.nombre_participants}}</span>
+        </div>
+      </td>
+      <td>
+        <div class="div-action">
+          <button [disabled]="terminated || participated" (click)="participate()" class="crea-btn-default">Je participe
+          </button>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="projet-row-table desktopView">
+  <ul class="">
+    <li style="width: 5%">{{projet.PrId}}</li>
+    <li style="width: 13%">
+      <div class="col-type" *ngFor="let service of projet.services">
+        <div class="div-libelle">
+          <h6>{{service.SvrLibelle}}</h6>
+        </div>
+      </div>
+    </li>
+    <li style="width: 27%">
+      <div class="col-titre-description">
+        <div class="div-texte">
+          <h4 class="hover-pointer" style="cursor: pointer;" (click)="showBrief()">{{projet.PrTitre}}</h4>
+          <p>{{(projet.PrDescription.length>100)? (projet.PrDescription |
+            slice:0:100)+'..':(projet.PrDescription)}} </p>
+        </div>
+      </div>
+    </li>
+    <li style="width: 15%; display: flex">
+      <div class="div-delai" *ngIf="!terminated">
+        <img src="assets/images/icons/ic_timer.svg" alt="">
+        <!-- <span>{{projet.PrDateLimite | amDifference: projet.PrDatePublication   :'days' : false}} jour(s)</span>
+        <span>{{projet.PrDelai}} jour(s)</span>
+        <countdown [text]="text" units="Days | Hours | Minutes"  [end]="dateAchevement"></countdown>-->
+        <app-count-down-view (zeroTrigger)="zeroAtteint()" [end]="dateAchevement"></app-count-down-view>
+      </div>
+    </li>
+    <li style="width: 15%; display: flex">
+      <div class="div-cout" *ngIf="!terminated">
+        <h4>{{montant | money }} FCFA</h4>
+      </div>
+    </li>
+    <li style="width: 10%; display: flex">
+      <div class="div-particip">
+        <img src="assets/images/icons/ic_avatar.svg" alt="">
+        <span>{{projet.nombre_participants}}</span>
+      </div>
+    </li>
+    <li style="width: 15%; display: flex">
+      <div class="div-action">
+        <button [disabled]="terminated || participated" (click)="participate()" class="crea-btn-default">Je participe
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>

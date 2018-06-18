@@ -1,0 +1,32 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="over" #right position="end"
+              #left position="start">
+
+    <div *ngIf="isConnect" class="user-top-div">
+      <h6 (click)="goProfil()">{{identity}}</h6>
+      <img [matMenuTriggerFor]="menu" [src]="avatar" alt="">
+      <mat-menu #menu="matMenu" yPosition="below">
+        <button (click)="goProfil()" mat-menu-item>
+          <mat-icon>perm_identity</mat-icon>
+          <span>Mon profil</span>
+        </button>
+        <button (click)="logOut()" mat-menu-item>
+          <mat-icon>power_settings_new</mat-icon>
+          <span>Déconnexion</span>
+        </button>
+      </mat-menu>
+    </div>
+    <ul class="crea-menu-ul-drawer">
+      <li *ngFor="let item of menuItem">
+        <a routerLink="{{item.path}}">{{item.title}}</a>
+      </li>
+    </ul>
+  </mat-drawer>
+  <div class="example-sidenav-content">
+    <div class="col-xs-1 crea-menu-btn">
+      <mat-icon #btnMenu (click)="drawer.toggle()" svgIcon="icon_menu_btn_white"></mat-icon>
+
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>

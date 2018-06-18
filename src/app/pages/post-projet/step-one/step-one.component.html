@@ -1,0 +1,66 @@
+
+<div class="flex-column">
+
+    <simple-notifications [options]="options"></simple-notifications>
+
+  <div class="row around-xs">
+    <h2 class="crea-session-title uppercase">Rédiger une commande</h2>
+  </div>
+  <div class="row col-xs-12">
+
+    <div class="flex-row center-xs col-xs-12">
+      <h4 class="color-h4-title2-CVP">POUR CALCULER VOTRE DEVISE, C'EST SIMPLE</h4>
+    </div>
+    <div class="flex-row center-xs col-xs-12">
+      <p class="">Faites votre sélection en fonction de vos besoins et calculez votre dévis instantanément. Pour toute question,
+        <br> contactez-nous au +225 58 45 99 99 </p>
+    </div>
+  </div>
+  <div class="row col-xs-12 around-xs grande_div2">
+    <!--Le grande tableau à gauche-->
+    <div class="col-xs-8 items-forms  between-xs">
+
+      <div *ngFor="let service of services" class="item-service-form flex-column">
+        <div class="flex-row item-header-form">
+          <img src="{{service.SvrIcon}}" alt="" />
+          <h2>{{service.SvrLibelle}}</h2>
+        </div>
+        <div class="crea-divider"></div>
+        <div>
+            <section class="flex-column">
+                <mat-checkbox color="primary" (change)="selecteActivity($event, activite, service)"  *ngFor="let activite of service.activities" class="example-margin" >{{activite.TpactLibelle}}</mat-checkbox>
+            </section>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-xs-3 crea-border flex-column padding-1">
+      <div class="row">VOTRE SELECTION</div>
+      <div class="crea-divider"></div>
+
+      <div class="row around-xs flex-column items-choix">
+        <div *ngFor="let choix  of selections" class="flex-column item-choix">
+          <p>{{choix.TpactLibelle}}</p>
+          <p class="frais">{{ applyPercent(choix.frais) | money}}</p>
+          <div class="crea-divider"></div>
+        </div>
+      </div>
+      
+      <div class="flex-row between-xs total-container">
+        <span>
+          Total
+        </span>
+        <b>
+          {{montant | money}} FCFA
+        </b>
+      </div>
+      <div class="crea-divider"></div>
+      <div class="col-md-3">
+        <button [disabled]="!(selections.length>0)" (click)="nextStep()" type="submit" class="crea-btn-default">VALIDER</button>
+      </div>
+
+
+    </div>
+
+  </div>
+</div>

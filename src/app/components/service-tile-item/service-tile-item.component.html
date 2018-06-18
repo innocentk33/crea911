@@ -1,0 +1,10 @@
+<div class="crea911-item-nos-services" >
+
+  <div class="crea911-item-service-title">
+      <img [src]="service.svrIcon" class="img-icon-pres" alt="" (click)="select($event)">
+  </div>
+  <h4 style="cursor: pointer;" (click)="select($event)">{{service.svrLibelle}}</h4>
+  <ul class="list-sub-service">
+    <li *ngFor="let activite of service.typeServices; let j = index">{{activite.tpactLibelle}}</li>
+  </ul>
+</div>
