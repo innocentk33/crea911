@@ -4,7 +4,7 @@
     <h2 class="crea-session-title uppercase">Liste des projets</h2>
   </div>
 
-  <div class="row flex-row crea99-categorie-barre">
+  <div class="row flex-row crea99-categorie-barre container">
     <h4 class="" style="margin: auto 3em">Catégorie</h4>
     <div>
       <mat-radio-group (change)="changeService($event)">
@@ -20,7 +20,7 @@
   <!-- en attente -->
   <div class="">
     <div class="flex-row title container">
-      <h4 class="col-xs-12 col-md-1">EN ATTENTE</h4>
+      <h4 class="col-xs-12 col-md-2 sm-2">EN ATTENTE</h4>
       <div class="barre"></div>
     </div>
     <!--En attente Mobile-->
@@ -49,8 +49,6 @@
     <div>
 
       <div class="desktopView container">
-        <app-item-projet-creatif-table-row *ngFor="let projet of projetsEnAttentes" [terminated]="false"
-                                           [projet]="projet"></app-item-projet-creatif-table-row>
         <!--bare des titres-->
         <div class="crea-barre-title">
           <ul class="">
@@ -63,6 +61,9 @@
             <li style="width: 15%">Action</li>
           </ul>
         </div>
+<!--content-->
+        <app-item-projet-creatif-table-row *ngFor="let projet of projetsEnAttentes" [terminated]="false"
+                                           [projet]="projet"></app-item-projet-creatif-table-row>
         <!-- pager -->
         <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
           <li class="page" [ngClass]="{disabled:pager.currentPage === 1}">
@@ -91,7 +92,7 @@
   <!-- En cours -->
   <div class="">
     <div class="flex-row title container">
-      <h4 class="col-xs-12 col-md-1">EN COURS</h4>
+      <h4 class="col-xs-12 col-md-2 col-sm-2">EN COURS</h4>
       <div class="barre"></div>
     </div>
     <div class="mobileView">
@@ -165,7 +166,7 @@
 
   <div class="">
     <div class="flex-row title container">
-      <h4 class="col-md-1 col-xs-12">Terminés</h4>
+      <h4 class="col-md-2 col-sm-2 col-xs-12">Terminés</h4>
       <div class="barre desktopView"></div>
     </div>
     <div>
