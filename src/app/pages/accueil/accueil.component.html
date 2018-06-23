@@ -20,7 +20,7 @@
       clients aux créateurs</h2>
   </div>
   <div class="container">
-<!--    mobileView-->
+    <!--    mobileView-->
     <div class="row margin-top-6 center mobileView">
       <div class="col-xs-6 col-md-3">
         <img src="assets/images/icons/ic_service1.svg" class="img-icon-pres" alt="">
@@ -44,7 +44,7 @@
       </div>
     </div>
     <!--desktopView-->
-    <div class="row margin-top-6 center desktopView">
+    <div class="row margin-top-6 center desktopView ">
       <div class="col-xs-6 col-md-3">
         <img src="assets/images/icons/ic_service1.svg" class="img-icon-pres" alt="">
         <p class="margin-1">LANCER VOTRE PROJET</p>
@@ -57,7 +57,7 @@
       </div>
       <div class="col-xs-6 col-md-3">
         <img src="assets/images/icons/ic_service4.svg" class="img-icon-pres" alt="">
-        <p class="margin-1">RECEVEZ  PLUSIEURS CREATIONS</p>
+        <p class="margin-1">RECEVEZ PLUSIEURS CREATIONS</p>
         <p>Nos créatifs de divers horizons vous proposent des créations sur mesure.</p>
       </div>
       <div class="col-xs-6 col-md-3">
@@ -66,8 +66,8 @@
         <p>Faites votre choix parmi plusieurs créations proposées. Récupérez les fichiers.</p>
       </div>
     </div>
-    <div class="flex-row col-xs-12 around-xs auto-margin type-user-container desktopView">
-      <div class="col-lat-concept col-xs-12 col-md-5">
+    <div class="flex-row  around-xs auto-margin type-user-container desktopView ">
+      <div class="col-lat-concept  col-md-6 col-sm-6">
         <p class="justify-texte no-margin-bottom">
           <b class="font-size-1-1">Annonceurs</b>
         </p><br><br>
@@ -79,7 +79,7 @@
           <button class="crea-btn-default" (click)="iamClient()">Je suis client</button>
         </div>
       </div>
-      <div class="col-lat-concept col-xs-12 col-md-5">
+      <div class="col-lat-concept col-md-6 col-sm-6">
         <p class="justify-texte no-margin-bottom">
           <b class="font-size-1-1">Créateurs</b>
         </p>
@@ -146,10 +146,14 @@
       <h2 class="crea-session-title uppercase">NOS SERVICES</h2>
     </div>
 
-    <div class="crea911-nos-services c911-services-container margin-top-6 desktopView">
-      <app-service-tile-item *ngFor="let service of services; let i = index "
-                             [service]="service"></app-service-tile-item>
-    </div>
+
+        <div class="crea911-nos-services c911-services-container margin-top-6 desktopView container">
+          <app-service-tile-item  *ngFor="let service of services; let i = index "
+                                 [service]="service"></app-service-tile-item>
+        </div>
+
+
+
     <div class="crea911-services-row c911se">
       <div class="crea911-nos-services c911-services-container margin-top-6 mobileView">
         <app-service-tile-item *ngFor="let service of services; let i = index"

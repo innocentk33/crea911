@@ -1,4 +1,5 @@
 @import "colors";
+
 @crea911_bleu: #2AAAE3;
 @crea911_bleu_black: #253B48;
 @crea911_color_font: #B0B5B7;
@@ -71,7 +72,6 @@ h1, h2, h3, h4 {
   width: 100%;
   height: 1em;
 }
-
 
 /* MENU et SUB-MENU */
 
@@ -300,7 +300,6 @@ header {
     }
   }
 }
-
 
 /***
 *   Accueil page
@@ -719,7 +718,6 @@ app-services {
   }
 }
 
-
 /**********************
 *                     *
 *     LOGIN PAGE      *
@@ -823,7 +821,8 @@ app-login {
     width: 45%;
     border: 2px rgb(235, 235, 235) solid;
     padding: 1em 2em;
-    margin-left: 1em;
+    //@correction
+    //margin-left: 1em;
   }
 }
 
@@ -912,7 +911,8 @@ app-print-pub, app-web-deigital, app-redaction, app-design-despace, app-identite
       }
     }
   }
-  .barre-latteral-row {}
+  .barre-latteral-row {
+  }
   .padding-lat {
     max-width: calc(79%);
     width: inherit;
@@ -1221,7 +1221,6 @@ form {
   }
 }
 
-
 /* Barre de titre des tableaux */
 
 .crea-barre-title {
@@ -1301,7 +1300,6 @@ app-mesprojets, app-projets {
   align-items: flex-start;
 }
 
-
 /*****
 *
 * Page nos creatif
@@ -1352,7 +1350,6 @@ app-communaute-creatif {
     }
   }
 }
-
 
 /*****************************
 *                            *
@@ -1410,6 +1407,7 @@ app-password-forget, app-define-new-password {
   .auto-margin-xs {
     margin: auto;
   }
+
   app-accueil {
     .margin-top-6 {
       margin-top: 1em;
@@ -1463,10 +1461,12 @@ app-password-forget, app-define-new-password {
       }
     }
   }
+
   .crea-session-title {
     //font-size: 11px;
     font-size: 1rem;
   }
+
   .crea-menu-header-top {
     flex-direction: column;
     padding: 0px;
@@ -1520,6 +1520,7 @@ app-password-forget, app-define-new-password {
       }
     }
   }
+
   .crea-menu-header-bottom {
     .crea-menu-sub-list {
       li {
@@ -1531,9 +1532,11 @@ app-password-forget, app-define-new-password {
       }
     }
   }
+
   .crea-menu-header-bottom-2 {
     background: #596c79;
   }
+
   .crea-footer-top {
     padding: 1em;
     div {
@@ -1544,14 +1547,17 @@ app-password-forget, app-define-new-password {
       }
     }
   }
+
   .crea911-service-item {
     flex-direction: column;
   }
+
   .crea911-grid-creation {
     app-item-creation-default {
       width: 86%;
     }
   }
+
   .crea911-nos-creations {
     mat-radio-group {
       font-size: 11px;
@@ -1560,6 +1566,7 @@ app-password-forget, app-define-new-password {
       font-size: 11px;
     }
   }
+
   .crea-top-cover {
     .crea-search-box {
       h2 {
@@ -1567,20 +1574,24 @@ app-password-forget, app-define-new-password {
       }
     }
   }
+
   .crea911-default-list-creatif {
     app-item-creatif-default {
       width: 31%;
       margin-bottom: 1em;
     }
   }
+
   .crea911-service-item {
     flex-direction: column;
   }
+
   .crea911-nos-services {
     app-service-tile-item {
       max-width: 40%;
     }
   }
+
   /* style ajouté par Akon 30/04/2018 pour le header responsif sur une fenetre desktop de petite talle */
   header.crea-menu-header {
     .noCollapsedElt {
@@ -1635,24 +1646,26 @@ app-password-forget, app-define-new-password {
       }
     }
   }
+
   .crea-menu-btn {
     display: block;
     z-index: 999;
     position: fixed;
     margin: 2em;
   }
+
   app-concept {
     .crea-page-container {
       div {
         flex-direction: column;
-        &.reverse-cr{
+        &.reverse-cr {
           flex-direction: column-reverse;
         }
         * {
           max-width: 100%;
           width: 100%;
           flex-direction: column;
-          &.reverse-cr{
+          &.reverse-cr {
             flex-direction: column-reverse;
           }
         }
@@ -1674,11 +1687,13 @@ app-password-forget, app-define-new-password {
   .crea-session-title {
     font-size: 1rem;
   }
+
   .crea-menu-header-top {
     li {
       font-size: 13px;
     }
   }
+
   .crea-footer-top {
     padding: 1em;
     div {
@@ -1687,25 +1702,30 @@ app-password-forget, app-define-new-password {
       }
     }
   }
+
   .crea911-default-list-creatif {
     app-item-creatif-default {
       width: 31%;
       margin-bottom: 1em;
     }
   }
+
   .crea911-service-item {
     flex-direction: column;
   }
+
   .crea911-nos-services {
     app-service-tile-item {
       max-width: 30%;
     }
   }
+
   .crea911-grid-creation {
     app-item-creation-default {
       width: 46%;
     }
   }
+
   .crea911-nos-creations {
     mat-radio-group {
       font-size: 11px;
@@ -1714,6 +1734,7 @@ app-password-forget, app-define-new-password {
       font-size: 11px;
     }
   }
+
   .crea-top-cover {
     .crea-search-box {
       h2 {
@@ -1727,21 +1748,12 @@ app-password-forget, app-define-new-password {
   }
 }
 
-
-@media only screen and (min-width: 850px) and (max-width: 1224) {
-
-  .crea-menu-btn {
-    display: none;
-  }
-}
-
-
-@media only screen and (min-device-width: 850px) and (max-device-width: 1224) {
+/*@media only screen and (min-width: 850px) and (max-width: 1224) {
 
   .crea-menu-btn {
     display: none;
   }
-}
+}*/
 
 /* ---------- Smartphones (portrait and landscape) ----------- */
 
@@ -1772,6 +1784,7 @@ app-password-forget, app-define-new-password {
       }
     }
   }
+
   /* style ajouté par Akon 28/04/2018 */
   header.crea-menu-header {
     .noCollapsedElt {
@@ -1832,12 +1845,14 @@ app-password-forget, app-define-new-password {
       }
     }
   }
+
   .crea-menu-btn {
     display: block;
     z-index: 999;
     position: fixed;
     margin: 2em;
   }
+
   app-communaute-creatif {
     & > div {
       & > div {
@@ -1862,6 +1877,7 @@ app-password-forget, app-define-new-password {
       }
     }
   }
+
   app-services {
     .crea-page-container {
       .crea911-nos-services {
@@ -1887,6 +1903,7 @@ app-password-forget, app-define-new-password {
       }
     }
   }
+
   app-identite-visuel, app-print-pub, app-web-deigital, app-redaction, app-design-despace, app-motion-design {
     .crea911-top-cover {
       display: flex;
@@ -1954,13 +1971,11 @@ app-password-forget, app-define-new-password {
   }
 }
 
-
 /* ------------------ Smartphones (landscape) ----------- */
 
 @media only screen and (min-width: 321px) {
   /* Styles */
 }
-
 
 /* --------------- Smartphones (portrait) ----------- */
 
@@ -1991,6 +2006,7 @@ app-password-forget, app-define-new-password {
       }
     }
   }
+
   /* style ajouté par Akon 28/04/2018 */
   header.crea-menu-header {
     .noCollapsedElt {
@@ -2051,6 +2067,7 @@ app-password-forget, app-define-new-password {
       }
     }
   }
+
   .crea-menu-btn {
     display: block;
     z-index: 999;
@@ -2070,6 +2087,7 @@ app-password-forget, app-define-new-password {
       }
     }
   }
+
   .crea-menu-btn {
     display: none;
   }
@@ -2088,11 +2106,11 @@ app-password-forget, app-define-new-password {
       }
     }
   }
+
   .crea-menu-btn {
     display: none;
   }
 }
-
 
 /* iPads (landscape) ----------- */
 
@@ -2106,11 +2124,11 @@ app-password-forget, app-define-new-password {
       }
     }
   }
+
   .crea-menu-btn {
     display: none;
   }
 }
-
 
 /* iPads (portrait) ----------- */
 
@@ -2124,6 +2142,7 @@ app-password-forget, app-define-new-password {
       }
     }
   }
+
   .crea-menu-btn {
     display: none;
   }
@@ -2139,12 +2158,11 @@ app-password-forget, app-define-new-password {
       }
     }
   }
+
   .crea-menu-btn {
     display: none;
   }
 }
-
-
 /* Desktops and laptops ----------- */
 
 @media only screen and (min-width: 600px) {
@@ -2158,27 +2176,21 @@ app-password-forget, app-define-new-password {
       }
     }
   }
+
   .crea-menu-btn {
     display: none;
   }
 }
 
-
-/* Large screens ----------- */
-
-@media only screen and (min-width: 1824px) {
-  /* Styles */
-}
-
-
-/* iPhone 4 ----------- */
-
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
   /* style ajouté par Akon 28/04/2018 */
   header.crea-menu-header {
     .noCollapsedElt {
-      display: none;
+      //display: none;
+      padding-left: 5%;
     }
+
+
     .collapsedElt {
       display: flex;
       position: absolute;
@@ -2234,6 +2246,7 @@ app-password-forget, app-define-new-password {
       }
     }
   }
+
   .crea-menu-btn {
     display: block;
     z-index: 999;
@@ -2249,7 +2262,6 @@ app-password-forget, app-define-new-password {
 .bg-grey {
   background: @palette-Blue-Grey-50;
 }
-
 
 /*
 *
@@ -2302,7 +2314,6 @@ button {
   cursor: pointer;
 }
 
-
 /*
 *
 MENU CUSTOM
@@ -2334,7 +2345,7 @@ MENU CUSTOM
 }
 
 /*Style special Cree par innocent kacou*/
-.container{
+.container {
   margin: 0 auto;
   padding: 1rem 1rem;
 }
@@ -2344,32 +2355,68 @@ MENU CUSTOM
   margin: 2em 1em;
   position: absolute;
 }
-@media  (min-width: 1200px) {
-  .container{
+@media screen and (min-width: 768px) and  (max-width:1200px){
+  p{
+    font-size: 14px;
+  }
+  .col-lat-concept{
+    text-align: left;
+  }
+
+}
+@media (min-width: 1200px) {
+  .container {
     max-width: 90%;
     width: 1170px;
   }
 }
-@media (min-width: 992px) and (max-width: 1160px){
-  .container{
+
+@media (min-width: 992px) and (max-width: 1160px) {
+  .container {
     width: 970px;
   }
 
 }
-@media (min-width: 768px) and (max-width: 960px){
-  .container{
+
+@media (min-width: 768px) and (max-width: 960px) {
+  .container {
     width: 750px;
+  }
+  .c911-services-container{
+    flex-wrap: wrap;
+    width: 95%;
+
+  }
+}
+
+@media (min-width: 600px) and (max-width: 767px) {
+  .container {
+    width: 590px;
+  }
+  .c911-services-container{
+    flex-wrap: wrap;
+    width: 95%;
+  }
+}
+
+@media handheld and (min-width: 600px) and (max-width: 767px) {
+  .container {
+    max-width: 90%;
+    width: 80%;
   }
 }
 
 /*allignement des texts*/
-.text-center{
+.text-center {
   text-align: center;
 }
+
 @media screen and (min-device-width: 767px) {
   .mobileView {
     display: none;
-
+  }
+  .crea-menu-btn{
+    display: none;
   }
   /* .crea911-grid-creation {
      app-item-creation-default, app-item-my-crea {
@@ -2378,21 +2425,23 @@ MENU CUSTOM
        border-radius: 20px;
      }
    }*/
-
 }
 
 //crea-login-container-mobile
-@media screen and (min-width: 481px) and (max-width: 767px){
-  .mobileView{
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .mobileView {
     display: none;
   }
 
+
 }
-@media screen and (min-width: 768px) and (max-width: 991px){
-  .container{
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .container {
     width: 98%;
   }
 }
+
 @media handheld and (min-width: 481px) and (max-width: 767px) {
   .crea-login-container {
     margin: 0;
@@ -2402,9 +2451,11 @@ MENU CUSTOM
   .crea99-categorie-barre {
     display: none;
   }
+
   .desktopView {
     display: none;
   }
+
   .crea911-grid-creation {
     app-item-creation-default, app-item-my-crea {
       width: 45%;
@@ -2413,55 +2464,66 @@ MENU CUSTOM
       padding: 0.1rem;
     }
   }
-  app-mes-creations{
+
+  app-mes-creations {
     padding: 0.1rem;
   }
-  app-projets{
+
+  app-projets {
     padding: 1rem;
   }
 }
 
 //Smartphones Mobiles (Portrait)
-@media (min-width: 320px) and (max-device-width: 480px){
+@media (min-width: 320px) and (max-device-width: 480px) {
   .crea99-categorie-barre {
     display: none;
   }
-  .desktopView{
+
+  .desktopView {
     display: none;
   }
-    .crea911-grid-creation {
-      app-item-creation-default, app-item-my-crea {
-        width: 45%;
-        margin-left: 2%;
-        border-radius: 20px;
-        padding: 0.1rem;
-      }
+
+  .crea911-grid-creation {
+    app-item-creation-default, app-item-my-crea {
+      width: 45%;
+      margin-left: 2%;
+      border-radius: 20px;
+      padding: 0.1rem;
     }
-  app-mes-creations{
+  }
+
+  app-mes-creations {
     padding: 0.1rem;
   }
-  .cdk-overlay-container{
-    .element.style{
+
+  .cdk-overlay-container {
+    .element.style {
       width: 60%;
     }
-    .cdk-overlay-pane{
+    .cdk-overlay-pane {
       width: 60%;
     }
   }
-  app-projets{
-    padding: 1rem;
+
+  app-projets {
+    padding: .5rem;
   }
 }
+
 @media handheld and (min-width: 320px) and (max-width: 480px) {
   .crea99-categorie-barre {
     display: none;
   }
-  app-projets{
+
+  app-projets {
     padding: 1rem;
   }
+
   .desktopView {
     display: none;
   }
+
   .crea911-grid-creation {
     app-item-creation-default, app-item-my-crea {
       width: 45%;
@@ -2470,28 +2532,34 @@ MENU CUSTOM
       padding: 0.1rem;
     }
   }
-  app-mes-creations{
+
+  app-mes-creations {
     padding: 0.1rem;
   }
-  .cdk-overlay-container{
-    .element.style{
+
+  .cdk-overlay-container {
+    .element.style {
       width: 60%;
     }
-    .cdk-overlay-pane{
+    .cdk-overlay-pane {
       width: 60%;
     }
   }
 }
+
 @media handheld {
   .desktopView {
     display: none;
   }
-  app-mes-creations{
+
+  app-mes-creations {
     padding: 0.1rem;
   }
-  app-projets{
+
+  app-projets {
     padding: 1rem;
   }
+
   .crea911-grid-creation {
     app-item-creation-default, app-item-my-crea {
       width: 45%;
@@ -2501,21 +2569,40 @@ MENU CUSTOM
     }
   }
 }
-.font-size-1-1{
+
+.font-size-1-1 {
   font-size: 1.1rem;
 }
-.leftRs-5{
+
+.leftRs-5 {
   left: -5%;
 }
-.rightRs-5{
+
+.rightRs-5 {
   right: -5%;
 }
-.img-mobile{
+
+.img-mobile {
   width: 100%;
   height: 12rem;
 }
-.svg-size{
+
+.svg-size {
   height: 84px;
   width: 84px;
+}
+//les speciaux
+.mobileView{
+  .crea-page-container{
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+  }
+
+}
+
+@media (min-width: 484px) and (max-width: 1160px) {
+  .crea-btn-default{
+    padding: 0 0.5rem;
+  }
 }
 
