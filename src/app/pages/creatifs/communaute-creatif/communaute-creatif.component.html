@@ -5,7 +5,7 @@
     <h2 class="crea-session-title uppercase">notre communauté des créatifs c911</h2>
   </div>
 
-  <div class="row">
+  <div class="row container">
 
 
     <div class="mobileView">
@@ -26,22 +26,31 @@
       </div>
     </div>
 
-    <div class="desktopView container">
-      <div class="col-xs-12 flex-row apcc-title-container">
-        <h6 class="title-block center-xs">CATEGORIE</h6>
 
-        <mat-radio-group (change)="changeService($event)">
-          <mat-radio-button color="primary" class="example-radio-button" *ngFor="let service of services"
-                            [value]="service.SrvId">
-            {{service.SvrLibelle}}
-          </mat-radio-button>
-        </mat-radio-group>
+  <div class="desktopView ">
+    <div class="col-xs-12 flex-row apcc-title-container ">
+      <h6 class="title-block center-xs">CATEGORIE</h6>
 
-      </div>
-      <div class="col-xs-10 auto-margin col-lg-10 center crea911-default-list-creatif">
-        <app-item-creatif-default *ngFor="let creatif of creatifsArray ; let i = index"
-                                  [creatif]="creatif"></app-item-creatif-default>
+      <mat-radio-group (change)="changeService($event)">
+        <mat-radio-button color="primary" class="example-radio-button" *ngFor="let service of services"
+                          [value]="service.SrvId">
+          {{service.SvrLibelle}}
+        </mat-radio-button>
+      </mat-radio-group>
+
+    </div>
+    <div class="row around-lg around-md ">
+      <div class="col-lg-12 around-lg">
+        <div class="auto-margin col-lg-10 center crea911-default-list-creatif around-lg">
+          <app-item-creatif-default *ngFor="let creatif of creatifsArray ; let i = index"
+                                    [creatif]="creatif"></app-item-creatif-default>
+        </div>
       </div>
     </div>
+
   </div>
-</div>
+
+    </div>
+
+  </div>
+

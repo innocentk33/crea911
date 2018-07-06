@@ -1,40 +1,43 @@
 <!--MENU ACCUEIL -->
 <header class="flex-column crea-menu-header crea-menu-bleu ">
-  <div class="crea-menu-header-top crea-menu-bleu-top row around-xs " [ngClass]="styleClassList">
-    <div class="col-xs-3 crea-menu-logo">
-      <img (click)="gotAccueil()" src="assets/images/logo.svg" alt="">
-    </div>
-    <div class="col-xs-6 crea-menu-midle" [ngClass]="styleClassList">
-      <ul class="crea-menu-ul">
-        <li *ngFor="let item of menuItem">
-          <a routerLink="{{item.path}}">{{item.title}}</a>
-
-        </li>
-      </ul>
-    </div>
-    <div class="col-xs-3 crea-menu-left" [ngClass]="styleClassList">
-      <ul *ngIf="!isConnect" class="crea-menu-ul">
-        <li>
-          <a [routerLink]="'/connexion'">Connexion</a>
-        </li>
-        <li>
-          <a [routerLink]="'/inscription'">Inscription</a>
-        </li>
-      </ul>
-      <div *ngIf="isConnect" class="user-top-div">
-        <h6 (click)="goProfil()">{{identity}}</h6>
-        <img [matMenuTriggerFor]="menu" [src]="avatar" alt="">
-        <mat-menu #menu="matMenu" yPosition="below">
-          <button (click)="goProfil()" mat-menu-item>
-            <mat-icon>perm_identity</mat-icon>
-            <span>Mon profil</span>
-          </button>
-          <button (click)="logOut()" mat-menu-item>
-            <mat-icon>power_settings_new</mat-icon>
-            <span>Déconnexion</span>
-          </button>
-        </mat-menu>
+  <div class="container">
+    <div class="crea-menu-header-top crea-menu-bleu-top row around-xs " [ngClass]="styleClassList">
+      <div class="col-xs-3 crea-menu-logo">
+        <img (click)="gotAccueil()" src="assets/images/logo.svg" alt="">
       </div>
+      <div class="col-xs-6 crea-menu-midle" [ngClass]="styleClassList">
+        <ul class="crea-menu-ul">
+          <li *ngFor="let item of menuItem">
+            <a routerLink="{{item.path}}">{{item.title}}</a>
+
+          </li>
+        </ul>
+      </div>
+      <div class="col-xs-3 crea-menu-left" [ngClass]="styleClassList">
+        <ul *ngIf="!isConnect" class="crea-menu-ul">
+          <li>
+            <a [routerLink]="'/connexion'">Connexion</a>
+          </li>
+          <li>
+            <a [routerLink]="'/inscription'">Inscription</a>
+          </li>
+        </ul>
+        <div *ngIf="isConnect" class="user-top-div">
+          <h6 (click)="goProfil()">{{identity}}</h6>
+          <img [matMenuTriggerFor]="menu" [src]="avatar" alt="">
+          <mat-menu #menu="matMenu" yPosition="below">
+            <button (click)="goProfil()" mat-menu-item>
+              <mat-icon>perm_identity</mat-icon>
+              <span>Mon profil</span>
+            </button>
+            <button (click)="logOut()" mat-menu-item>
+              <mat-icon>power_settings_new</mat-icon>
+              <span>Déconnexion</span>
+            </button>
+          </mat-menu>
+        </div>
+      </div>
+
     </div>
 
   </div>

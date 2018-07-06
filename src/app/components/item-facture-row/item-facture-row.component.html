@@ -5,7 +5,7 @@
     </button>
   </div>
   <div style="width: 25%">
-    <span>OO{{facture.FctId}}</span>
+    <span>{{facture.FctNumero | truncate: 8}}</span>
   </div>
   <div style="width: 25%">
     <span>{{facture.FctDateEmission | date: 'dd/MM/yyyy'}}</span>

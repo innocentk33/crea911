@@ -24,14 +24,14 @@
       </div>
     </div>
     <div *ngIf="creatif.UApropos" class="crea911-creatif-bio">
-      <p> {{ (creatif.UApropos.length>6)? (creatif.UApropos | slice:0:60)+'...':(creatif.UApropos) }}</p>
+      <p>{{creatif.UApropos}}</p>
     </div>
     <div *ngIf='fichierCover' class="crea911-divider"></div>
     <div  *ngIf='fichierCover' #cover (click)="zoomCrea()" class="crea911-creatif-cover">
-      
+
     </div>
   </div>
-  <div *ngIf="isActif" (click)="iamClient()" class="crea911-creatif-card-footer">
+  <div *ngIf="isActif" (click)="iamClient()" class="crea911-creatif-card-footer text-center">
     <span>{{travaillerText}}</span>
   </div>
 </div>

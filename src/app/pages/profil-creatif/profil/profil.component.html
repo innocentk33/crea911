@@ -11,9 +11,10 @@
         <div class="col-xs-4 col-lg-4 avatar-container" style="display: flex;justify-content: center;">
           <img class="img-responsive crea911-avatar-img" [src]="avatar" alt="">
         </div>
-        <div class="col-xs-8 flex-column crea911-infos-box">
-          <p class="infos-texte">pour ajouter votre photo et d’autres informations importantes, rendez-vous sur INFO COMPTES</p>
-          <h3 class="name">{{creatif?.UNom | uppercase}} {{creatif?.UPrenoms | capitalize: true}}</h3>
+        <div class="col-xs-8 flex-column crea911-infos-box ">
+          <h3 class="name margin-top-6">{{creatif?.UNom | uppercase}} {{creatif?.UPrenoms | capitalize: true}}</h3>
+
+
           <!-- <h3 class="name">{{creatif?.UNom | uppercase}} {{creatif?.UPrenoms | capitalize: true}}</h3>
           <div *ngIf="this.creatif?.creatif?.CrProfession">
             <mat-icon svgIcon="sac_crea"></mat-icon>
@@ -36,6 +37,7 @@
       <div class="col-xs-12 center-xs left-xs" style="padding: .6em 0px">
         <button class="crea-btn-default right-xs" (click)="editable()">Modifier</button>
       </div>
+      <p class="infos-texte text-left">pour ajouter votre photo et d’autres informations importantes, rendez-vous sur INFO COMPTES</p>
       <div class="crea911-divider"></div>
       <div class="flex-column">
         <h6 class="crea911-sub-title-default">à propos</h6>
@@ -111,9 +113,10 @@
           <img class="img-responsive crea911-avatar-img" [src]="avatar" alt="">
         </div>
         <div class="col-xs-6 flex-column crea911-infos-box">
-
           <h3 class="name">{{creatif?.UNom | uppercase}} {{creatif?.UPrenoms | capitalize: true}}</h3>
-          <p class="infos-texte text-center">pour ajouter votre photo et d’autres informations importantes, rendez-vous sur INFO COMPTES</p>
+          <p class="infos-texte text-left">pour ajouter votre photo et d’autres informations importantes, rendez-vous sur INFO COMPTES</p>
+
+
         </div>
       </div>
       <div class="col-xs-12 center-xs " style="padding: .6em 0px">

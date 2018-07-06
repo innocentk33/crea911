@@ -51,9 +51,8 @@ export class ProjetsComponent implements OnInit {
         if (res.status_code == 200) {
           //console.log("ProjetsComponent::loadProjets => ", res.data)
 
-          this.projetsEnAttentes = res.data.filter(
-            projet => !projet.participated )
-          //this.projetsEnAttentes = res.data;
+          //this.projetsEnAttentes = res.data.filter(projet => (!projet.facture || !projet.facture.FctDateReglement))
+          this.projetsEnAttentes = res.data;
           this.setPage(res.total, res.limit, res.offset);
         } else {
         }

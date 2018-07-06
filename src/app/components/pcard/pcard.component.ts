@@ -9,8 +9,6 @@ import { MatCard } from "@angular/material";
 })
 export class PcardComponent implements OnInit {
 
-  @Input()
-  projet
   constructor() { }
 
   ngOnInit() {

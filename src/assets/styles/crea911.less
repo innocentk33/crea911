@@ -548,7 +548,7 @@ input {
 }
 
 .crea-footer {
-  display: felx;
+/*  display: felx;*/
   flex-direction: column;
   max-width: 100%;
   margin: 0px;
@@ -652,7 +652,7 @@ input {
       text-align: left;
       margin: 0.5em auto;
       height: 2.5em;
-      display: flex;
+ /*     display: flex;*/
       justify-content: flex-start;
       align-items: flex-end;
       margin-top: 2em;
@@ -841,6 +841,9 @@ app-factures, app-profil, app-offres, app-mesprojets, app-infos, app-mes-creatio
   width: 100%;
   background: white;
   padding: 2em;
+}
+app-mes-creations{
+  background: @crea911_gray_background;
 }
 
 app-profil-client, app-services, app-profil-creatif, app-contact, app-portfolio, app-register-client, app-register-creatif, app-register, app-password-forget, app-define-new-password, app-confirm-mail, app-step-one, app-step-final, app-edit-projet, app-creatif-portfolio {
@@ -1031,7 +1034,7 @@ app-concept {
       padding: 2em;
       text-align: justify;
       * {
-        text-align: justify;
+        text-align: left;
       }
     }
   }
@@ -2345,6 +2348,14 @@ MENU CUSTOM
 }
 
 /*Style special Cree par innocent kacou*/
+//les style de textes
+.text-left{
+  text-align: left;
+}
+
+
+
+
 .container {
   margin: 0 auto;
   padding: 1rem 1rem;
@@ -2399,7 +2410,7 @@ MENU CUSTOM
   }
 }
 
-@media handheld and (min-width: 600px) and (max-width: 767px) {
+@media screen and (min-width: 600px) and (max-width: 767px) {
   .container {
     max-width: 90%;
     width: 80%;
@@ -2442,7 +2453,7 @@ MENU CUSTOM
   }
 }
 
-@media handheld and (min-width: 481px) and (max-width: 767px) {
+@media screen and(min-width: 481px) and (max-width: 767px) {
   .crea-login-container {
     margin: 0;
     padding: 0;
@@ -2479,6 +2490,12 @@ MENU CUSTOM
   .crea99-categorie-barre {
     display: none;
   }
+  .crea911-nos-creations {
+    mat-radio-group {
+      align-items: center;
+      text-align: center;
+    }
+  }
 
   .desktopView {
     display: none;
@@ -2496,6 +2513,9 @@ MENU CUSTOM
   app-mes-creations {
     padding: 0.1rem;
   }
+  app-infos{
+    padding-left: 0.8rem;
+  }
 
   .cdk-overlay-container {
     .element.style {
@@ -2511,9 +2531,15 @@ MENU CUSTOM
   }
 }
 
-@media handheld and (min-width: 320px) and (max-width: 480px) {
+@media screen and (min-width: 320px) and (max-width: 480px) {
   .crea99-categorie-barre {
     display: none;
+  }
+  .crea911-nos-creations {
+    mat-radio-group {
+      align-items: center;
+      text-align: center;
+    }
   }
 
   app-projets {
@@ -2535,6 +2561,9 @@ MENU CUSTOM
 
   app-mes-creations {
     padding: 0.1rem;
+  }
+  app-infos{
+    padding-left: 0.8rem;
   }
 
   .cdk-overlay-container {
@@ -2555,11 +2584,13 @@ MENU CUSTOM
   app-mes-creations {
     padding: 0.1rem;
   }
+  app-infos{
+    padding-left: 0.8rem;
+  }
 
   app-projets {
     padding: 1rem;
   }
-
   .crea911-grid-creation {
     app-item-creation-default, app-item-my-crea {
       width: 45%;
@@ -2604,5 +2635,9 @@ MENU CUSTOM
   .crea-btn-default{
     padding: 0 0.5rem;
   }
+}
+
+app-creatif-portfolio {
+background-color: @crea911_gray_background;
 }
 

@@ -21,6 +21,7 @@
     font-weight: normal;
     text-rendering: optimizeLegibility;
 }
+
 /* Webfont: Lato-Bold */@font-face {
     font-family: 'LatoWebBold';
     src: url('fonts/Lato-Bold.eot'); /* IE9 Compat Modes */

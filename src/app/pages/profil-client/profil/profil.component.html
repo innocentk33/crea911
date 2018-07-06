@@ -89,11 +89,12 @@
   </div>
 
   <!--mobileView par innocent kacou-->
-  <div class="row center-xs padding-1 mobileView">
-    <!-- Debut left infos bloc -->
-    <div class="col-xs-8">
+
+
+  <div class="row padding-1 mobileView">
+    <div class="col-xs-12">
       <div class="row crea911-left-infos-container">
-        <div class="col-xs-4 avatar-container" style="display: flex;justify-content: center;">
+        <div class="col-xs-6 avatar-container" style="display: flex;justify-content: center;">
           <form [formGroup]="formAvatar" (ngSubmit)="uploadAvatar()" action="">
 
             <div class="between-xs">
@@ -109,6 +110,34 @@
               <button *ngIf="btnAvatarUpload" type="submit" class="crea-btn-default btn-save-avatar">ENREGISTRER LA PHOTO</button>
             </div>
           </form>
+        </div>
+        <div class="col-xs-6 flex-column crea911-infos-box">
+          <p class="infos-texte text-center">pour ajouter votre photo et d’autres informations importantes, rendez-vous sur INFO COMPTES</p>
+          <h3 class="name">{{creatif?.UNom | uppercase}} {{creatif?.UPrenoms | capitalize: true}}</h3>
+
+        </div>
+      </div>
+      <div class="col-xs-12 center-xs " style="padding: .6em 0px">
+
+        <button class="crea-btn-default right-xs" (click)="editable()">Modifier</button>
+      </div>
+      <div class="crea911-divider"></div>
+      <div class="flex-column">
+        <h6 class="crea911-sub-title-default">à propos</h6>
+        <div class="crea911-divider"></div>
+        <p class="left-xs">{{creatif?.UApropos}}</p>
+      </div>
+
+    </div>
+
+    <!-- Fin left infos bloc -->
+  </div>
+<!--  <div class="row center-xs padding-1 desktopView">
+    &lt;!&ndash; Debut left infos bloc &ndash;&gt;
+    <div class="col-xs-8">
+      <div class="row crea911-left-infos-container">
+        <div class="col-xs-4 avatar-container" style="display: flex;justify-content: center;">
+
 
         </div>
         <div class="col-xs-8 flex-column crea911-infos-box">
@@ -151,5 +180,5 @@
 
     </div>
 
-  </div>
+  </div>-->
 </div>

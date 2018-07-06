@@ -19,10 +19,10 @@ export class ServicesComponent implements OnInit {
   loadServices() {
     //++service
     var serviceIV = <Service>{};
-    serviceIV.svrLibelle = "Identité visuel"
+    serviceIV.svrLibelle = "Identité visuelle"
     serviceIV.svrIcon = "assets/images/icons/ic_identite_visuelle_color.svg"
-    serviceIV.srvDescription = "C’est le style graphique propre à votre entreprise, elle lui permet d’exprimer ses valeurs, ses ambi ons et son ac vité.Tout comme une carte iden té, l’iden té visuelle permet à toute personne vous d’iden fier très rapidement ..."
-    serviceIV.link= "/identite-visuel"
+    serviceIV.srvDescription = "C’est le style graphique propre à votre entreprise, elle lui permet d’exprimer ses valeurs, ses ambitions et son acvité.Tout comme une carte identité, l’identité visuelle permet à toute personne vous d’idenfier très rapidement ..."
+    serviceIV.link= "/identité-visuelle"
     //++ activities
     var activiteIV1 = <TypeActivite>{};
     activiteIV1.tpactLibelle = "Logo"
@@ -31,7 +31,7 @@ export class ServicesComponent implements OnInit {
     var activiteIV3 = <TypeActivite>{};
     activiteIV3.tpactLibelle = "Packaging"
     var activiteIV4 = <TypeActivite>{};
-    activiteIV4.tpactLibelle = "Mascote"
+    activiteIV4.tpactLibelle = "Mascotte"
     var activiteIV5 = <TypeActivite>{};
     activiteIV5.tpactLibelle = "Signalétique"
     //end ++ activities
@@ -42,17 +42,17 @@ export class ServicesComponent implements OnInit {
     var servicePP = <Service>{};
     servicePP.svrLibelle = "Print & Publicité"
     servicePP.svrIcon = "assets/images/icons/ic_print_pub_color.svg"
-    servicePP.srvDescription = "Le digital est en plein essor, mais les supports papiers indétrônables ont toujours un rôle très important au sein d’une stratégie de communica-  on. Plaque es, dépliants, brochures, catalogues sont des ou ls clés dans une démarche ..."
+    servicePP.srvDescription = "Le digital est en plein essor, mais les supports papiers indétrônables ont toujours un rôle très important au sein d’une stratégie de communication. Plaquettes, dépliants, brochures, catalogues sont des ou ls clés dans une démarche ..."
     servicePP.link= "/print-pub"
     //++ activities
     var activitePP1 = <TypeActivite>{};
-    activitePP1.tpactLibelle = "Carte de visite + Entête"
+    activitePP1.tpactLibelle = "Carte de visite + En-tête"
     var activitePP2 = <TypeActivite>{};
-    activitePP2.tpactLibelle = "Plaquête"
+    activitePP2.tpactLibelle = "Plaquette"
     var activitePP3 = <TypeActivite>{};
     activitePP3.tpactLibelle = "Chemise"
     var activitePP4 = <TypeActivite>{};
-    activitePP4.tpactLibelle = "Propectus"
+    activitePP4.tpactLibelle = "Prospectus"
     var activitePP5 = <TypeActivite>{};
     activitePP5.tpactLibelle = "Dépliant"
     var activitePP6 = <TypeActivite>{};
@@ -72,7 +72,7 @@ export class ServicesComponent implements OnInit {
     var serviceW = <Service>{};
     serviceW.svrLibelle = "Web"
     serviceW.svrIcon = "assets/images/icons/ic_web_color.svg"
-    serviceW.srvDescription = "Prendre en compte les interac ons des u lisa- teurs et leur proposer un design qui les op mise devient donc une priorité lors de la créa on de votre site web. L’un de nos objec fs lorsque vous nous confiez un projet ..."
+    serviceW.srvDescription = "Prendre en compte les interac ons des utilisateurs et leur proposer un design qui les optimise devient donc une priorité lors de la création de votre site web. L’un de nos objectifs lorsque vous nous confiez un projet ..."
     serviceW.link= "/web-digital"
     //++ activities
     var activiteW1 = <TypeActivite>{};
@@ -86,7 +86,7 @@ export class ServicesComponent implements OnInit {
     var activiteW5 = <TypeActivite>{};
     activiteW5.tpactLibelle = "Application Mobile"
     var activiteW6 = <TypeActivite>{};
-    activiteW6.tpactLibelle = "Newletter"
+    activiteW6.tpactLibelle = "Newsletter"
     //end ++ activities
     serviceW.typeServices = []
     serviceW.typeServices.push(activiteW1, activiteW2, activiteW3, activiteW4, activiteW5, activiteW6)
@@ -95,7 +95,7 @@ export class ServicesComponent implements OnInit {
     var serviceR = <Service>{};
     serviceR.svrLibelle = "Rédaction"
     serviceR.svrIcon = "assets/images/icons/ic_redaction_color.svg"
-    serviceR.srvDescription = "Un nom et un logo peuvent dire beaucoup. Mais ils ne disent jamais tout. La signature de marque a pour fonc on de transme re des infor- ma ons complémentaires sur votre entreprise et a ser l’envie d’entrer en contact avec elle ..."
+    serviceR.srvDescription = "Un nom et un logo peuvent dire beaucoup. Mais ils ne disent jamais tout. La signature de marque a pour fonction de transmetre des informations complémentaires sur votre entreprise et a ser l’envie d’entrer en contact avec elle ..."
     serviceR.link= "/redaction"
     //++ activities
     var activiteR1 = <TypeActivite>{};
@@ -112,7 +112,7 @@ export class ServicesComponent implements OnInit {
     var serviceDE = <Service>{};
     serviceDE.svrLibelle = "Design d'espace"
     serviceDE.svrIcon = "assets/images/icons/ic_design_espace_color.svg"
-    serviceDE.srvDescription = "Le design d’espace est un concept imagina f, mais aussi un acte de terrain. Son rôle est de créer ou de transformer la pra ci- té, le volume et l’esthé-  que d’un espace; selon sa fonc onnalité, l’am- biance souhaitée et le message à véhiculer ..."
+    serviceDE.srvDescription = "Le design d’espace est un concept imaginatif, mais aussi un acte de terrain. Son rôle est de créer ou de transformer la praticité, le volume et l’esthétique d’un espace; selon sa fonctionnalité, l’ambiance souhaitée et le message à véhiculer ..."
     serviceDE.link= "/design-espace"
     //++ activities
     var activiteDE1 = <TypeActivite>{};
@@ -134,7 +134,7 @@ export class ServicesComponent implements OnInit {
     var serviceMD = <Service>{};
     serviceMD.svrLibelle = "Motion design"
     serviceMD.svrIcon = "assets/images/icons/ic_motion_design_color.svg"
-    serviceMD.srvDescription = "Une image vaut mille mots! Et si elle était en mouvement, accompagner de mots et ou de son? Elle en vaudrait combien? L’image animée est un excellent ou l de com- munica on. Crea911 apporte autant de soin..."
+    serviceMD.srvDescription = "Une image vaut mille mots! Et si elle était en mouvement, accompagner de mots et ou de son? Elle en vaudrait combien? L’image animée est un excellent ou l de communication. Crea911 apporte autant de soin..."
     serviceMD.link= "/motion-design"
     //++ activities
     var activiteMD1 = <TypeActivite>{};
@@ -157,9 +157,9 @@ export class ServicesComponent implements OnInit {
 
     //++ activities
     var activiteAT1 = <TypeActivite>{};
-    activiteAT1.tpactLibelle = "Création de Concepte"
+    activiteAT1.tpactLibelle = "Création de Concept"
     var activiteAT2 = <TypeActivite>{};
-    activiteAT2.tpactLibelle = "Création de trophet"
+    activiteAT2.tpactLibelle = "Création de trophée"
     var activiteAT3 = <TypeActivite>{};
     activiteAT3.tpactLibelle = "Création de tee-shirt"
     //end ++ activities
