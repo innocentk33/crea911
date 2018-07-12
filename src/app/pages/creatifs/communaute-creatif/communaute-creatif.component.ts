@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { Creatif } from '../../../models/models';
-import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder } from '@angular/forms';
-import { MatSnackBar } from '@angular/material';
-import { ApiServicesCrea911Service } from '../../../services/api-services-crea911.service';
-import { WaitOverlayRef } from '../../../components/dialogs/wait-overlay-ref';
-import { WaitingOverlayServiceService } from '../../../components/dialogs/waiting-overlay-service.service';
-import { NotificationsService } from 'angular2-notifications';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {FormBuilder} from '@angular/forms';
+import {MatSnackBar} from '@angular/material';
+import {ApiServicesCrea911Service} from '../../../services/api-services-crea911.service';
+import {WaitOverlayRef} from '../../../components/dialogs/wait-overlay-ref';
+import {WaitingOverlayServiceService} from '../../../components/dialogs/waiting-overlay-service.service';
+import {NotificationsService} from 'angular2-notifications';
+import {PaginationPageServiceService} from "../../../services/pagination-page-service.service";
 
 @Component({
   selector: 'app-communaute-creatif',
@@ -19,9 +19,10 @@ export class CommunauteCreatifComponent implements OnInit {
 
   creatifsArray: any[] = []
 
-  serviceSelected: string = "ALL";
+  serviceSelected = 0;
 
   services: any[] = [];
+  pager: any = {};
 
   public options = {
     position: ["bottom", "left"],
@@ -30,23 +31,26 @@ export class CommunauteCreatifComponent implements OnInit {
   }
 
   constructor(private router: Router, private route: ActivatedRoute,
-    private fb: FormBuilder,
-    private _notificationsService: NotificationsService,
-    private previewDialog: WaitingOverlayServiceService,
-    private snackBar: MatSnackBar,
-    private api: ApiServicesCrea911Service) { }
+              private fb: FormBuilder,
+              private _notificationsService: NotificationsService,
+              private previewDialog: WaitingOverlayServiceService,
+              private snackBar: MatSnackBar,
+              private pagerService: PaginationPageServiceService,
+              private api: ApiServicesCrea911Service) {
+  }
 
   ngOnInit() {
-    this.dialogRef = this.previewDialog.open();
+
     this.loadServices();
-    this.loadByServices();
+    this.goPage(1);
   }
 
 
   public changeService(value) {
     //console.log("CommunauteCreatifComponent::changeService", value)
-    this.dialogRef = this.previewDialog.open();
-    this.loadByServices(value.value)
+
+    this.serviceSelected = value.value;
+    this.goPage(1);
   }
 
 
@@ -66,12 +70,32 @@ export class CommunauteCreatifComponent implements OnInit {
 
   }
 
-  private loadByServices(service=0) {
-    this.api.getByService(service).subscribe(
+  setPage(total: number, limit, offset) {
+    let page = Math.floor(offset / limit) + 1;
+    if (page < 1 || page > this.pager.totalPages) {
+      return;
+    }
+
+    // get pager object from service
+    this.pager = this.pagerService.getPager(total, page, limit);
+
+    // get current page of items
+    //this.pagedItems = this.allItems.slice(this.pager.startIndex, this.pager.endIndex + 1);
+  }
+
+  goPage(index) {
+    this.loadByServices(10, 10 * (index - 1), this.serviceSelected);
+  }
+
+
+  private loadByServices(limit = 10, offset = 0, service = 0) {
+    this.dialogRef = this.previewDialog.open();
+    this.api.getByService(limit, offset, service).subscribe(
       res => {
         this.dialogRef.close()
         if (res.status_code == 200) {
           this.creatifsArray = res.data
+          this.setPage(res.total, res.limit, res.offset);
         }
 
       },

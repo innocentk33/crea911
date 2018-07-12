@@ -1,130 +1,140 @@
-@radius : 1.4em;
+@radius: 1.4em;
 .crea911-creatif-card {
-    background: #fff;
-    border-radius: @radius;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    padding: 0px;
-    max-width: calc(98%);
+  background: #fff;
+  border-radius: @radius;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 0px;
+  max-width: calc(98%);
 }
 
 .crea911-creatif-card-header {
-    padding: 1em;
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  .crea911-creatif-avatar {
+    flex: 1;
+    img {
+      max-width: 100%;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+  .crea911-creatif-name {
+    flex: 2;
     display: flex;
-    flex-direction: row;
-    .crea911-creatif-avatar {
-        flex: 1;
-        img {
-            max-width: 100%;
-            border-radius: 50%;
-            cursor: pointer;
-        }
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    max-width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    h4 {
+      margin: auto;
+      font-size: 16px;
+      text-align: left;
+      padding-left: .6em;
+      width: 100%;
+      text-transform: uppercase;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
     }
-    .crea911-creatif-name {
-        flex: 2;
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-        justify-content: flex-start;
-        text-align: left;
-        h4 {
-            margin: auto;
-            font-size: 16px;
-            text-align: left;
-            padding-left: .6em;
-            width: 100%;
-            text-transform: uppercase;
-        }
-        span {
-            color: inherit;
-            text-align: left;
-            padding-left: .6em;
-          font-size: 12px;
-          text-transform: capitalize;
-
-        }
+    span {
+      color: inherit;
+      text-align: left;
+      padding-left: .6em;
+      font-size: 12px;
+      text-transform: capitalize;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
     }
+  }
 }
 
 .crea911-creatif-card-body {
-    display: flex;
-    flex-direction: column;
-    padding: 0em .9em;
-    padding-bottom: .4em;
-    .crea911-cretif-infos {
-        div {
-            align-items: center;
-            display: flex;
-            span,
-            p {
-                text-align: left;
-                font-size: .8em;
-                margin-left: .4em;
-            }
-        }
+  display: flex;
+  flex-direction: column;
+  padding: 0em .9em;
+  padding-bottom: .4em;
+  .crea911-cretif-infos {
+    div {
+      align-items: center;
+      display: flex;
+      span,
+      p {
+        text-align: left;
+        font-size: .8em;
+        margin-left: .4em;
+      }
     }
-    .crea911-creatif-bio {
-        margin-bottom: .4em;
-        p {
-            padding-bottom: 0px;
-            margin-bottom: 0px;
-          font-size: 12px;
-        }
-        p,
-        span {
-            text-align: left;
-            text-justify: inter-word;
-        }
+  }
+  .crea911-creatif-bio {
+    margin-bottom: .4em;
+    p {
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+      font-size: 12px;
     }
-    .crea911-creatif-cover {
-        cursor: zoom-in;
-        margin-bottom: .6em;
-        height: 8em;
-        background-size: cover;
-        background-position: center;
-        background-image: url('https://via.placeholder.com/350x150');
+    p,
+    span {
+      text-align: left;
+      text-justify: inter-word;
     }
+  }
+  .crea911-creatif-cover {
+    cursor: zoom-in;
+    margin-bottom: .6em;
+    height: 8em;
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://via.placeholder.com/350x150');
+  }
 }
 
 .crea911-creatif-card-footer {
-    cursor: pointer;
-    background: #2AAAE3;
-    max-width: 100%;
-    color: white;
-    padding: .9em;
-    border-radius: 0px 0px @radius @radius;
-    span {
-        font-size: 0.9rem;
-    }
+  cursor: pointer;
+  background: #2AAAE3;
+  max-width: 100%;
+  color: white;
+  padding: .9em;
+  border-radius: 0px 0px @radius @radius;
+  span {
+    font-size: 0.9rem;
+  }
 }
 
 @media only screen and (max-width: 850px) {
-    .crea911-creatif-card-body {
-        .crea911-creatif-bio {
-            margin-bottom: .4em;
-            p,
-            span {
-                font-size: 11px;
-            }
-        }
+  .crea911-creatif-card-body {
+    .crea911-creatif-bio {
+      margin-bottom: .4em;
+      p,
+      span {
+        font-size: 11px;
+      }
     }
-    .crea911-cretif-infos {
-        div {
-            span,
-            p {
-                font-size: 11px;
-            }
-        }
+  }
+
+  .crea911-cretif-infos {
+    div {
+      span,
+      p {
+        font-size: 11px;
+      }
     }
-    .crea911-creatif-card-header {
-        .crea911-creatif-name {
-            h4 {
-                font-size: 14px;
-            }
-            span {
-                font-size: 11px;
-            }
-        }
+  }
+
+  .crea911-creatif-card-header {
+    .crea911-creatif-name {
+      h4 {
+        font-size: 14px;
+      }
+      span {
+        font-size: 11px;
+      }
     }
+  }
 }

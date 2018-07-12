@@ -1,6 +1,6 @@
-import { Service } from './../../models/models';
-import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import {Service} from './../../models/models';
+import {Component, Input, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-service-tile-item',
@@ -12,9 +12,15 @@ export class ServiceTileItemComponent implements OnInit {
   @Input()
   service: Service
 
-  constructor(private router: Router) { }
+  isShowing = true;
+
+  constructor(private router: Router) {
+  }
 
   ngOnInit() {
+    if (this.service.svrLibelle === "Autre") {
+      this.isShowing = false
+    }
   }
 
   select(event) {

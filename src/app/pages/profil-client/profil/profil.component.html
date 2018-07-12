@@ -113,19 +113,19 @@
         </div>
         <div class="col-xs-6 flex-column crea911-infos-box">
           <p class="infos-texte text-center">pour ajouter votre photo et d’autres informations importantes, rendez-vous sur INFO COMPTES</p>
-          <h3 class="name">{{creatif?.UNom | uppercase}} {{creatif?.UPrenoms | capitalize: true}}</h3>
+          <h3 class="name">{{client?.UNom | uppercase}} {{client?.UPrenoms | capitalize: true}}</h3>
 
         </div>
       </div>
       <div class="col-xs-12 center-xs " style="padding: .6em 0px">
 
-        <button class="crea-btn-default right-xs" (click)="editable()">Modifier</button>
+        <button class="crea-btn-default right-xs" [routerLink]="'/profil-client/infos'">Modifier</button>
       </div>
       <div class="crea911-divider"></div>
       <div class="flex-column">
         <h6 class="crea911-sub-title-default">à propos</h6>
         <div class="crea911-divider"></div>
-        <p class="left-xs">{{creatif?.UApropos}}</p>
+        <p class="left-xs">{{client?.UApropos}}</p>
       </div>
 
     </div>

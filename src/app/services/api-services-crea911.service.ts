@@ -6,7 +6,7 @@ import { environment } from '../../environments/environment';
 import 'rxjs/Rx';
 import { ICreatifSubscribtion } from '../interfaces/creatif-subscribtion.interface';
 import { IClientSubscribtion } from '../interfaces/client-subscribtion.interface';
-import { ResponseContentType } from '@angular/http';
+
 const API_URL = environment.apiUrl;
 
 @Injectable()
@@ -18,7 +18,7 @@ export class ApiServicesCrea911Service {
 
   /**
    * Inscription creatif
-   * @param creatif 
+   * @param creatif
    */
   public registerCreatif(creatif: ICreatifSubscribtion) {
     return this.http
@@ -31,7 +31,7 @@ export class ApiServicesCrea911Service {
 
   /**
      * Mise a jour infos creatif
-     * @param creatif 
+     * @param creatif
     */
   public updateCreatif(creatif) {
     return this.http
@@ -44,8 +44,8 @@ export class ApiServicesCrea911Service {
 
 
   /**
-   * 
-   * @param client 
+   *
+   * @param client
    */
   public updateClient(client) {
     return this.http
@@ -55,10 +55,10 @@ export class ApiServicesCrea911Service {
       })
       .catch(this.handleError);
   }
-  
+
   /**
-   * 
-   * @param avatarForm 
+   *
+   * @param avatarForm
    */
   public putUserAvatar(avatarForm) {
     return this.http
@@ -71,7 +71,7 @@ export class ApiServicesCrea911Service {
 
   /**
    * Inscription client
-   * @param client 
+   * @param client
    */
   public registerClient(client: IClientSubscribtion) {
     return this.http
@@ -96,8 +96,8 @@ export class ApiServicesCrea911Service {
     )
   }
 
-  public getByService(service = 0) {
-    return this.http.get(API_URL + "/utilisateurs/liste/creatifs/byService?service=" + service).map(
+  public getByService(limit = 10, offset = 0, service = 0) {
+    return this.http.get(API_URL + "/utilisateurs/liste/creatifs/byService?limit=" + limit + "&offset=" + offset + "&service=" + service).map(
       res => {
         return res;
       }
@@ -110,8 +110,8 @@ export class ApiServicesCrea911Service {
   /**
    * Liste des creations d'un creatif
    * @param creatif adresse mail du creatif
-   * @param limit 
-   * @param offset 
+   * @param limit
+   * @param offset
    */
   public getCreatifCreationsList(creatif, limit, offset) {
     return this.http.get(API_URL + '/creas/by_creatif?limit=' + limit + "&offset=" + offset + '&creatif=' + creatif).map(
@@ -166,7 +166,7 @@ export class ApiServicesCrea911Service {
 
   /**
    * Poster une créa
-   * @param data 
+   * @param data
    */
   public postCrea(data) {
     return this.http
@@ -180,8 +180,8 @@ export class ApiServicesCrea911Service {
   }
 
   /**
-   * 
-   * @param data 
+   *
+   * @param data
    */
   public getCreas() {
     return this.http
@@ -198,7 +198,7 @@ export class ApiServicesCrea911Service {
   /**
    * @role Creatif
    * Supprimer une crea a partir de son ID
-   * @param idCrea 
+   * @param idCrea
    */
   public deleteCrea(idCrea) {
     return this.http
@@ -250,9 +250,9 @@ export class ApiServicesCrea911Service {
 
 
   /**
-   * 
-   * @param limit 
-   * @param offset 
+   *
+   * @param limit
+   * @param offset
    */
   public getProjetsClient(limit: number, offset: number, service = "") {
     return this.http.get(API_URL + '/projets?limit=' + limit + "&offset=" + offset + "&service=" + service)
@@ -303,7 +303,7 @@ export class ApiServicesCrea911Service {
       .catch(this.handleError)
   }
   /**
-   * 
+   *
    */
   public getFacturesClient(limit: number, offset: number) {
     return this.http.get(API_URL + '/factures?limit=' + limit + "&offset=" + offset)
@@ -333,7 +333,7 @@ export class ApiServicesCrea911Service {
   }
 
   /**
-   * 
+   *
    */
   public getCountries() {
     return this.http.get(API_URL + '/localisation/pays/liste')
@@ -437,8 +437,8 @@ export class ApiServicesCrea911Service {
   public downloadBrief(prId) {
     // Depending on what you are sending to the server
     // and what the server is sending back
-    /*let headers = new Headers({ 
-      'Content-Type': 'application/json', 
+    /*let headers = new Headers({
+      'Content-Type': 'application/json',
       'Accept': 'application/pdf'
     });
 
@@ -447,11 +447,11 @@ export class ApiServicesCrea911Service {
     .map(
       res => res.()
     )
-    .catch(this.handleError);  */  
+    .catch(this.handleError);  */
   }
   /**
-   * 
-   * @param user 
+   *
+   * @param user
    */
   public login(user) {
     return this.http
