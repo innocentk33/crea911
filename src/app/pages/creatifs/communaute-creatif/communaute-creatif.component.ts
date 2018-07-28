@@ -30,6 +30,19 @@ export class CommunauteCreatifComponent implements OnInit {
     lastOnBottom: true
   }
 
+  public optionDesktopMansory =  {
+    transitionDuration: '0.8s',
+    gutter: 5,
+    percentPosition: true
+  }
+
+  optionMobileMansory = {
+    transitionDuration: '0.8s',
+    gutter: 5,
+    columnWidth: "29%",
+    percentPosition: true
+  }
+
   constructor(private router: Router, private route: ActivatedRoute,
               private fb: FormBuilder,
               private _notificationsService: NotificationsService,
@@ -42,7 +55,7 @@ export class CommunauteCreatifComponent implements OnInit {
   ngOnInit() {
 
     this.loadServices();
-    this.goPage(1);
+    this.loadByServices(this.serviceSelected);
   }
 
 
@@ -71,7 +84,7 @@ export class CommunauteCreatifComponent implements OnInit {
   }
 
   setPage(total: number, limit, offset) {
-    let page = Math.floor(offset / limit) + 1;
+    const page = Math.floor(offset / limit) + 1;
     if (page < 1 || page > this.pager.totalPages) {
       return;
     }
@@ -84,16 +97,32 @@ export class CommunauteCreatifComponent implements OnInit {
   }
 
   goPage(index) {
-    this.loadByServices(10, 10 * (index - 1), this.serviceSelected);
+    //this.loadByServices(this.serviceSelected, 10, 10 * (index - 1));
+    this.loadByServices(this.serviceSelected);
   }
 
 
-  private loadByServices(limit = 10, offset = 0, service = 0) {
+  private loadByServices(service = 0 ,limit = 100, offset = 0) {
     this.dialogRef = this.previewDialog.open();
     this.api.getByService(limit, offset, service).subscribe(
       res => {
         this.dialogRef.close()
         if (res.status_code == 200) {
+          for(let position=res.data.length-1; position>=1; position--){
+
+            //hasard reçoit un nombre entier aléatoire entre 0 et position
+            const hasard=Math.floor(Math.random()*(position+1));
+
+            //Echange
+            const sauve=res.data[position];
+            res.data[position]=res.data[hasard];
+            res.data[hasard]=sauve;
+
+            if(position==0){
+
+            }
+
+          }
           this.creatifsArray = res.data
           this.setPage(res.total, res.limit, res.offset);
         }

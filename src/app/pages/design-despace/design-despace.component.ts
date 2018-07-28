@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { NgxCarousel } from 'ngx-carousel';
-import { AuthCrea911Service } from '../../services/auth-crea911.service';
-import { Router } from '@angular/router';
-import { ApiServicesCrea911Service } from '../../services/api-services-crea911.service';
+import {Component, OnInit} from '@angular/core';
+import {NgxCarousel} from 'ngx-carousel';
+import {AuthCrea911Service} from '../../services/auth-crea911.service';
+import {Router} from '@angular/router';
+import {ApiServicesCrea911Service} from '../../services/api-services-crea911.service';
 
 @Component({
   selector: 'app-design-despace',
@@ -19,11 +19,12 @@ export class DesignDespaceComponent implements OnInit {
   constructor(
     private router: Router,
     private api: ApiServicesCrea911Service,
-    private authService: AuthCrea911Service) { }
+    private authService: AuthCrea911Service) {
+  }
 
   ngOnInit() {
     this.carouselOne = {
-      grid: { xs: 1, sm: 2, md: 3, lg: 4, all: 0 },
+      grid: {xs: 1, sm: 2, md: 3, lg: 4, all: 0},
       slide: 1,
       speed: 400,
       interval: 4000,
@@ -66,8 +67,8 @@ export class DesignDespaceComponent implements OnInit {
   }
 
   /**
-    * Boutton Je suis un client | j'ai un projet
-    */
+   * Boutton Je suis un client | j'ai un projet
+   */
   iamClient() {
     if (this.authService.connected() == "client") {
       this.router.navigate(["/post-projet"])

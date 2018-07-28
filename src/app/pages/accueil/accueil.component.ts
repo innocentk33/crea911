@@ -112,6 +112,7 @@ export class AccueilComponent implements OnInit {
     this.api.getALlServices().subscribe(
       res => {
         if (res.status_code == 200) {
+
           this.servicesCreas = res.data
         } else {
 
@@ -132,6 +133,21 @@ export class AccueilComponent implements OnInit {
     this.api.getCreationsList(4, 0, service).subscribe(
       res => {
         if (res.status_code == 200) {
+          for(let position=res.data.length-1; position>=1; position--){
+
+            //hasard reçoit un nombre entier aléatoire entre 0 et position
+            const hasard=Math.floor(Math.random()*(position+1));
+
+            //Echange
+            const sauve=res.data[position];
+            res.data[position]=res.data[hasard];
+            res.data[hasard]=sauve;
+
+            if(position==0){
+
+            }
+
+          }
           this.creations = res.data
         } else {
 
@@ -155,7 +171,7 @@ export class AccueilComponent implements OnInit {
 
   loadServices() {
     //++service
-    var serviceIV = <Service>{};
+    const serviceIV = <Service>{};
     serviceIV.svrLibelle = "Identité visuelle"
     serviceIV.svrIcon = "assets/images/icons/ic_paint.svg"
     serviceIV.link = "/identite-visuel"
@@ -163,43 +179,43 @@ export class AccueilComponent implements OnInit {
 
 
     //++ activities
-    var activiteIV1 = <TypeActivite>{};
+    const activiteIV1 = <TypeActivite>{};
     activiteIV1.tpactLibelle = "Logo"
-    var activiteIV2 = <TypeActivite>{};
+    const activiteIV2 = <TypeActivite>{};
     activiteIV2.tpactLibelle = "Charte graphique"
-    var activiteIV3 = <TypeActivite>{};
+    const activiteIV3 = <TypeActivite>{};
     activiteIV3.tpactLibelle = "Packaging"
-    var activiteIV4 = <TypeActivite>{};
-    activiteIV4.tpactLibelle = "Mascote"
-    var activiteIV5 = <TypeActivite>{};
+    const activiteIV4 = <TypeActivite>{};
+    activiteIV4.tpactLibelle = "Mascotte"
+    const activiteIV5 = <TypeActivite>{};
     activiteIV5.tpactLibelle = "Signalétique"
     //end ++ activities
     serviceIV.typeServices = []
     serviceIV.typeServices.push(activiteIV1, activiteIV2, activiteIV3, activiteIV4, activiteIV5)
     this.services.push(serviceIV)
 
-    var servicePP = <Service>{};
+    const servicePP = <Service>{};
     servicePP.svrLibelle = "Print & Publicité"
     servicePP.svrIcon = "assets/images/icons/ic_print.svg"
     servicePP.link = "/print-pub"
 
 
     //++ activities
-    var activitePP1 = <TypeActivite>{};
+    const activitePP1 = <TypeActivite>{};
     activitePP1.tpactLibelle = "Carte de visite + Entête"
-    var activitePP2 = <TypeActivite>{};
-    activitePP2.tpactLibelle = "Plaquête"
-    var activitePP3 = <TypeActivite>{};
+    const activitePP2 = <TypeActivite>{};
+    activitePP2.tpactLibelle = "Plaquette"
+    const activitePP3 = <TypeActivite>{};
     activitePP3.tpactLibelle = "Chemise"
-    var activitePP4 = <TypeActivite>{};
-    activitePP4.tpactLibelle = "Propectus"
-    var activitePP5 = <TypeActivite>{};
+    const activitePP4 = <TypeActivite>{};
+    activitePP4.tpactLibelle = "Prospectus"
+    const activitePP5 = <TypeActivite>{};
     activitePP5.tpactLibelle = "Dépliant"
-    var activitePP6 = <TypeActivite>{};
+    const activitePP6 = <TypeActivite>{};
     activitePP6.tpactLibelle = "Flyer"
-    var activitePP7 = <TypeActivite>{};
+    const activitePP7 = <TypeActivite>{};
     activitePP7.tpactLibelle = "Affiche"
-    var activitePP8 = <TypeActivite>{};
+    const activitePP8 = <TypeActivite>{};
     activitePP8.tpactLibelle = "Roll Up"
     //end ++ activities
     servicePP.typeServices = []
@@ -208,7 +224,7 @@ export class AccueilComponent implements OnInit {
     )
     this.services.push(servicePP)
 
-    var serviceW = <Service>{};
+    const serviceW = <Service>{};
     serviceW.svrLibelle = "Web"
     serviceW.svrIcon = "assets/images/icons/ic_screen.svg"
     serviceW.link = "/web-digital"
@@ -216,53 +232,53 @@ export class AccueilComponent implements OnInit {
 
 
     //++ activities
-    var activiteW1 = <TypeActivite>{};
+    const activiteW1 = <TypeActivite>{};
     activiteW1.tpactLibelle = "Webdesign"
-    var activiteW2 = <TypeActivite>{};
+    const activiteW2 = <TypeActivite>{};
     activiteW2.tpactLibelle = "Site Web"
-    var activiteW4 = <TypeActivite>{};
+    const activiteW4 = <TypeActivite>{};
     activiteW4.tpactLibelle = "Application Web"
-    var activiteW5 = <TypeActivite>{};
+    const activiteW5 = <TypeActivite>{};
     activiteW5.tpactLibelle = "Application Mobile"
-    var activiteW6 = <TypeActivite>{};
+    const activiteW6 = <TypeActivite>{};
     activiteW6.tpactLibelle = "Newletter"
     //end ++ activities
     serviceW.typeServices = []
     serviceW.typeServices.push(activiteW1, activiteW2, activiteW4, activiteW5, activiteW6)
     this.services.push(serviceW)
 
-    var serviceR = <Service>{};
+    const serviceR = <Service>{};
     serviceR.svrLibelle = "Rédaction"
     serviceR.svrIcon = "assets/images/icons/ic_edit.svg"
     serviceR.link = "/redaction"
 
     //++ activities
-    var activiteR1 = <TypeActivite>{};
+    const activiteR1 = <TypeActivite>{};
     activiteR1.tpactLibelle = "Nom de marque"
-    var activiteR2 = <TypeActivite>{};
+    const activiteR2 = <TypeActivite>{};
     activiteR2.tpactLibelle = "Slogan"
-    var activiteR3 = <TypeActivite>{};
+    const activiteR3 = <TypeActivite>{};
     activiteR3.tpactLibelle = "Scénario"
     //end ++ activities
     serviceR.typeServices = []
     serviceR.typeServices.push(activiteR1, activiteR2, activiteR3)
     this.services.push(serviceR)
 
-    var serviceDE = <Service>{};
+    const serviceDE = <Service>{};
     serviceDE.svrLibelle = "Design d'espace"
     serviceDE.svrIcon = "assets/images/icons/ic_rules.svg"
     serviceDE.link = "/design-espace"
 
     //++ activities
-    var activiteDE1 = <TypeActivite>{};
+    const activiteDE1 = <TypeActivite>{};
     activiteDE1.tpactLibelle = "Aménagement d'espace"
-    var activiteDE2 = <TypeActivite>{};
+    const activiteDE2 = <TypeActivite>{};
     activiteDE2.tpactLibelle = "Stand"
-    var activiteDE3 = <TypeActivite>{};
+    const activiteDE3 = <TypeActivite>{};
     activiteDE3.tpactLibelle = "Design Mobilier"
-    var activiteDE4 = <TypeActivite>{};
+    const activiteDE4 = <TypeActivite>{};
     activiteDE4.tpactLibelle = "Présentoir"
-    var activiteDE5 = <TypeActivite>{};
+    const activiteDE5 = <TypeActivite>{};
     activiteDE5.tpactLibelle = "Totem"
     //end ++ activities
 
@@ -270,19 +286,19 @@ export class AccueilComponent implements OnInit {
     serviceDE.typeServices.push(activiteDE1, activiteDE2, activiteDE3, activiteDE4, activiteDE5)
     this.services.push(serviceDE)
 
-    var serviceMD = <Service>{};
+    const serviceMD = <Service>{};
     serviceMD.svrLibelle = "Motion design"
     serviceMD.svrIcon = "assets/images/icons/ic_play.svg"
     serviceMD.link = "/motion-design"
 
     //++ activities
-    var activiteMD1 = <TypeActivite>{};
+    const activiteMD1 = <TypeActivite>{};
     activiteMD1.tpactLibelle = "Animation de logo"
-    var activiteMD2 = <TypeActivite>{};
+    const activiteMD2 = <TypeActivite>{};
     activiteMD2.tpactLibelle = "Film institutionnel"
-    var activiteMD3 = <TypeActivite>{};
+    const activiteMD3 = <TypeActivite>{};
     activiteMD3.tpactLibelle = "Film publicitaire"
-    var activiteMD4 = <TypeActivite>{};
+    const activiteMD4 = <TypeActivite>{};
     activiteMD4.tpactLibelle = "Présentation d'entreprise"
     //end ++ activities
 
@@ -290,16 +306,16 @@ export class AccueilComponent implements OnInit {
     serviceMD.typeServices.push(activiteMD1, activiteMD2, activiteMD3, activiteMD4)
     this.services.push(serviceMD)
 
-    var serviceAT = <Service>{};
+    const serviceAT = <Service>{};
     serviceAT.svrLibelle = "Autres"
     serviceAT.svrIcon = "assets/images/icons/ic_idee.svg"
 
     //++ activities
-    var activiteAT1 = <TypeActivite>{};
-    activiteAT1.tpactLibelle = "Création de Concepte"
-    var activiteAT2 = <TypeActivite>{};
-    activiteAT2.tpactLibelle = "Création de trophet"
-    var activiteAT3 = <TypeActivite>{};
+    const activiteAT1 = <TypeActivite>{};
+    activiteAT1.tpactLibelle = "Création de Concept"
+    const activiteAT2 = <TypeActivite>{};
+    activiteAT2.tpactLibelle = "Création de trophée"
+    const activiteAT3 = <TypeActivite>{};
     activiteAT3.tpactLibelle = "Création de tee-shirt"
     //end ++ activities
 

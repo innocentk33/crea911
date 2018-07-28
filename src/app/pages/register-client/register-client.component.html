@@ -9,7 +9,7 @@
             </div>
           </div>
         </div>
-      
+
         <div class="row no-margin flex-column">
           <div class="center-xs col-xs-12 flex-row">
             <mat-icon class="logo" svgIcon="logo_blue_crea"></mat-icon>
@@ -19,17 +19,17 @@
               <div class="row around-xs flex-start-item">
                 <div class="row between-xs col-xs-6 col-boxed infos-compte-box ">
                   <h4 class="title-page uppercase">Inscription client</h4>
-      
+
                   <h6 class="title-page">Inscrivez-vous avec votre adresse email</h6>
                   <div class="col-xs-12 padding-xs-top-2">
                     <form [formGroup]="infosClientForm" (ngSubmit)="createCompte()" class="col-xs-12 marge-corps-form1">
-                    
+
                       <div class="row between-xs">
                         <div class="col-xs-12">
                           <label>E-mail
                             <b class="error-input" *ngIf="errors">{{errors.email ? errors.email[0] : ""}}</b>
                           </label>
-                          <input [attr.disabled]="email?'':null" type="email" class="form-control" placeholder="E-mail" formControlName="email">
+                          <input [attr.disabled]="email?'':null" type="email" class="form-control form-control-email" placeholder="E-mail" formControlName="email">
                         </div>
                       </div>
                       <div class="row between-xs">
@@ -48,7 +48,7 @@
                           <input type="password" class="form-control" placeholder="confirmation du mot de passe" formControlName="confirm_password">
                         </div>
                       </div>
-      
+
                       <div class="row between-xs">
                         <div class="col-xs-12">
                           <label>Nom
@@ -57,7 +57,7 @@
                           <input type="text" class="form-control" placeholder="Nom" formControlName="nom">
                         </div>
                       </div>
-      
+
                       <div class="row between-xs">
                         <div class="col-xs-12">
                           <label>Prénoms
@@ -66,8 +66,8 @@
                           <input type="text" class="form-control" placeholder="Prénoms" formControlName="prenoms">
                         </div>
                       </div>
-      
-      
+
+
                       <div class="row between-xs  col-xs-12">
                         <b class="error-input" *ngIf="errors">{{errors.sexe ? errors.sexe[0] : ""}}</b>
                         <mat-radio-group formControlName="sexe">
@@ -75,36 +75,35 @@
                           <mat-radio-button color="primary" value="0">Femme</mat-radio-button>
                         </mat-radio-group>
                       </div>
-      
+
                       <div class="row col-xs-12">
-                        
-      
+
+
                       </div>
                       <div class="row between-xs col-xs-12">
-      
+
                         <span class="span-partage">Partagez les données sur mon inscription avec les fournisseurs de contenu de Crea911 à des fins de marketing.
                           Notez que vos données peuvent être transférées vers des pays en dehors de l'Espace économique de votre
                           pays, comme précisé dans notre Politique de confidentialité. </span>
                       </div>
-      
+
                       <div class="col-xs-12 center-xs flex-column">
-      
+
                         <span class="span-conditions">En cliquant sur S'inscrire, vous acceptez les Conditions d'utilisation et la Politique de confidentialité
                           de Crea911</span>
                         <!-- [disabled]="!infosClientForm.valid" La nouvelle classe btn-edit provient du fichier styles.css-->
                         <button [disabled]="!infosClientForm.valid" type="submit" class="crea-btn-default">S'INSCRIRE</button>
                       </div>
                     </form>
-      
+
                   </div>
                 </div>
-      
+
               </div>
-      
+
             </div>
-      
+
           </div>
         </div>
-      
+
       </div>
-      

@@ -53,7 +53,7 @@ export class CreatifPortfolioComponent implements OnInit {
     this.router.navigate(["/post-projet"], {});
   }
   /**
-   * 
+   *
    */
   loadCreations(service = "") {
     this.dialogRef = this.previewDialog.open();
@@ -62,7 +62,24 @@ export class CreatifPortfolioComponent implements OnInit {
       res => {
         this.dialogRef.close()
         if (res.status_code == 200) {
+
+          for(var position=res.data.length-1; position>=1; position--){
+
+            //hasard reçoit un nombre entier aléatoire entre 0 et position
+            var hasard=Math.floor(Math.random()*(position+1));
+
+            //Echange
+            var sauve=res.data[position];
+            res.data[position]=res.data[hasard];
+            res.data[hasard]=sauve;
+
+            if(position==0){
+
+            }
+
+          }
           this.creations = res.data
+
         } else {
 
         }

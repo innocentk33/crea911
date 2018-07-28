@@ -14,7 +14,7 @@ export class IdentiteVisuelComponent implements OnInit {
   public carouselOne: NgxCarousel;
 
 
-  itemsCreas : any[] = []
+  itemsCreas: any[] = []
 
   constructor(
     private router : Router,
@@ -38,7 +38,7 @@ export class IdentiteVisuelComponent implements OnInit {
     }
 
     //this.loadCreations("1")
-    this.loadCreations()
+    this.loadCreations("1")
 
   }
 

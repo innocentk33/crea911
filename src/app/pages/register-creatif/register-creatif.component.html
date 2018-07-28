@@ -24,7 +24,7 @@
                 <div class="row between-xs">
                   <div class="col-xs-12">
                     <label>Pseudo
-                      <b class="error-input" *ngIf="errors">{{errors.pseudo ? errors.pseudo[0] : ""}}</b>
+                      <b class="error-input" *ngIf="errors">{{ errors.pseudo ? errors.pseudo[0] : "" }}</b>
                     </label>
                     <input type="text" class="form-control" placeholder="Pseudo" formControlName="pseudo">
                   </div>
@@ -32,15 +32,15 @@
                 <div class="row between-xs">
                   <div class="col-xs-12">
                     <label>E-mail
-                      <b class="error-input" *ngIf="errors">{{errors.email ? errors.email[0] : ""}}</b>
+                      <b class="error-input" *ngIf="errors">{{ errors.email ? errors.email[0] : "" }}</b>
                     </label>
-                    <input [attr.disabled]="email?'':null" type="email" class="form-control" placeholder="E-mail" formControlName="email">
+                    <input [attr.disabled]="email?'':null" type="email" class="form-control form-control-email" placeholder="E-mail" formControlName="email">
                   </div>
                 </div>
                 <div class="row between-xs">
                   <div class="col-xs-12">
                     <label>Mot de passe
-                      <b class="error-input" *ngIf="errors">{{errors.password ? errors.password[0] : ""}}</b>
+                      <b class="error-input" *ngIf="errors">{{ errors.password ? errors.password[0] : "" }}</b>
                     </label>
                     <input type="password" class="form-control" placeholder="mot de passe" formControlName="password">
                   </div>
@@ -48,7 +48,7 @@
                 <div class="row between-xs">
                   <div class="col-xs-12">
                     <label>Confirmer mot de passe
-                        <b class="error-input" *ngIf="errors">{{errors.confirm_password ? errors.confirm_password[0] : ""}}</b>
+                        <b class="error-input" *ngIf="errors">{{ errors.confirm_password ? errors.confirm_password[0] : "" }}</b>
                     </label>
                     <input type="password" class="form-control" placeholder="confirmation du mot de passe" formControlName="confirm_password">
                   </div>
@@ -57,7 +57,7 @@
                 <div class="row between-xs">
                   <div class="col-xs-12">
                     <label>Nom
-                      <b class="error-input" *ngIf="errors">{{errors.nom ? errors.nom[0] : ""}}</b>
+                      <b class="error-input" *ngIf="errors">{{ errors.nom ? errors.nom[0] : "" }}</b>
                     </label>
                     <input type="text" class="form-control" placeholder="Nom" formControlName="nom">
                   </div>
@@ -66,7 +66,7 @@
                 <div class="row between-xs">
                   <div class="col-xs-12">
                     <label>Prénoms
-                      <b class="error-input" *ngIf="errors">{{errors.prenoms ? errors.prenoms[0] : ""}}</b>
+                      <b class="error-input" *ngIf="errors">{{ errors.prenoms ? errors.prenoms[0] : "" }}</b>
                     </label>
                     <input type="text" class="form-control" placeholder="Prénoms" formControlName="prenoms">
                   </div>
@@ -75,7 +75,7 @@
                 <div class="row between-xs">
                   <div class="col-xs-12">
                     <label>Contact ( Exemple : (225)58459999 )
-                      <b class="error-input" *ngIf="errors">{{errors.phone ? errors.phone[0] : ""}}</b>
+                      <b class="error-input" *ngIf="errors">{{ errors.phone ? errors.phone[0] : "" }}</b>
                     </label>
                     <input type="tel"  [textMask]="{mask: mask}" class="form-control" placeholder="Téléphone portable" formControlName="phone">
                   </div>
@@ -83,7 +83,7 @@
 
 
                 <div class="row between-xs  col-xs-12">
-                  <b class="error-input" *ngIf="errors">{{errors.sexe ? errors.sexe[0] : ""}}</b>
+                  <b class="error-input" *ngIf="errors">{{ errors.sexe ? errors.sexe[0] : "" }}</b>
                   <mat-radio-group formControlName="sexe">
                     <mat-radio-button color="primary" value="1">Homme</mat-radio-button>
                     <mat-radio-button color="primary" value="0">Femme</mat-radio-button>

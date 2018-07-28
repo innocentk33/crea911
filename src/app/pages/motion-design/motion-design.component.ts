@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { NgxCarousel } from 'ngx-carousel';
-import { Router } from '@angular/router';
-import { AuthCrea911Service } from '../../services/auth-crea911.service';
-import { ApiServicesCrea911Service } from '../../services/api-services-crea911.service';
+import {Component, OnInit} from '@angular/core';
+import {NgxCarousel} from 'ngx-carousel';
+import {Router} from '@angular/router';
+import {AuthCrea911Service} from '../../services/auth-crea911.service';
+import {ApiServicesCrea911Service} from '../../services/api-services-crea911.service';
 
 @Component({
   selector: 'app-motion-design',
@@ -13,12 +13,13 @@ export class MotionDesignComponent implements OnInit {
   public carouselOne: NgxCarousel;
 
 
-  itemsCreas : any[] = []
+  itemsCreas: any[] = []
 
   constructor(
-    private router : Router,
+    private router: Router,
     private api: ApiServicesCrea911Service,
-    private authService: AuthCrea911Service) { }
+    private authService: AuthCrea911Service) {
+  }
 
   ngOnInit() {
     this.carouselOne = {
@@ -37,8 +38,8 @@ export class MotionDesignComponent implements OnInit {
 
 
     //this.loadCreations("6")
-    this.loadCreations()
 
+    this.loadCreations()
   }
 
   loadCreations(service = "") {
@@ -64,16 +65,17 @@ export class MotionDesignComponent implements OnInit {
     // carouselLoad will trigger this funnction when your load value reaches
     // it is helps to load the data by parts to increase the performance of the app
     // must use feature to all carousel
- }
- /**
+  }
+
+  /**
    * Boutton Je suis un client | j'ai un projet
    */
   iamClient() {
     if (this.authService.connected() == "client") {
-       this.router.navigate(["/post-projet"])
-     } else {
-       this.router.navigate(["/inscription-client"])
-     }
-   }
+      this.router.navigate(["/post-projet"])
+    } else {
+      this.router.navigate(["/inscription-client"])
+    }
+  }
 
 }

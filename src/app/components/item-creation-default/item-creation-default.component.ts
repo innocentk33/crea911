@@ -15,7 +15,7 @@ export class ItemCreationDefaultComponent implements OnInit {
 
   @ViewChild('creaImg') creaImg: ElementRef;
   @ViewChild('avatarImg') avatarImg: ElementRef;
-  
+
   constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
@@ -27,6 +27,8 @@ export class ItemCreationDefaultComponent implements OnInit {
     if(this.creation.creatif.photo){
       this.avatarImg.nativeElement.src = this.creation.creatif.photo.FchLink
     }
+
+
   }
 
   openAddDialog(): void {
@@ -42,10 +44,10 @@ export class ItemCreationDefaultComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       ////console.log('The dialog was closed');
       //this.animal = result;
-      
+
     },
       err => {
-       
+
       });
 
   }

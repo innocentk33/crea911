@@ -18,48 +18,48 @@ export class ServicesComponent implements OnInit {
 
   loadServices() {
     //++service
-    var serviceIV = <Service>{};
+    const serviceIV = <Service>{};
     serviceIV.svrLibelle = "Identité visuelle"
     serviceIV.svrIcon = "assets/images/icons/ic_identite_visuelle_color.svg"
     serviceIV.srvDescription = "C’est le style graphique propre à votre entreprise, elle lui permet d’exprimer ses valeurs, ses ambitions et son acvité.Tout comme une carte identité, l’identité visuelle permet à toute personne vous d’idenfier très rapidement ..."
-    serviceIV.link= "/identité-visuelle"
+    serviceIV.link= "/identite-visuel"
     //++ activities
-    var activiteIV1 = <TypeActivite>{};
+    const activiteIV1 = <TypeActivite>{};
     activiteIV1.tpactLibelle = "Logo"
-    var activiteIV2 = <TypeActivite>{};
+    const activiteIV2 = <TypeActivite>{};
     activiteIV2.tpactLibelle = "Charte graphique"
-    var activiteIV3 = <TypeActivite>{};
+    const activiteIV3 = <TypeActivite>{};
     activiteIV3.tpactLibelle = "Packaging"
-    var activiteIV4 = <TypeActivite>{};
+    const activiteIV4 = <TypeActivite>{};
     activiteIV4.tpactLibelle = "Mascotte"
-    var activiteIV5 = <TypeActivite>{};
+    const activiteIV5 = <TypeActivite>{};
     activiteIV5.tpactLibelle = "Signalétique"
     //end ++ activities
     serviceIV.typeServices = []
     serviceIV.typeServices.push(activiteIV1, activiteIV2, activiteIV3, activiteIV4, activiteIV5)
     this.services.push(serviceIV)
 
-    var servicePP = <Service>{};
+    const servicePP = <Service>{};
     servicePP.svrLibelle = "Print & Publicité"
     servicePP.svrIcon = "assets/images/icons/ic_print_pub_color.svg"
     servicePP.srvDescription = "Le digital est en plein essor, mais les supports papiers indétrônables ont toujours un rôle très important au sein d’une stratégie de communication. Plaquettes, dépliants, brochures, catalogues sont des ou ls clés dans une démarche ..."
     servicePP.link= "/print-pub"
     //++ activities
-    var activitePP1 = <TypeActivite>{};
+    const activitePP1 = <TypeActivite>{};
     activitePP1.tpactLibelle = "Carte de visite + En-tête"
-    var activitePP2 = <TypeActivite>{};
+    const activitePP2 = <TypeActivite>{};
     activitePP2.tpactLibelle = "Plaquette"
-    var activitePP3 = <TypeActivite>{};
+    const activitePP3 = <TypeActivite>{};
     activitePP3.tpactLibelle = "Chemise"
-    var activitePP4 = <TypeActivite>{};
+    const activitePP4 = <TypeActivite>{};
     activitePP4.tpactLibelle = "Prospectus"
-    var activitePP5 = <TypeActivite>{};
+    const activitePP5 = <TypeActivite>{};
     activitePP5.tpactLibelle = "Dépliant"
-    var activitePP6 = <TypeActivite>{};
+    const activitePP6 = <TypeActivite>{};
     activitePP6.tpactLibelle = "Flyer"
-    var activitePP7 = <TypeActivite>{};
+    const activitePP7 = <TypeActivite>{};
     activitePP7.tpactLibelle = "Affiche"
-    var activitePP8 = <TypeActivite>{};
+    const activitePP8 = <TypeActivite>{};
     activitePP8.tpactLibelle = "Roll Up"
     //end ++ activities
     servicePP.typeServices = []
@@ -69,61 +69,61 @@ export class ServicesComponent implements OnInit {
     )
     this.services.push(servicePP)
 
-    var serviceW = <Service>{};
+    const serviceW = <Service>{};
     serviceW.svrLibelle = "Web"
     serviceW.svrIcon = "assets/images/icons/ic_web_color.svg"
     serviceW.srvDescription = "Prendre en compte les interac ons des utilisateurs et leur proposer un design qui les optimise devient donc une priorité lors de la création de votre site web. L’un de nos objectifs lorsque vous nous confiez un projet ..."
     serviceW.link= "/web-digital"
     //++ activities
-    var activiteW1 = <TypeActivite>{};
+    const activiteW1 = <TypeActivite>{};
     activiteW1.tpactLibelle = "Webdesign"
-    var activiteW2 = <TypeActivite>{};
+    const activiteW2 = <TypeActivite>{};
     activiteW2.tpactLibelle = "Site Web"
-    var activiteW3 = <TypeActivite>{};
+    const activiteW3 = <TypeActivite>{};
     activiteW3.tpactLibelle = "Packaging"
-    var activiteW4 = <TypeActivite>{};
+    const activiteW4 = <TypeActivite>{};
     activiteW4.tpactLibelle = "Application Web"
-    var activiteW5 = <TypeActivite>{};
+    const activiteW5 = <TypeActivite>{};
     activiteW5.tpactLibelle = "Application Mobile"
-    var activiteW6 = <TypeActivite>{};
+    const activiteW6 = <TypeActivite>{};
     activiteW6.tpactLibelle = "Newsletter"
     //end ++ activities
     serviceW.typeServices = []
     serviceW.typeServices.push(activiteW1, activiteW2, activiteW3, activiteW4, activiteW5, activiteW6)
     this.services.push(serviceW)
 
-    var serviceR = <Service>{};
+    const serviceR = <Service>{};
     serviceR.svrLibelle = "Rédaction"
     serviceR.svrIcon = "assets/images/icons/ic_redaction_color.svg"
     serviceR.srvDescription = "Un nom et un logo peuvent dire beaucoup. Mais ils ne disent jamais tout. La signature de marque a pour fonction de transmetre des informations complémentaires sur votre entreprise et a ser l’envie d’entrer en contact avec elle ..."
     serviceR.link= "/redaction"
     //++ activities
-    var activiteR1 = <TypeActivite>{};
+    const activiteR1 = <TypeActivite>{};
     activiteR1.tpactLibelle = "Nom de marque"
-    var activiteR2 = <TypeActivite>{};
+    const activiteR2 = <TypeActivite>{};
     activiteR2.tpactLibelle = "Slogan"
-    var activiteR3 = <TypeActivite>{};
+    const activiteR3 = <TypeActivite>{};
     activiteR3.tpactLibelle = "Scénario"
     //end ++ activities
     serviceR.typeServices = []
     serviceR.typeServices.push(activiteR1, activiteR2, activiteR3)
     this.services.push(serviceR)
 
-    var serviceDE = <Service>{};
+    const serviceDE = <Service>{};
     serviceDE.svrLibelle = "Design d'espace"
     serviceDE.svrIcon = "assets/images/icons/ic_design_espace_color.svg"
     serviceDE.srvDescription = "Le design d’espace est un concept imaginatif, mais aussi un acte de terrain. Son rôle est de créer ou de transformer la praticité, le volume et l’esthétique d’un espace; selon sa fonctionnalité, l’ambiance souhaitée et le message à véhiculer ..."
     serviceDE.link= "/design-espace"
     //++ activities
-    var activiteDE1 = <TypeActivite>{};
+    const activiteDE1 = <TypeActivite>{};
     activiteDE1.tpactLibelle = "Aménagement d'espace"
-    var activiteDE2 = <TypeActivite>{};
+    const activiteDE2 = <TypeActivite>{};
     activiteDE2.tpactLibelle = "Stand"
-    var activiteDE3 = <TypeActivite>{};
+    const activiteDE3 = <TypeActivite>{};
     activiteDE3.tpactLibelle = "Design Mobilier"
-    var activiteDE4 = <TypeActivite>{};
+    const activiteDE4 = <TypeActivite>{};
     activiteDE4.tpactLibelle = "Présentoir"
-    var activiteDE5 = <TypeActivite>{};
+    const activiteDE5 = <TypeActivite>{};
     activiteDE5.tpactLibelle = "Totem"
     //end ++ activities
 
@@ -131,19 +131,19 @@ export class ServicesComponent implements OnInit {
     serviceDE.typeServices.push(activiteDE1, activiteDE2, activiteDE3, activiteDE4, activiteDE5)
     this.services.push(serviceDE)
 
-    var serviceMD = <Service>{};
+    const serviceMD = <Service>{};
     serviceMD.svrLibelle = "Motion design"
     serviceMD.svrIcon = "assets/images/icons/ic_motion_design_color.svg"
     serviceMD.srvDescription = "Une image vaut mille mots! Et si elle était en mouvement, accompagner de mots et ou de son? Elle en vaudrait combien? L’image animée est un excellent ou l de communication. Crea911 apporte autant de soin..."
     serviceMD.link= "/motion-design"
     //++ activities
-    var activiteMD1 = <TypeActivite>{};
+    const activiteMD1 = <TypeActivite>{};
     activiteMD1.tpactLibelle = "Animation de logo"
-    var activiteMD2 = <TypeActivite>{};
+    const activiteMD2 = <TypeActivite>{};
     activiteMD2.tpactLibelle = "Film institutionnel"
-    var activiteMD3 = <TypeActivite>{};
+    const activiteMD3 = <TypeActivite>{};
     activiteMD3.tpactLibelle = "Film publicitaire"
-    var activiteMD4 = <TypeActivite>{};
+    const activiteMD4 = <TypeActivite>{};
     activiteMD4.tpactLibelle = "Présentation d'entreprise"
     //end ++ activities
 
@@ -151,16 +151,16 @@ export class ServicesComponent implements OnInit {
     serviceMD.typeServices.push(activiteMD1, activiteMD2, activiteMD3, activiteMD4)
     this.services.push(serviceMD)
 
-    var serviceAT = <Service>{};
+    const serviceAT = <Service>{};
     serviceAT.svrLibelle = "Autres"
     serviceAT.svrIcon = "assets/images/icons/ic_idee.svg"
 
     //++ activities
-    var activiteAT1 = <TypeActivite>{};
+    const activiteAT1 = <TypeActivite>{};
     activiteAT1.tpactLibelle = "Création de Concept"
-    var activiteAT2 = <TypeActivite>{};
+    const activiteAT2 = <TypeActivite>{};
     activiteAT2.tpactLibelle = "Création de trophée"
-    var activiteAT3 = <TypeActivite>{};
+    const activiteAT3 = <TypeActivite>{};
     activiteAT3.tpactLibelle = "Création de tee-shirt"
     //end ++ activities
 

@@ -104,6 +104,7 @@ import { DefineNewPasswordComponent } from './pages/define-new-password/define-n
 import { EditProjetComponent } from './pages/profil-client/edit-projet/edit-projet.component';
 import { CountDownViewComponent } from './components/count-down-view/count-down-view.component';
 import { PcardComponent } from './components/pcard/pcard.component';
+import {NgxMasonryModule} from "ngx-masonry";
 
 const MY_IMAGEVIEWER_CONFIG: ImageViewerConfig = {
   zoomInButton: createButtonConfig('zoom_in', 'Zoom +', 1),
@@ -215,7 +216,8 @@ const MY_IMAGEVIEWER_CONFIG: ImageViewerConfig = {
     NgPipesModule,
     ImageViewerModule,
     NgxCarouselModule,
-    TextMaskModule
+    TextMaskModule,
+    NgxMasonryModule
   ],
   providers: [
     { provide: OverlayContainer, useClass: FullscreenOverlayContainer },

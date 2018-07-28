@@ -226,39 +226,40 @@
   <div class="row center-xs margin-top-6">
     <button class="crea-btn-default" (click)="iamClient()">J'ai un projet</button>
   </div>
-</div>
 
-<!-- FIN CONTENT -->
-<div class="">
-  <div class=" margin-top-6 row-carousel bg-grey">
-    <!-- group -->
-    <div class="browser_width ">
-      <div>
-        <!-- column -->
+  <!-- FIN CONTENT -->
+  <div class="">
+    <div class=" margin-top-6 row-carousel bg-grey">
+      <!-- group -->
+      <div class="browser_width ">
         <div>
-          <div class="row around-xs no-margin-lat">
-            <h2 class="crea-session-title uppercase text-center">NOS EXEMPLES DE VIDEOS MOTION DESIGN</h2>
-          </div>
-          <div class="row center-xs">
-            <div class="carousel-container  col-xs-8">
-
-              <ngx-carousel [inputs]="carouselOne" (carouselLoad)="myfunc($event)">
-                <ngx-item NgxCarouselItem *ngFor="let item of itemsCreas">
-                  <app-item-creation-default [creation]="item"></app-item-creation-default>
-                </ngx-item>
-                <button NgxCarouselPrev class='leftRs leftRs-5'>&lt;</button>
-                <button NgxCarouselNext class='rightRs rightRs-5'>&gt;</button>
-              </ngx-carousel>
-
+          <!-- column -->
+          <div>
+            <div class="row around-xs no-margin-lat">
+              <h2 class="crea-session-title uppercase text-center">NOS EXEMPLES DE VIDEOS MOTION DESIGN</h2>
             </div>
-          </div>
+            <div class="row center-xs">
+              <div class="carousel-container  col-xs-8">
 
+                <ngx-carousel [inputs]="carouselOne" (carouselLoad)="myfunc($event)">
+                  <ngx-item NgxCarouselItem *ngFor="let item of itemsCreas">
+                    <app-item-creation-default [creation]="item"></app-item-creation-default>
+                  </ngx-item>
+                  <button NgxCarouselPrev class='leftRs leftRs-5'>&lt;</button>
+                  <button NgxCarouselNext class='rightRs rightRs-5'>&gt;</button>
+                </ngx-carousel>
+
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
-    </div>
 
+    </div>
   </div>
 </div>
+
 
 <!-- FOOTER -->
 <app-footer></app-footer>

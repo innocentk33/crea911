@@ -178,13 +178,13 @@ export class RegisterCreatifComponent implements OnInit, OnDestroy {
 
   contactValide(): boolean {
     console.log("Phone", this.infosCreatifForm.controls.phone.value);
-    let phone = this.infosCreatifForm.controls.phone.value.replace(
+    const phone = this.infosCreatifForm.controls.phone.value.replace(
       /^\_+|\_+$/g,
       ""
     );
     console.log("Phone match", phone);
     if (phone.length > 12) {
-     
+
       return true;
     } else {
       let errorsData;
@@ -194,13 +194,13 @@ export class RegisterCreatifComponent implements OnInit, OnDestroy {
     }
   }
   openDialogSuccess(): void {
-    let dialogRef = this.dialog.open(EndActionDialogComponent, {
+    const dialogRef = this.dialog.open(EndActionDialogComponent, {
       width: "90%",
       disableClose: true,
       data: {
         texte: "Félicitations !",
         action: "<p class='black'>Votre nouveau compte a été créé avec succès !<br> Nous sommes heureux de vous accueillir sur crea911 !<br> Nous vous remercions de votre conance.</p>",
-        sub_action: "Un mail de conrmation à été envoyé à votre adresse élèctronique",
+        sub_action: "Un mail de confirmation à été envoyé à votre adresse élèctronique",
         icon: "assets/images/icons/ic_felicitation.svg"
       }
     });
@@ -236,7 +236,7 @@ export class RegisterCreatifComponent implements OnInit, OnDestroy {
         }
       );
     }
-    
+
   }
 
   returnPage() {

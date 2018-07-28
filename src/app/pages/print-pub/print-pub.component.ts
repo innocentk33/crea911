@@ -10,7 +10,7 @@ import { ApiServicesCrea911Service } from '../../services/api-services-crea911.s
   styleUrls: ['./print-pub.component.less']
 })
 export class PrintPubComponent implements OnInit {
-  
+
   public carouselOne: NgxCarousel;
 
 
@@ -36,8 +36,8 @@ export class PrintPubComponent implements OnInit {
       custom: 'banner'
     }
 
-    //this.loadCreations("2")
-    this.loadCreations()
+    this.loadCreations("2")
+
 
   }
 
